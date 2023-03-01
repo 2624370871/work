@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上架商品</title>
+
+    <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/admin-css/top.css">
+    <link rel="stylesheet" href="../../public/css/admin-css/button.css">
+
+</head>
+<body>
+<div class="main">
+    <div class="top">
+       <span class="path">
+            <span class="location">当前位置:</span>
+            <a href="/admin/goodList">商品管理</a>
+            <span> ></span>
+            <a href="">上新商品</a>
+        </span>
+        <a class="fresh" href="javascript:location.reload()"  title="刷新" style="float: right;padding-right: 20px"> <span class="glyphicon glyphicon-repeat"></span></a>
+    </div>
+<div class="header">
+    <h3>上新商品</h3>
+</div>
+    <div class="second">
+        <form action="/admin/addGood" method="post" id="goodform" onsubmit="return check(this)">
+        <div class="row">
+            <div class="col-lg-6">
+            <div class="form-group">
+                <label for="goodname">商品名</label>
+                <input type="text" class="form-control" id="goodname" name="goodname" placeholder="请输入商品名">
+            </div>
+            <div class="form-group">
+                <label for="goodprice">商品价格</label><br/>
+                <input type="text" class="form-control" id="goodprice" name="goodprice" placeholder="请输入商品价格">
+            </div>
+                <div class="form-group">
+                    <label for="goodcount">商品库存</label><br/>
+                    <input type="text" class="form-control" id="goodcount" name="goodcount" placeholder="请输入商品库存">
+                </div>
+                <div class="form-group">
+                    <label for="goodimg">商品图片</label>
+                    <input type="file" id="goodimg" name="goodimg" accept="image/*">
+                    <p class="help-block">请选择要上传的商品图片.</p>
+                </div>
+        </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>商品类别</label><br/>
+                    <select id="goodsort" name="goodsort"  class="form-control">
+                        <option value="乌龙茶" selected="selected">乌龙茶</option>
+                        <option value="红茶">红茶</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="goodplace">商品产地</label>
+                    <input type="text" class="form-control" id="goodplace" name="goodplace" placeholder="请输入商品产地">
+                </div>
+                <div class="form-group">
+                    <label for="goodweight">商品净含量</label>
+                    <input type="text" class="form-control" id="goodweight" name="goodweight" placeholder="请输入商品净含量">
+                </div>
+                <div class="form-group">
+                    <label for="gooddetail">商品详情图片</label>
+                    <input type="file" id="gooddetail" name="gooddetail" accept="image/*">
+                    <p class="help-block">请选择要上传的商品详情图片.</p>
+                </div>
+            </div>
+        </div>
+            <button type="submit" class="btn btn-primary" id="add" >点击上新</button>
+        </form>
+        </div>
+        </div>
+    </div>
+</div>
+<script src="../../public/jQuery/jquery-3.3.1.min.js"></script>
+<script src="../../public/js/admin-js/good-add.js"></script>
+</body>
+</html>

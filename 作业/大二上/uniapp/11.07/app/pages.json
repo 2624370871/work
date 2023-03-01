@@ -1,0 +1,73 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	{
+	        "path" : "pages/ad/ad",
+	        "style" :                                                                                    
+	        {
+	            "navigationBarTitleText": "",
+	            "enablePullDownRefresh": false
+	        }
+	        
+	    }
+	    ,
+	{
+            "path" : "pages/tabBar/shouye/shouye",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "首页",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tabBar/bofang/bofang",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "播放页",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tabBar/wode/wode",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"tabBar":{
+			"backgroundColor":"#dcdcdc",
+			"color":"#989898",
+			"list":[
+			
+			{
+				"text":"首页",
+				"pagePath":"pages/tabBar/shouye/shouye",
+				"iconPath":"static/shouye1.png",
+				"selectedIconPath":"static/shouye2.png"
+			},
+			{
+				"text":"播放",
+				"pagePath":"pages/tabBar/bofang/bofang",
+				"iconPath":"static/bofang1.png",
+				"selectedIconPath":"static/bofang2.png"
+			},
+			{
+				"text":"我的",
+				"pagePath":"pages/tabBar/wode/wode",
+				"iconPath":"static/wode1.png",
+				"selectedIconPath":"static/wode2.png"
+			}
+			]
+		}
+}

@@ -1,0 +1,70 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+/*头部width设置为100%适应屏幕宽度,使用CSS3的flex弹性布局,justify-content是flex布局中
+的水平方向对齐方式,设置为space-around时会让弹性子元素平均分布,即每个项目两侧的间隔相等
+*/
+/* img{
+	width: 100px;
+	height: 100px;
+} */
+#top{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.brand{
+	font-size: 22px;
+	/*使用CSS3的属性选择器设置搜索框的尺寸*/
+}
+#top input[type=search]{
+	width: 160px;
+}
+.content{
+	width: 90%;
+	margin: 10px auto;
+	padding: 5px;
+	border: 1px #eeeeee solid;
+	/*边框圆角*/
+	border-radius: 15px;
+	/*边框阴影 box-shadow: 水平位置	垂直位置		模糊距离		阴影大小		阴影颜色;*/
+	box-shadow: 0px 0px 8px 0px #eeeeee;
+}
+.pic_info img{
+	border-radius: 15px;
+	width: 100%;
+}
+.pic_info{	/*设置父元素为弹性盒模型容器*/
+	display: flex;
+	align-items: center;
+}
+.pic_box{	/*使用flex属性分配弹性子元素占有的区域大小*/
+	flex: 0.7;
+}
+.pic_info ul{
+	flex: 1;
+}
+/*选择器匹配父元素中的第n个子元素,可以为公式*/
+.pic_info li:nth-child(2n-1){
+	opacity: 0.6;/*设置背景或背景颜色,以及字体颜色的透明度*/
+	color: red;
+}
+/* img{
+	width: 300px;
+	height: 200pxx;
+} */
+@font-face {
+	font-family:'font';
+	src: url('../font/1.TTF');
+}
+.pic_info li{
+	padding-left: 20px;
+	line-height: 20px;
+	font-size: 18px;
+	font-family:'font';
+}

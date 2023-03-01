@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go购数码首页</title>
+    <link rel="stylesheet" href="../public/css/reset.css" media="all">
+    <link rel="stylesheet" href="../public/css/index.css" media="all">
+    <script src="../public/js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<!--顶部导航栏-->
+<div id="div1">
+    <div id="header" >
+        <!--left-->
+        <div id="headerleft">
+            <ul>
+                <li class="hli1">APPLE</li>
+                <li class="hli1">MI</li>
+                <li class="hli1">HUAWEI</li>
+            </ul>
+        </div>
+        <div id="headerright">
+            <ul>
+                <!--登录-->
+                <a href="/login">
+                    <li  style="width: 70px" id="userLogin">登录</li>
+                </a>
+                <!--注册-->
+                <a href="/register">
+                    <li style="width: 70px;padding-left: 15px;margin-top: 1px" id="userReg">注册</li>
+                </a>
+                <a href="#"><li  style="width:130px;margin-top: 1px;display: none" id="phone"></li></a>
+                <a href=""><li  style="width: 70px;margin-top: 1px">中国大陆</li></a>
+            </ul>
+        </div>
+        <div id="nav">
+            <!--logo-->
+            <div id="navlog">
+                <a href="/"><img src="../public/img/icon/logo-2.png" id="log" style="width: 80px;height: 80px"></a>
+            </div>
+            <!--导航-->
+            <div id="navbar">
+                <ul>
+                    <a href="/fenlei">
+                        <li class="outli" id="outlid0">优惠专区</li>
+                    </a>
+                    <a href="#">
+                        <li class="outli" id="outlid1">电脑
+                            <div class="navdiv" id="navdivid1">
+                                <!--电脑分类导航商品渲染-->
+                                <ul>
+                                    <li class="inli">
+                                        <a href="#"><img src="../public/img/product/MacBookPro_gray_0.png"><br>
+                                            MacBookPro
+                                        </a><br>
+                                        <span>18999元起</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li class="outli" id="outlid2">手机
+                            <div class="navdiv" id="navdivid2">
+                                <!--手机分类导航商品渲染-->
+                                <ul>
+                                    <li class="inli">
+                                        <a href="#"><img src="../public/img/product/huaweimate30pro5g_black_0.png"><br>
+                                            HUAWEI Mate 30 Pro 5G
+                                        </a><br>
+                                        <span>6999元起</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li class="outli" id="outlid3">平板
+                            <div class="navdiv" id="navdivid3">
+                                <!--平板分类导航商品渲染-->
+                                <ul>
+                                    <li class="inli">
+                                        <a href="#>"><img src="../public/img/product/HUAWEIM6_blue_0.png"><br>
+                                            华为平板 M6 高能版 8.4英寸
+                                        </a><br>
+                                        <span>2699元起</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li class="outli" id="outlid4">耳机
+                            <div class="navdiv" id="navdivid4">
+                                <!--耳机分类导航商品渲染-->
+                                <ul>
+                                    <li class="inli">
+                                        <a href="/goodsdetails?id=<%=value.p_id%>"><img src="../public/img/product/AirPodsPro_white_0.png"><br>
+                                            AirPodsPro
+                                        </a><br>
+                                        <span>1999元起</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div >
+</div>
+<!-- 左边导航+商品渲染部分 -->
+<div class="banner">
+    <div class="banner-cen clearfix">
+        <div class="banner-select">
+            <div style="font-weight: bold">商品分类</div>
+            <a href="#"><div>电脑·COMPUTER</div></a>
+            <a href="#"><div>手机·PHONE</div></a>
+            <a href="#"><div>平板·PAD</div></a>
+            <a href="#"><div>耳机·EARPHONE</div></a>
+            <div style="font-weight: bold">品牌分类</div>
+            <a href="#"><div>苹果·APPLE</div></a>
+            <a href="#"><div>华为·HUAWEI</div></a>
+            <a href="#"><div>小米·MI</div></a>
+        </div>
+        <div class="banner-product">
+            <div class="parta">
+                <a href="#">
+                <div>
+                <img src="../public/img/product/HUAWEIM5_golden_1.png" alt="" >
+                <p style="margin-top: 20px;font-weight: bold">MacBookPro</p>
+                <span style="margin-top: 10px;">16GB 2666MHz DDR4 / 32GB 2666MHz DDR4</span>
+                <span style="margin-top: 10px;">深空灰色 / 银色 </span>
+                <p style="font-size: 12px;color: #999999;margin-top: 30px;">RMB <span style="color: #c91111;display: inline;font-weight: bold">4299</span></p>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--所有商品展示-->
+<%productList.forEach(function(value){%>
+<a href="#">
+    <div>
+        <img src="../public/img/product/<%=value.p_img_1%>" alt="" >
+        <p style="margin-top: 20px;font-weight: bold"> <%=value.p_name%></p>
+        <span style="margin-top: 10px;"><%=value.p_version%> / <%=value.p_version2%></span>
+        <span style="margin-top: 10px;"><%=value.p_color%> / <%=value.p_color2%> </span>
+        <p style="font-size: 12px;color: #999999;margin-top: 30px;">RMB <span style="color: #c91111;display: inline;font-weight: bold"><%=value.p_price1%></span></p>
+    </div>
+</a>
+<%})%>
+<script>
+    if (sessionStorage.getItem('phone')!=null){
+        document.getElementById('phone').style.display='block'
+        document.getElementById('phone').innerText='欢迎您,'+sessionStorage.getItem('phone')
+        document.getElementById('userLogin').style.display='none'
+        document.getElementById('userReg').style.display='none'
+    }
+</script>
+
+</body>
+</html>

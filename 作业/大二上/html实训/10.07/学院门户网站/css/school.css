@@ -1,0 +1,68 @@
+body,html{
+	/*页面整体样式*/
+	height: 100%;
+	width: 100%;
+}
+header{
+	/*页头样式*/
+	height: 15%;
+	width: 100%;
+}
+section{
+	/*主体部分样式*/
+	height: 75%;
+	width: 100%;
+}
+footer{
+	/*页脚样式*/
+	height: 10%;
+	width: 100%;
+}
+@font-face{
+	font-family: "font";
+	src: url("../font/STKAITI.TTF");
+}
+#img_logo{
+	width: 100%;
+}
+section img{
+	float: left;
+	width: 20%;
+	margin-top: 13px;
+}
+section p{
+	float: left;
+	width: 80%;
+	font-family: 'font';
+}
+section span{
+	width: 80%;
+	color: #d3d3d3;
+	overflow: hidden;
+	display: block;				/*块级元素*/
+	text-overflow: ellipsis;	/*文字溢出时显示省略符号来代表被修剪的文本*/
+	white-space: nowrap;		/*段落中的文本不进行换行*/
+}
+section a:link{
+	background-color: orange;
+}
+section a:visited{/*超链接访问后变为红色*/
+	color: red;
+}
+#grad1{
+	height: 10px;
+	/*渐变*/
+	background: linear-gradient(to right,red,blue);
+	/*圆角边框*/
+	border-radius: 20px;
+	box-shadow: 2px 5px 2px #888888;
+}
+footer p{
+	text-shadow: 1px 1px #ff0000;
+}
+.div_article{
+	border-radius:20px;
+	border: 3px solid black;
+	margin-bottom: 10px;
+}
+

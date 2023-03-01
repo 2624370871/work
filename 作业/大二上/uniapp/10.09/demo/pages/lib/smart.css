@@ -1,0 +1,22 @@
+
+.smart-padding-wrap{
+	padding: 15rpx;
+	background-color: #f8f8f8;
+}
+.smart-panel{
+	margin-bottom: 12px;
+}
+.smart-panel-title{
+	background-color: #f1f1f1;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 12px;
+	flex-direction: row;
+}
+.smart-panel-h{
+	background-color: #ececec;
+	flex-direction: row;
+	align-items: center;
+	padding: 12px;
+	margin-bottom: 2px;
+}

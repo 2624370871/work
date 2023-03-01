@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "个人微信小程序",
+  "usingComponents": {
+    "uni-link": "/components/uni-link/uni-link"
+  }
+}

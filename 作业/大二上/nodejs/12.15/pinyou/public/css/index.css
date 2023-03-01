@@ -1,0 +1,568 @@
+/*main 主体开始*/
+
+.main {
+    width: 980px;
+    height: 455px;
+    margin: 11px 0 0 219px;
+}
+
+.focus {
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    width: 720px;
+    height: 455px;
+    /*	background: purple;*/
+}
+
+.focus ul {
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 455px;
+    width: 800%;
+}
+
+.focus ul li {
+    float: left;
+    width: 720px;
+}
+
+.focus .arrow_l,
+.focus .arrow_r {
+    font-family: 'icomoon';
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 20px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+    background: rgba(105, 105, 105, 0.5);
+    cursor: pointer;
+}
+
+.focus .arrow_r {
+    right: 0;
+}
+
+.focus ol.list {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+.focus ol.list li {
+    float: left;
+    list-style: none;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    border-radius: 50%;
+    background: white;
+}
+
+.focus ol.list .curter {
+    background: orange;
+}
+
+.newflash {
+    position: relative;
+    float: right;
+    width: 240px;
+    height: 454px;
+}
+
+.new_content {
+    width: 240px;
+    border: 1px solid #e4e4e4;
+    border-bottom: 0;
+}
+
+.new_content h5 {
+    height: 32px;
+    line-height: 32px;
+    padding: 0 14px;
+    border-bottom: 1px dashed #e4e4e4;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.new_content h5 a {
+    float: right;
+    font-family: 'icomoon';
+}
+
+.newflash_hot dl {
+    margin-top: 5px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.newflash_hot dl dd {
+    height: 24px;
+    line-height: 24px;
+    margin-left: 14px;
+    font-weight: 700;
+    font-size: 12px;
+    color: #666;
+}
+
+.newflash_hot dl dd p {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 5px;
+    font-weight: 400;
+}
+
+.lifeservice {
+    width: 100%;
+    overflow: hidden;
+}
+
+.lifeservice ul {
+    overflow: hidden;
+    width: 244px;
+}
+
+.lifeservice li {
+    float: left;
+    width: 60px;
+    height: 70px;
+    border: 1px solid #e4e4e4;
+    border-top: 0;
+    border-left: 0;
+}
+
+.lifeservice li a {
+    display: inline-block;
+    width: 62px;
+    height: 70px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.lifeservice li a em {
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin: 10px auto;
+}
+
+.lifeservice li a .hf {
+    background: url(../images/icons.png) no-repeat -16px -15px;
+}
+
+.lifeservice li a .jp {
+    background: url(../images/icons.png) no-repeat -78px -16px;
+}
+
+.lifeservice li a .dyp {
+    background: url(../images/icons.png) no-repeat -141px -16px;
+}
+
+.lifeservice li a .yx {
+    background: url(../images/icons.png) no-repeat -206px -16px;
+}
+
+.lifeservice li a .cp {
+    background: url(../images/icons.png) no-repeat -17px -88px;
+}
+
+.lifeservice li a .jyk {
+    background: url(../images/icons.png) no-repeat -78px -88px;
+}
+
+.lifeservice li a .jd {
+    background: url(../images/icons.png) no-repeat -141px -88px;
+}
+
+.lifeservice li a .hcp {
+    background: url(../images/icons.png) no-repeat -206px -88px;
+}
+
+.lifeservice li a .zc {
+    background: url(../images/icons.png) no-repeat -17px -159px;
+}
+
+.lifeservice li a .lc {
+    background: url(../images/icons.png) no-repeat -78px -159px;
+}
+
+.lifeservice li a .lpk {
+    background: url(../images/icons.png) no-repeat -141px -153px;
+}
+
+.lifeservice li a .bt {
+    background: url(../images/icons.png) no-repeat -206px -159px;
+}
+
+.lifeservice li a span {
+    display: inline-block;
+    text-align: center;
+}
+
+.newflash_ft {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+}
+
+.newflash_ft img {
+    width: 240px;
+}
+
+
+/* main 主体结束 */
+
+
+/* today 今日推荐模块 开始*/
+
+.today {
+    height: 163px;
+    margin-top: 10px;
+    background-color: #ddd;
+}
+
+.clock {
+    float: left;
+    width: 200px;
+    height: 100%;
+    background: #5c5251 url(../images/clock.png) no-repeat center 30px;
+}
+
+.clock p {
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+.recommend {
+    display: flex;
+    justify-content: space-between;
+    float: left;
+    width: 990px;
+}
+
+.recommend ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recommend ul li {
+    width: 249px;
+    height: 163px;
+    border-right: 1px solid #ddd;
+}
+
+
+/* today 今日推荐模块 结束*/
+
+
+/*猜你喜欢 开始*/
+
+.mylike {
+    height: 261px;
+    margin-top: 20px;
+    border-bottom: 1px solid #ededed;
+}
+
+.mylike_tit {
+    height: 20px;
+    line-height: 20px;
+}
+
+.mylike_tit h5 {
+    float: left;
+    width: 100px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #333;
+}
+
+.mylike_tit div.cut {
+    float: right;
+    width: 100px;
+    text-align: right;
+}
+
+.mylike_tit div.cut a {
+    font-size: 12px;
+    color: #666;
+}
+
+.mylike_tit div.cut a:hover {
+    color: #df3033;
+}
+
+.mylike_tit div.cut a span {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    background: url(../images/icons.png) no-repeat -420px -110px;
+}
+
+.mylike_info {
+    height: 232px;
+    margin-top: 9px;
+    background-color: #ddd;
+    border: 1px solid #ededed;
+}
+
+.mylike_info ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mylike_info li {
+    width: 198px;
+    height: 232px;
+    background: #fff
+}
+
+.mylike_info li .mylike_info_pic {
+    width: 198px;
+    height: 140px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background: #fff;
+}
+
+.mylike_info li .mylike_info_pic a img {
+    width: 198px;
+    height: 140px;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+.mylike_info li p {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.mylike_info li p.mylike_info_title {
+    font-size: 12px;
+    color: #666;
+}
+
+.mylike_info li p.mylike_info_price {
+    font-size: 18px;
+    color: #df3033;
+}
+
+
+/*猜你喜欢 结束*/
+
+
+/* 商品commodity 开始  */
+
+.commodity {
+    height: 392px;
+    background: #ededed;
+    margin-top: 20px;
+}
+
+.commodity_hd {
+    height: 30px;
+    line-height: 30px;
+    background: white;
+}
+
+.commodity_hd h5 {
+    float: left;
+    font-weight: 400;
+    font-size: 18px;
+    color: #c81623;
+}
+
+.commodity_hd .commodity_hd_list {
+    float: right;
+}
+
+.commodity_hd .commodity_hd_list ul {
+    list-style: none;
+}
+
+.commodity_hd .commodity_hd_list ul li {
+    float: left;
+    padding: 0 18px;
+    font-size: 12px;
+    color: #666;
+}
+
+.commodity_hd .commodity_hd_list ul li:first-child a {
+    color: #c81623;
+}
+
+.commodity_hd .commodity_hd_list ul span {
+    display: inline-block;
+    float: left;
+    width: 1px;
+    height: 15px;
+    margin-top: 7px;
+    background-color: #666;
+}
+
+.commodity_info {
+    display: flex;
+    justify-content: space-between;
+    height: 360px;
+    border-top: 2px solid #c81623;
+}
+
+.commodity_info_first {
+    width: 210px;
+    background-color: #f9f9f9;
+}
+
+.commodity_info_first .commodity_info_first_top {
+    height: 99px;
+    margin: 0 30px;
+}
+
+.commodity_info_first .commodity_info_first_top dl {
+    margin-top: 10px;
+}
+
+.commodity_info_first .commodity_info_first_top dl dd {
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-bottom: 1px solid #ededed;
+    font-size: 12px;
+    color: #666;
+}
+
+.commodity_info_first .commodity_info_first_top dl:first-child {
+    float: left;
+}
+
+.commodity_info_first .commodity_info_first_top dl:last-child {
+    float: right;
+}
+
+.commodity_info_first .commodity_info_first_bottom {
+    height: 260px;
+    text-align: center;
+}
+
+.commodity_info_focus {
+    position: relative;
+    width: 329px;
+    background-color: #aed6d8;
+}
+
+.commodity_info_focus ul {
+    position: absolute;
+    width: 800%;
+}
+
+.commodity_info_focus ul li {
+    float: left;
+    width: 329px;
+}
+
+.commodity_info_focus ol {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    margin-left: -33px;
+    list-style: none;
+}
+
+.commodity_info_focus ol li {
+    float: left;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.white {
+    background-color: white;
+}
+
+.commodity_info_theer,
+.commodity_info_four {
+    width: 219px;
+    background-color: #fff;
+}
+
+.commodity_info_theer_top {
+    position: relative;
+    height: 179px;
+    border-bottom: 1px solid #ededed;
+}
+
+.commodity_info_theer_tit {
+    position: absolute;
+    z-index: 1;
+    padding: 20px 0 0 20px;
+}
+
+.commodity_info_theer_tit p:first-of-type {
+    font-size: 16px;
+    color: #000;
+}
+
+.commodity_info_theer_tit p:last-of-type {
+    font-size: 14px;
+    color: #e60012;
+}
+
+.commodity_info_theer_top_pic {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.commodity_info_four {
+    position: relative;
+    border-bottom: 1px solid #ededed;
+}
+
+.commodity_info_four .describe {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 70px;
+    text-align: center;
+}
+
+.commodity_info_four .describe p:first-of-type {
+    font-size: 18px;
+    color: #000;
+}
+
+.commodity_info_four .describe p:last-of-type {
+    font-size: 16px;
+    color: #999;
+}
+
+.commodity_info_four .commodity_info_four_pic {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* 合作伙伴 */
+
+.banner {
+    margin-top: 20px;
+}
+
+
+/* 商品commodity 结束 */

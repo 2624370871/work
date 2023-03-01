@@ -1,0 +1,155 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+            "path" : "pages/tabBar/component/component",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        },
+		{
+			"path": "pages/components/button/button",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		}
+        ,{
+            "path" : "pages/components/progress/progress",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "progress"
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/checkbox/checkbox",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/picker/picker",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/slider/slider",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/input/input",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        
+        ,{
+            "path" : "pages/components/cities/cities",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/switch/switch",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        },
+		{
+		    "path" : "pages/components/navigator/navigator",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": ""
+		    }
+		    
+		}
+        ,{
+            "path" : "pages/components/user/user",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "用户反馈",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tabBar/api/api",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/video/video",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/image/image",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/audio/audio",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"tabBar":{
+			"backgroundColor":"#dcdcdc",
+			"color":"#989898",
+			"list":[
+			
+			{
+				"text":"组件",
+				"pagePath":"pages/tabBar/component/component",
+				"iconPath":"static/组件2.png",
+				"selectIconPath":"static/组件1.png"
+			},
+			{
+				"text":"api",
+				"pagePath":"pages/tabBar/api/api",
+				"iconPath":"static/API2.png",
+				"selectIconPath":"static/API1.png"
+			}
+			]
+		}
+	
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评论管理</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../public/images/favicon.ico" />
+    <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/admin-css/top.css">
+    <style>
+        .main .second{
+            width: 1200px;
+            height: auto;
+        }
+        .table thead tr td{
+            font-weight: bolder;
+        }
+        .table tr td{
+            text-align: center;
+        }
+        .table tbody tr td img{
+            width: 35px;
+            height: 35px;
+        }
+        .second .table tr td a{
+            width: 60px;
+            height: 20px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+</head>
+<body>
+<div class="main">
+    <div class="top">
+        <span class="path">
+            <span class="location">当前位置:</span>
+            <a href="/admin/comList">评论管理</a>
+            <a href=""><%=comspace%></a>
+        </span>
+        <a class="fresh" href="javascript:location.reload()"  title="刷新" style="float: right;padding-right: 20px"> <span class="glyphicon glyphicon-repeat"></span></a>
+    </div>
+    <div class="header">
+        <h3>商品评论管理</h3>
+    </div>
+    <div class="search">
+        <div class="row">
+            <div class="col-lg-4">
+                <form action="/admin/searchCom" method="get">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="comsearch" placeholder="请输入商品名称查询评论">
+                    <span class="input-group-btn">
+        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+      </span>
+                </div><!-- /input-group -->
+                </form>
+            </div><!-- /.col-lg-6 -->
+        </div>
+    </div>
+    <div class="second">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <td>商品名</td>
+                <td>评论条数（条）</td>
+                <td>商品图</td>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<%comList.forEach(function(value){%>-->
+            <!--<tr>-->
+                <!--<td><%=value.good_name%></td>-->
+                <!--<td><%=value.total%></td>-->
+                <!--<td><img src="../../public/img/good_img/<%=value.good_img%>"> </td>-->
+                <!--<td><a href="comDetail/<%=value.good_id%>" title="查询评论详细信息">评论详情</a>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<%})%>-->
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

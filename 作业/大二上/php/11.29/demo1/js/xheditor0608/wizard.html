@@ -1,0 +1,20 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>xhEditor初始化代码生成向导 for xhEditor v1.1.12</title>
+<script type="text/javascript" src="jquery/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="xheditor-1.1.12-zh-cn.min.js"></script>
+<script type="text/javascript">
+$(pageInit);
+function pageInit()
+{
+	var sVar,sJSInit;
+	$('textarea[name=preview]').attr('id','elem1').xheditor(false);
+	sJSInit="$('#elem1').xheditor("+(sVar?'{'+sVar+'}':'')+');';
+    eval(sJSInit);
+}
+</script>
+<body>
+	<textarea id="preview" name="preview" rows="8" cols="100"></textarea>
+</body>
+</html>

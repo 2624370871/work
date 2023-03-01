@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lists">
+        <item>智能体感</item>
+    <item>多屏互动</item>
+    <item>分屏多任务</item>
+    <item>单手操作</item>
+    <item>超级截屏</item>
+    <item>快捷启动</item>
+    </string-array>
+</resources>
+

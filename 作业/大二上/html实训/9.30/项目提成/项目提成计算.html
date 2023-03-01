@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="white=device-width"/>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{margin: 0px; padding: 0px;}
+		header{text-align: center;margin-bottom: 15px;}
+		#box{margin: 20px auto 0;width: 300px;text-align: center;}
+		#bennfit{height: 20px;width: 140px;}
+		#roles{height: 22px;width: 130px;vertical-align: bottom;}
+		#count{padding-top: 10px;padding-right: 11px;text-align: right;}
+		#countBtn{height: 25px;width: 70px;text-align: center;background-color: #FFFFFF;cursor: pointer;}
+		#dataBox{padding: 10px 0;}
+		#bennfit,#roles,#countBtn,#bonus{border: 1px solid #d4d4d4;}
+	</style>
+	<body>
+		<div id="box">
+			<header>项目提成计算器</header>
+			<div id="dataBox">
+				<input type="text" id="bonus" readonly="readonly" placeholder="项目提成"/>
+			</div>
+			<input type="text"  id="bennfit" value="0" />
+			<select id="roles">
+				<option value ="1">程序员</option>
+				<option value ="2">项目经理</option>
+				<option value ="3">销售人员</option>
+			</select>
+			<div id="count">
+				<input type="button" id="countBtn" value="计算" onclick="countFun()"/>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function roles(){
+				this.programmer = function(data){
+					if (data>10000) {
+						return data*0.05;
+					} else if(data >=2000){
+						return 50;
+					}else{
+						return 0;
+					}
+				}
+				this.manager=function(data){
+					if (data>20000) {
+						return data*0.2;
+					} else{
+						return data*0.1;
+					}
+				}
+				this.saleman=function(data){
+					if (data>100000) {
+						return data*0.3;
+					} else if(data>=50000){
+						return data*0.2;
+					}else{
+						return data*0.05;
+					}
+				}
+			}
+			function bonus(){
+				this.bennfit=0;
+			}
+			bonus.prototype.setBenefit=function(data){
+				this.bennfit=data;
+			}
+			bonus._proto_=new roles();
+			bonus.prototype.getBonus=function(role){
+				return role(this.bennfit);
+			}
+			var strategies={
+				"1":function(){
+					return bonusCount.getBonus(bonus.programmer);
+				},
+				"2":function(){
+					return bonusCount.getBonus(bonus.manager);
+				},
+				"3":function(){
+					return bonusCount.getBonus(bonus.saleman);
+				}
+			}
+			function coinPun(){
+				var benefit=document.getElementById("benefit").value;
+				var roel=document.getElementById("roles").value;
+				bonusCount.setBenefit(benefit);
+				document.getElementById("bonus").value=strategies[role]();
+			}
+		</script>
+	</body>
+</html>

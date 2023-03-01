@@ -1,0 +1,48 @@
+body{
+    background-color: #cccccc;
+}
+#div{
+    text-align: center;
+    width: 700px;
+    height:auto;
+    box-shadow: 10px 10px 15px black;
+    border: 1px solid #ccc;
+    margin: auto;
+    margin-top: 150px;
+    padding: 10px;
+    background-color: white;
+}
+h2{
+    color: royalblue;
+    font-weight: bolder;
+}
+hr{
+    margin: 0px 50px;
+    border-top: 2px solid royalblue;
+
+}
+label{
+    /*width: 100px;*/
+    text-align: right;
+    display: inline-block;
+    color:royalblue;
+    font-size: 16px;
+}
+#btn{
+    width: 100px;
+    height:30px;
+    border: 1px solid blue;
+    background-color: royalblue;
+    color: white;
+    font-size: 18px;
+}
+.input-group{
+    margin-left: 230px;
+}
+.tent{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+}

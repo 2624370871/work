@@ -1,0 +1,114 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	{
+	    "path" : "pages/component/tabBar/resign/resign",
+	    "style" :                                                                                    
+	    {
+	        "navigationBarTitleText": "",
+	        "enablePullDownRefresh": false
+	    }
+	    
+	},
+		{
+			// "path": "pages/component/tabBar/wo_de02",
+			"path":"pages/component/tabBar/xin_weng",
+			"style": {
+				"navigationBarTitleText": "新闻",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/component/map/map",
+			"style": {
+				"navigationBarTitleText": "map",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		}, {
+			"path": "pages/component/tabBar/shi_ping",
+			"style": {
+				"navigationBarTitleText": "视频",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/tabBar/hua_ti",
+			"style": {
+				"navigationBarTitleText": "话题",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/component/tabBar/wo_de",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	    ,{
+            "path" : "pages/component/tabBar/newsinfo/newsinfo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "咨询详情页",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+		    "path" : "pages/component/tabBar/videoxq",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "视频详情页",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+       
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/component/tabBar/xin_weng",
+				"iconPath": "static/新闻 (1).png",
+				"selectedIconPath": "static/新闻.png",
+				"text": "新闻"
+			},
+			{
+				"pagePath": "pages/component/tabBar/shi_ping",
+				"iconPath": "static/视频 (1).png",
+				"selectedIconPath": "static/视频.png",
+				"text": "视频"
+			},
+			{
+				"pagePath": "pages/component/tabBar/hua_ti",
+				"iconPath": "static/话题 (1).png",
+				"selectedIconPath": "static/话题.png",
+				"text": "话题"
+			},
+			{
+				"pagePath": "pages/component/tabBar/wo_de",
+				"iconPath": "static/_我的 (1).png",
+				"selectedIconPath": "static/_我的.png",
+				"text": "我的"
+			}
+		]
+	}
+}

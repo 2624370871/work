@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/video.css"/>
+		
+	</head>
+	<body>
+		<header>
+			<h2>视频播放器</h2>
+			<small>这是页头</small>
+		</header><!-- 定义页头 -->
+		<article><!-- 定义正文 -->
+			<section>
+				<figure>
+					<video width="90%" controls loop>
+						<source  src="./img/radish.mp4" type="video/mp4"></source>
+						<a href="video/radish.mp4" download="radish.mp4">下载视频</a>
+					</video>
+					<figcaption>拔萝卜</figcaption>
+				</figure>
+			</section><!-- 定义段落 -->
+			<section>
+				<form autocomplete="on">
+					<div>
+						<textarea rows="3" cols="20" name="input" placeholder="请输入评论..." title="评论框" accesskey="g" spellcheck="true" id="content"></textarea>
+					</div>
+					<button type="button" onclick="sendComment()"><mark>发表评论</mark></button>
+				</form>
+			</section><!-- 定义段落 -->
+			<section>
+				<ul id="commentList"></ul>
+			</section><!-- 定义段落 -->
+		</article>
+		
+		<script type="text/javascript">
+					var list=document.getElementById("commentList");
+					var text=document.getElementById("content");
+					function sendComment(){
+						var li=document.createElement('li');
+						li.innerHTML=text.value;
+						list.appendChild(li);
+						text.value="";
+						return false;
+					}
+		
+		</script>
+	</body>
+</html>

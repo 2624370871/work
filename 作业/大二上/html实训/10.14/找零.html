@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var price = prompt("请输入单价:");
+			var num = prompt("请输入数量");
+			var sum = price * num;
+				if (sum >= 500) {
+					sum = sum * 0.8;
+				} else {
+					sum = sum * 1;
+				}
+				var money = prompt("支付");
+				var tip = money - sum;
+				if (tip > 0) {
+					alert("找零" + tip + "元");
+				} else {
+					alert("钱不够");
+				}
+		</script>
+	</body>
+</html>

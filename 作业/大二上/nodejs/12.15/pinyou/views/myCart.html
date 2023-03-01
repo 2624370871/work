@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提交订单页</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../public/images/favicon.ico" />
+    <link rel="stylesheet" href="../public/css/clear_normal.css" type="text/css">
+    <link rel="stylesheet" href="../public/css/common.css" type="text/css">
+    <link rel="stylesheet" href="../public/css/submit.css" type="text/css">
+    <script src="../public/js/jQuery.min.js/jQuery.min.js"></script>
+    <script src="../public/js/myCart.js"></script>
+    <script>
+        $(function() {
+            //返回 顶部按钮
+            $(window).scroll(function() {
+                //为了保证兼容性，这里取两个值，哪个有值取哪一个
+                //scrollTop就是触发滚轮事件时滚轮的高度
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                console.log("滚动距离" + scrollTop);
+                if (scrollTop == 0) {
+                    $(".return_top").hide();
+                } else {
+                    $(".return_top").show();
+                }
+
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="top" id="return_top">
+        <div class="w">
+            <div class="login">
+                <span>品优购欢迎您！ {{user.nickname}}
+	 				<a href="register.html">免费注册 </a>
+	 			</span>
+            </div>
+            <ul class="order">
+                <li><a href="#">我的订单</a><span></span></li>
+                <span class="line"></span>
+                <li><a href="#">我的品优购</a><span></span></li>
+                <span class="line"></span>
+                <li><a href="#">品优购会员</a><span></span></li>
+                <span class="line"></span>
+                <li><a href="#">企业采购</a><span></span></li>
+                <span class="line"></span>
+                <li><a href="#">关注品优购</a><span></span></li>
+                <span class="line"></span>
+                <li><a href="#">客户服务</a><span></span></li>
+                <span class="line"></span>
+                <li><a href="#">网站导航</a><span></span></li>
+            </ul>
+        </div>
+    </div>
+    <!--顶部结束-->
+
+    <!--header 开始-->
+    <header>
+        <div class="hd w">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>
+                        品优购
+                    </h1>
+                </a>
+                <a href="javascript::">
+                    <h3>
+                        购物车
+                    </h3>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!--header 结束-->
+
+    <!-- 订单内容order_form  开始 -->
+    <div class="order_form  w">
+        <div class="div_list">
+            <div class="message ">商品信息</div>
+            <div>单价</div>
+            <div>数量</div>
+            <div>操作</div>
+            <div>总价</div>
+        </div>
+        <ul class="order_form_list" id="{{user.u_id}}">
+            {{each goodsInCart}}
+            <li class="cartRow" >
+                <div class="checked_dx">
+                    <input type="checkbox" id="{{$value.goods_id}}" class="cartPid">
+                </div>
+                <div>
+                    <div class="sp_pic">
+                        <img src="../public/images/goods_img/{{$value.img_src}}" alt="">
+                    </div>
+                    <p>{{$value.goods_text}}*{{$value.size_type}}*{{$value.goods_name}}</p>
+                    <p>库存：<span style="color: red">{{$value.stock_num}}</span></p>
+                </div>
+                <div class="alike">
+                    <span class="dangjia">{{$value.goods_price.toFixed(2)}}</span>
+                </div>
+                <div class="alike">
+                    <div class="change">
+                        <p class="sub">-</p>
+                        <input type="text" class="num" value="{{$value.number}}" onkeyup="this.value=this.value.replace(/\D/g,'')">
+                        <input type="hidden" class="kucun" value="{{$value.stock_num}}"></input>
+                        <p class="add">+</p>
+                    </div>
+                </div>
+                <div class="alike">
+                    <div class="remove">
+                        <button>删除</button>
+                    </div>
+                </div>
+                <div class="alike">
+                    <div class="sum">
+                        <span class="subtotal"></span>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="ready w">
+        <div class="ready_qx">
+            <input type="checkbox" class="quanxuan" id="all">
+            <span>全选</span>
+        </div>
+        <div class="ready_ct">
+            <div class="select_count">
+                已选商品
+                <p id="total"></p>
+            </div>
+            <div class="wind_up">结算</div>
+        </div>
+    </div>
+    <!-- 订单内容order_form  结束 -->
+    <!--footer 开始-->
+    <div class="footer">
+        <div class="w">
+            <div class="mod_service">
+                <ul>
+                    <li>
+                        <i class="mod_service_zheng"></i>
+                        <div class="mod_service_title">
+                            <h4>正品保障</h4>
+                            <p>正品保障，提供发票</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="mod_service_kuai"></i>
+                        <div class="mod_service_title">
+                            <h4>极速物流</h4>
+                            <p>急速物流，急速送达</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="mod_service_bao"></i>
+                        <div class="mod_service_title">
+                            <h4>无忧售后</h4>
+                            <p>7天无理由退换货</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="mod_service_te"></i>
+                        <div class="mod_service_title">
+                            <h4>特色服务</h4>
+                            <p>私人定制家电套餐</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="mod_service_bang"></i>
+                        <div class="mod_service_title">
+                            <h4>帮助中心</h4>
+                            <p>您的购物指南</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mod_help">
+                <dl class="mod_help_item">
+                    <dt>购物指南</dt>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">会员介绍</a></dd>
+                    <dd><a href="#">生活旅行/团购</a></dd>
+                    <dd><a href="#">常见问题</a></dd>
+                    <dd><a href="#">大家电</a></dd>
+                    <dd><a href="#">联系客服</a></dd>
+                </dl>
+                <dl class="mod_help_item">
+                    <dt>配送方式</dt>
+                    <dd><a href="#">上门自提</a></dd>
+                    <dd><a href="#">211限时达</a></dd>
+                    <dd><a href="#">配送服务查询</a></dd>
+                    <dd><a href="#">配送费收取标准</a></dd>
+                    <dd><a href="#">海外配送</a></dd>
+                </dl>
+                <dl class="mod_help_item">
+                    <dt>支付方式</dt>
+                    <dd><a href="#">货到付款</a></dd>
+                    <dd><a href="#">在线支付</a></dd>
+                    <dd><a href="#">分期付款</a></dd>
+                    <dd><a href="#">邮局汇款</a></dd>
+                    <dd><a href="#">公司转账</a></dd>
+                </dl>
+
+                <dl class="mod_help_item">
+                    <dt>售后服务</dt>
+                    <dd><a href="#">售后政策</a></dd>
+                    <dd><a href="#">价格保护</a></dd>
+                    <dd><a href="#">退款说明</a></dd>
+                    <dd><a href="#">返修/退换货</a></dd>
+                    <dd><a href="#">取消订单</a></dd>
+                </dl>
+
+                <dl class="mod_help_item">
+                    <dt>特色服务</dt>
+                    <dd><a href="#">夺宝岛</a></dd>
+                    <dd><a href="#">DIY装机</a></dd>
+                    <dd><a href="#">延保服务</a></dd>
+                    <dd><a href="#">品优购E卡</a></dd>
+                    <dd><a href="#">品优购通信</a></dd>
+                </dl>
+                <dl class="mod_help_item mod_help_app">
+                    <dt>帮助中心</dt>
+                    <dd>
+                        <img src="../public/images/erweima.png" alt="" />
+                        <p>品优购客户端</p>
+                    </dd>
+                </dl>
+            </div>
+            <div class="mod_copyright">
+                <p class="mod_copyright_links">
+                    <a href="#">关于我们  |</a>
+                    <a href="#">联系我们  |</a>
+                    <a href="#">联系客服  |</a>
+                    <a href="#">商家入驻  |</a>
+                    <a href="#">营销中心  |</a>
+                    <a href="#">手机品优购  |</a>
+                    <a href="#">友情链接  |</a>
+                    <a href="#">销售联盟  |</a>
+                    <a href="#">品优购社区  |</a>
+                    <a href="#">品优购公益  |</a>
+                    <a href="#">English Site  |</a>
+                    <a href="#">Contact U  |</a>
+                </p>
+                <p class="mod_copyright_info">
+                    地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100 邮箱: zhanghj+itcast.cn <br /> 京ICP备08001421号京公网安备110108007702
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--footer 结束-->
+
+
+    <!-- 返回的 顶部 按钮 开始 -->
+    <div class="return_top" style="display: none;">
+        <a href="#return_top">
+            <img src="../public/images/returnTop.jpg" alt="返回顶部" title="返回顶部">
+        </a>
+    </div>
+
+    <!-- 返回的 顶部 按钮 结束 -->
+</body>
+
+</html>

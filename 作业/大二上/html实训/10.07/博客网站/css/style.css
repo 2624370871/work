@@ -1,0 +1,170 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#box{
+	width: 1024px;
+	margin: 0 auto;
+}
+#banner{
+	width: 1024px;
+	height: 209px;
+	background-image: url(../img/bg.jpg);
+}
+#menu{
+	width: 1024px;
+	height: 50px;
+	background-color: #328048;
+}
+#menu ul{
+	list-style: none;
+	width: 430px;
+	height: 50px;
+	line-height: 50px;
+	margin-right: 10px;
+	float: right;
+}
+#menu ul li{
+	float: left;
+	margin-left: 20px;
+}
+#menu ul li a{
+	text-decoration: none;
+	font-size: 16px;
+	color: #fff;
+	font-family: "微软雅黑";
+}
+#menu ul li a:hover{
+	color: #f60;
+}
+#main{
+	width: 1024px;
+}
+#left{
+	height: 1000px;
+	width: 250px;
+	float: left;
+}
+#zuozhe{
+	text-align: center;
+	padding-top: 15px;
+	padding-left: 15px;
+}
+#zuozhe img{
+	border: 1px solid #096;
+	padding: 5px;
+	border-radius: 15px;
+}
+#zuozhe span{
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	margin: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top: 1px dashed #b5b5b5;
+	border-bottom: 1px dashed #b5b5b5;
+}
+#huoli{
+	height: 150px;
+	margin-top: 20px;
+}
+#huoli ul{
+	padding-left:20px ;
+	padding-top: 10px;
+}
+#huoli li{
+	float: left;
+	list-style: none;
+	margin-left: 10px;
+	width: 80px;
+	margin: 5px;
+}
+#huoli li img{
+	float: left;
+	margin-right: 6px;
+}
+#huoli li a{
+	font-size: 12px;
+	color: #333;
+	text-decoration: none;
+	float: left;
+}
+#huoli li a:hover,#list li a:hover{
+	color: #f00;
+}
+#list ul{
+	list-style: none;
+	padding: 15px;
+}
+#list ul li{
+	background: url(../img/icon1.gif) no-repeat 5px center;
+	border-bottom: 1px dashed #666666;
+	padding-bottom: 8px;
+	padding-left: 15px;
+	margin-bottom: 8px;
+}
+#list li a{
+	font-size: 12px;
+	color: #333;
+	text-decoration: none;
+}
+.biaoti{
+	color: #fff;
+	font-size: 16px;
+	font-weight: bolder;
+	width: 220px;
+	height: 40px;
+	background-color: #328048;
+	border-radius: 0px 10px 10px 0px;
+	 padding-left: 30px;
+	 line-height: 40px;
+}
+#right{
+	width: 774px;
+	float: right;
+}
+.wenzhang{
+	padding: 0 30px;
+}
+.wenzhang h3{
+	font-size: 18px;
+	border-bottom: 1px dashed #666666;
+	padding-bottom: 8px;
+	margin: 10px;
+}
+.wenzhang h3 a{
+	color: #f60;
+	text-decoration: none;
+}
+.wenzhang span{
+	font-size: 12px;
+	color: #666;
+	margin-left: 520px;
+}
+.wenzhang p{
+	font-size: 14px;
+	color: #575757;
+	font-family: "微软雅黑";
+	line-height: 35px;
+	text-align: 2em;
+}
+p.zhu{
+	font-size: 10px;
+	color: #999;
+}
+
+#footer{
+	height: 50px;
+	background-color: #328048;
+	clear: both;
+}
+#footer span{
+	display: block;
+	text-align: center;
+	line-height: 50px;
+}
+#a{
+	color: #ffa273;
+	font-size: 20px;
+}

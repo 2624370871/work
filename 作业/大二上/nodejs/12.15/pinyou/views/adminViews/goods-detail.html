@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/admin-css/top.css">
+    <link rel="stylesheet" href="../../public/css/admin-css/button.css">
+    <script src="../../public/js/jquery.js"></script>
+
+</head>
+<body>
+<div class="main">
+    <div class="top">
+          <span class="path">
+            <span class="location">当前位置:</span>
+            <a href="/admin/goodList">商品管理</a>
+            <span>></span>
+            <a href="">商品信息详情</a>
+        </span>
+        <a class="fresh" href="javascript:location.reload()"  title="刷新" style="float: right;padding-right: 20px"> <span class="glyphicon glyphicon-repeat"></span></a>
+    </div>
+    <div class="header">
+        <h3>商品详细信息列表</h3>
+    </div>
+    <div class="">
+        <div class="row">
+            <div class="col-lg-6">
+                <table class="table table-striped">
+                    <tr>
+                        <td>商品编号：</td>
+                        <td><%=goodDetail[0].good_id%></td>
+                    </tr>
+                    <tr>
+                        <td>商品类别：</td>
+                        <td><%=goodDetail[0].good_type%></td>
+                    </tr>
+                    <tr>
+                        <td>商品净含量：</td>
+                        <td><%=goodDetail[0].good_weight%>g/盒（罐）</td>
+                    </tr>
+                    <tr>
+                        <td>商品产地：</td>
+                        <td><%=goodDetail[0].good_place%></td>
+                    </tr>
+                    <tr>
+                    <td>商品图片：</td>
+                    </tr>
+                </table>
+                <img src="../../public/img/good_img/<%=goodDetail[0].good_img%>" style="width: 400px;height: 400px;">
+            </div>
+            <div class="col-lg-6">
+                <table class="table table-striped">
+                    <tr>
+                        <td>商品名称：</td>
+                        <td><%=goodDetail[0].good_name%></td>
+                    </tr>
+                    <tr>
+                    <td>商品价格：</td>
+                    <td>￥<%=goodDetail[0].good_price.toFixed(2)%></td>
+                    </tr>
+                    <tr>
+                        <td>商品库存：</td>
+                        <td><%=goodDetail[0].good_count%>盒（罐）</td>
+                    </tr>
+                    <tr>
+                        <td>是否（上）下架该商品：</td><!--<%=goodDetail[0].good_place%>-->
+                        <td><button type="button" class="btn btn-info" id="goodbtn" value="<%=goodDetail[0].good_freeze%>"></button> </td>
+                    </tr>
+                    <tr>
+                    <td>商品详情图片：</td>
+                    </tr>
+                </table>
+                <img src="../../public/img/good_dimg/<%=goodDetail[0].good_dimg%>" style="width: 400px;height: 400px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var goodbtn=document.getElementById("goodbtn")
+    //当flag为0时，用户状态为非冻结状态；且用户注册时，用户状态默认为非冻结状态，即flag为0
+    var flag=goodbtn.value
+    if (flag==0){
+        goodbtn.innerHTML="下架商品"
+    } else{
+        goodbtn.innerHTML="上架商品"
+    }
+    goodbtn.addEventListener('click',function () {
+        if (flag==0){
+            var msg=confirm("你确认下架该商品")
+        } else{
+            var msg=confirm("你确认上架该商品")
+        }
+
+        if (flag==0 && msg==true){
+            goodbtn.innerHTML="上架该商品"
+            goodbtn.style.cursor="printer"
+            flag=1
+        } else{
+            goodbtn.innerHTML="下架该商品"
+            goodbtn.style.cursor="printer"
+            flag=0
+        }
+        goodbtn.value=flag
+    })
+</script>
+<script>
+    $('#goodbtn').click(function () {
+
+        $.ajax({
+            url:'/admin/setGoodFreeze/<%=goodDetail[0].good_id%>',
+            type:'get',
+            data:{
+                btnval:$("#goodbtn").val()
+            },
+            success:function (data) {
+                var res_code=data.res_code
+                if (res_code==0){
+                    alert("修改成功！")
+                    window.location.href='/admin/goodList'
+                }else{
+                    alert('服务器繁忙，请稍后再试！')
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/admin-css/welcome.css">
+    <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../../public/js/admin-js/welcome.js"></script>
+</head>
+<body onload="showtime()">
+<div class="main">
+    <div class="top">
+        <span>欢迎管理员：{{admin.adminname}},&nbsp;</span>
+        <span id="span"></span>
+        <span id="timer"></span>
+        <a class="fresh" href="javascript:location.reload()"  title="刷新" style="float: right;padding-right: 20px"> <span class="glyphicon glyphicon-repeat"></span></a>
+    </div>
+    <div class="header">
+        <img src="../../public/images/admin-img/welcome.jpg" height="150" width="600"/></div>
+    <div class="mid">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="with">
+                            <h3>用户注册数</h3>
+                            <p><%=usersum%></p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="with">
+                        <h3>商品数</h3>
+                        <p><%=goodsum%></p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="with">
+                        <h3>订单数</h3>
+                        <p><%=ordersum%></p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="with">
+                        <h3>评论数</h3>
+                        <p><%=comsum%></p>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

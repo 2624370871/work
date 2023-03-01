@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="860" height="480">浏览器不支持画布</canvas>
+		<script>
+			function draw(event){
+				var canvas=document.getElementById("canvas");
+				var pen=canvas.getContext("2d");
+				pen.moveTo(50,50);
+				pen.lineTo(300,300);
+				pen.lineWidth=5;
+				pen.strokeStyle="red";
+				pen.stroke();
+			}
+			window.onload=draw;
+		</script>
+	</body>
+</html>

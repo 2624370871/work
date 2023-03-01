@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var num=parseInt(Math.random()*100)+1;
+			do{
+				alert(num);
+				var res=prompt("请输入一个整数");
+				if(res>num){
+					alert("输入的值过大");
+				}else if(res<num){
+				alert("输入的值过小")
+				}
+			}while(res!=num);
+			alert("恭喜你，猜对了！"+num);
+		</script>
+	</body>
+</html>

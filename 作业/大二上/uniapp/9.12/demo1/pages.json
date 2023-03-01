@@ -1,0 +1,55 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/xx/xx",
+			"style": {
+				"navigationBarTitleText": "QQ"
+			}
+		},
+		{
+			"path": "pages/lxr/lxr",
+			"style": {
+				"navigationBarTitleText": "联系人"
+			}
+		},
+		{
+			"path": "pages/components/xpy",
+			"style": {
+				"navigationBarTitleText": "新朋友"
+			}
+		},
+	   {
+	   	"path": "pages/components/qtz",
+	   	"style": {
+	   		"navigationBarTitleText": "群通知"
+	   	}
+	   }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"backgroundColor": "#fcfcfc",
+		"color": "#adadad",
+		"selectedColor": "#8ad2ff",
+		"list":[
+			{
+				"text":"消息",
+				"pagePath":"pages/xx/xx",
+				"iconPath":"static/xx1.png",
+				"selectedIconPath":"static/xx2.png"
+			},
+				{
+					"text":"联系人",
+					"pagePath":"pages/lxr/lxr",
+					"iconPath":"static/lxr1.png",
+					"selectedIconPath":"static/lxr2.png"
+				}
+				]
+	}
+	
+}

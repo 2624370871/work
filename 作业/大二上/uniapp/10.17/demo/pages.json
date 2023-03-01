@@ -1,0 +1,88 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+            "path" : "pages/component/component",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        },
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/components/button/button",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		}
+        ,{
+            "path" : "pages/components/progress/progress",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "progress"
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/checkbox/checkbox",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/picker/picker",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/slider/slider",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/input/input",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        
+        ,{
+            "path" : "pages/components/cities/cities",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        ,{
+            "path" : "pages/components/switch/switch",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}

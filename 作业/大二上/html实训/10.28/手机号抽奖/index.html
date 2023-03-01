@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>手机号抽奖</title>
+		<style>
+			h2{
+				position: relative;
+				left: 47.5%;
+			}
+			button{
+				position: relative;
+				left: 46.0%;
+			}
+			p{
+				position: relative;
+			}
+		</style>
+		<script src="./js/jquery-3.6.0.js"></script>
+		<script src="./js/jquery-ui.js"></script>
+	</head>
+	<body>
+		<script>
+			var number=
+			[
+				"183"
+			];
+			$(function() {
+				for (var i = 0; i < 10; i++) {
+					//从number数组中获取随机3位数字
+					temp = number[Math.floor(Math.random() * number.length)];
+					//获取随机后8位数字
+					for (var j = 0; j < 8; j++) {
+						//拼接手机号
+						temp = temp + Math.floor(Math.random() * 10);
+					}
+					//设置延迟动画
+					setTimeout(create_animation(i, temp), 0);
+				}
+			});
+
+			function create_animation(i, temp) {
+				//向p标签复制手机号码
+				//eq() 方法返回带有被选元素的指定索引号的元素。
+				$("#div_p p:eq(" + i + ")").prepend(temp);
+				//设置从左到右的动画
+				$("#div_p p:eq(" + i + ")").animate({
+					left: '47.3%',
+				},2000);
+			}
+
+			$(document).on("click", "#btn_prize", function() {
+				//处理click事件
+				//(1)随机抽取一个手机号码
+				temp = Math.floor(Math.random() * 10);
+				for (var i = 0; i <= 10; i++) {
+					if (i != temp) {
+						//(2)没有抽取到的手机号码,设置fade动画(jQuery UI)
+						$("#div_p p:eq(" + i + ")").slideUp(2000);
+					} else {
+						//(3)抽取到的手机号码,设置CSS样式动画
+						$("#div_p p:eq(" + i + ")").animate({
+							fontSize: "2em",
+							left: "44.6%",
+							//jQuery UI捆绑了jQuery Color插件,jQuery Color插件提供了颜色动画
+							backgroundColor: "#aa0000",
+							color: "#fff",
+							width: 210,
+						}).css("color", "red");
+					}
+				}
+				//(4)设置开始抽奖按钮为不可用
+				$("#btn_prize").attr("disabled", "true");
+			});
+			$(document).on("click","#btn_re",function(){
+				//设置puff动画(JQUERY UI)
+				$("body").toggle("puff");
+				setTimeout(function(){
+					//延迟1s
+					//重载页面
+					window.location.reload();
+				},1000);
+			});
+		</script>
+			<h2>抽奖列表</h2>
+			<div id="div_p">
+				<!--手机号码显示区域-->
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+			</div>
+			<button type="button" id="btn_prize">开始抽奖</button>
+			<button type="button" id="btn_re">重置抽奖</button>
+	</body>
+</html>

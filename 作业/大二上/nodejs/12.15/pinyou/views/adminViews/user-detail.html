@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户详情列表</title>
+    <link rel="stylesheet" href="../../public/css/admin-css/top.css">
+    <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../../public/js/jquery.js"></script>
+
+</head>
+<body>
+<div class="main">
+    <div class="top">
+        <span class="path">
+            <span class="location">当前位置:</span>
+            <a href="/admin/userList">用户管理</a>
+            <span> ></span>
+            <a href="">用户信息详情</a>
+        </span>
+        <a class="fresh" href="javascript:location.reload()"  title="刷新" style="float: right;padding-right: 20px"> <span class="glyphicon glyphicon-repeat"></span></a>
+    </div>
+    <div class="header">
+        <h3>用户详细信息列表</h3>
+    </div>
+    <div class="">
+    <div class="row">
+        <div class="col-lg-6">
+        <table class="table table-striped">
+            <tr>
+                <td>用户账号</td>
+                <td><%=userDetailList[0].user_id%></td>
+            </tr>
+            <tr>
+                <td>联系方式</td>
+                <td><%=userDetailList[0].user_num%></td>
+            </tr>
+            <tr>
+                <td>用户真实姓名</td>
+                <td><%=userDetailList[0].order_name%></td>
+            </tr>
+            <tr>
+                <td>用户邮箱</td>
+                <td><%=userDetailList[0].user_email%></td>
+            </tr>
+            <tr>
+                <td>用户生日</td>
+                <td><%=userDetailList[0].user_birthd.toLocaleDateString()%></td>
+            </tr>
+            <tr>
+                <td>用户QQ</td>
+                <td><%=userDetailList[0].user_qq%></td>
+            </tr>
+            <tr>
+                <td>注册时间</td>
+                <td><%=userDetailList[0].user_time.toLocaleDateString()%></td>
+            </tr>
+            <tr>
+                <td>重置用户密码</td>
+                <td><button type="button" class="btn btn-danger" name="freeze" id="userbtn" value="">重置密码</button></td>
+            </tr>
+        </table>
+        </div>
+        <div class="col-lg-6">
+        <table class="table table-striped">
+            <tr>
+            <td>用户名（昵称）</td>
+            <td><%=userDetailList[0].user_nick%></td>
+            </tr>
+            <tr>
+                <td>用户头像</td>
+                <td>
+                    <%if(userDetailList[0].user_img){%>
+                    <img src="../../public/img/user_img/<%=userDetailList[0].user_img%>" style="width: 35px;height: 35px;border-radius: 50%;">
+                    <% }else {%>
+                    <span style="opacity: 0.7;">该用户暂无头像</span>
+                    <%}%>
+                </td>
+            </tr>
+            <tr>
+                <td>用户性别</td>
+                <td>
+                    <label><input type="radio" id="sex" value="<%=userDetailList[0].user_gender%>" style="display: none;"><span id="showSex"></span> </label>
+                </td>
+            </tr>
+            <tr>
+                <td>身份证号</td>
+                <td><%=userDetailList[0].user_id_card%></td>
+            </tr>
+            <tr>
+                <td>用户住址</td>
+                <td><%=userDetailList[0].order_address%></td>
+            </tr>
+            <tr>
+                <td>用户说明</td>
+                <td><%=userDetailList[0].user_explain%></td>
+            </tr>
+            <tr>
+               <td>是否冻结（激活）用户状态</td> <!--<a href="/adminsetFreeze/<%=userDetailList[0].user_id%>"></a>-->
+                <td><button type="button" class="freeze btn btn-info" name="freeze" id="btn" value="<%=userDetailList[0].user_freeze%>"></button></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    </div>
+</div>
+<script>
+    //用户状态修改
+    var btn=document.getElementById("btn")
+    //当flag为0时，用户状态为非冻结状态；且用户注册时，用户状态默认为非冻结状态，即flag为0
+    // var flag=false;
+    var flag=btn.value
+    if (flag==0){
+        btn.innerHTML="冻结该用户"
+    } else{
+        btn.innerHTML="激活该用户"
+    }
+    btn.addEventListener('click',function () {
+        if (flag==0){
+            var msg=confirm("你确认冻结该用户")
+        } else{
+            var msg=confirm("你确认激活该用户")
+        }
+
+        if (flag==0 && msg==true){
+            btn.innerHTML="激活该用户"
+            btn.style.cursor="printer"
+            flag=1
+        } else{
+            btn.innerHTML="冻结该用户"
+            btn.style.cursor="printer"
+            flag=0
+        }
+        btn.value=flag
+    })
+
+    //性别信息填写
+    var sex=document.getElementById("sex").value
+    if (sex==1){
+        document.getElementById("showSex").innerHTML='男'
+    } else{
+        document.getElementById("showSex").innerHTML='女'
+    }
+
+    //用户密码修改
+    var userbtn=document.getElementById("userbtn")
+    userbtn.addEventListener('click',function () {
+        var con=confirm("是否为用户"+'<%=userDetailList[0].user_nick%>'+"重置密码？")
+        if (con) {
+            $.ajax({
+                url:'/admin/resetpass/<%=userDetailList[0].user_id%>',
+                type:'get',
+                success:function (data) {
+                    var res_code=data.res_code
+                    if (res_code==0){
+                        alert('重置成功，重置密码为000000')
+                        window.location.href='/admin/userList'
+                    }else{
+                        alert('服务器繁忙，请稍后再试！')
+                    }
+                }
+            })
+        }else {
+            alert('没有重置该用户密码！')
+        }
+    })
+
+</script>
+<script>
+    //冻结用户登录
+        $('#btn').click(function () {
+
+            $.ajax({
+                url:'/admin/setFreeze/<%=userDetailList[0].user_id%>',
+                type:'get',
+                data:{
+                    btnval:$("#btn").val()
+                },
+                success:function (data) {
+                    var res_code=data.res_code
+                    if (res_code==0){
+                        window.location.href='/admin/userList'
+                    }else{
+                        alert('服务器繁忙，请稍后再试！')
+                    }
+                },
+                error:function (err) {
+                    console.log(err.message)
+                }
+            })
+        })
+</script>
+</body>
+</html>
