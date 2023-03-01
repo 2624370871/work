@@ -1,0 +1,64 @@
+CREATE DATABASE xxgc;
+
+show DATABASES;
+
+ALTER DATABASE xxgc DEFAULT CHARACTER SET gbk COLLATE gbk_bin;
+
+SHOW CREATE DATABASE xxgc;
+
+use xxgc;
+
+create table teacher
+(
+	id int,
+	name varchar(10),
+	email VARCHAR(30)
+);
+
+DESC teacher;
+
+SHOW CREATE TABLE teacher;
+
+use newxxgc;
+
+ALTER table teacher RENAME xxgc_teacher;
+
+show TABLES;
+
+DESC xxgc_teacher;
+
+ALTER table xxgc_teacher CHANGE id workid INT(5)
+
+DESC xxgc_teacher;
+
+alter table xxgc_teacher MODIFY WORKid tinyint;
+
+alter table xxgc_teacher MODIFY WORKid tinyint,change email email varchar(20);
+
+alter table xxgc_teacher MODIFY WORKid tinyint,change email email varchar(20),change name  xxgc_name varchar(20);
+desc xxgc_teacher;
+
+alter table xxgc_teacher add a int,add b int, add c varchar(10);
+
+desc xxgc_teacher;
+
+alter table xxgc_teacher drop a,drop b,dzrop c;
+
+desc xxgc_teacher;
+
+desc xxgc_teacher;
+drop table xxgc_teacher;
+
+drop table  if EXISTS xxgc_teacher;
+create table xxgc_teacher
+(
+	id int,
+	name varchar(10),
+	email VARCHAR(30)
+);
+
+desc xxgc_teacher;
+
+alter table xxgc_teacher add primary key(id,name);
+
+desc xxgc_teacher;

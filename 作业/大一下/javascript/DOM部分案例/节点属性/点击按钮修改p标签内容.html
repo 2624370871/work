@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="设置p的内容" id="btn"/>
+		<p id="p1">这是一个p</p>
+	<script>
+	  //点击按钮,设置p的内容
+	  //根据id获取按钮,注册点击事件,添加事件处理函数
+	  document.getElementById("btn").onclick = function () {
+	    //var pObj = document.getElementById("p1");
+	    document.getElementById("p1").innerText = "哦,这是p啊";
+	  };
+	</script>	
+	</body>
+</html>

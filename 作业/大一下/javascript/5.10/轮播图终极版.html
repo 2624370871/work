@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			ul{
+				list-style: none;
+			}
+			.imgs{
+				width: 590px;
+				height: 470px;
+				overflow: hidden;
+			}
+			.dots{
+				width: 164px;
+				position: absolute;
+				left: 250px;
+				top: 440px;
+				z-index: 999;
+			}
+			.dot{
+				width: 10px;
+				height: 10px;
+				border:2px solid #fff;
+				border-radius: 10px;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ad">
+			<ul id="imgs" class="imgs">
+				<li class="img_li"><img src='img/1.jpg'></li>
+				<li class="img_li"><img src='img/2.jpg'></li>
+				<li class="img_li"><img src='img/3.jpg'></li>
+				<li class="img_li"><img src='img/4.jpg'></li>
+				<li class="img_li"><img src='img/5.jpg'></li>
+				<li class="img_li"><img src='img/6.jpg'></li>
+			</ul>
+			<ul class="dots">
+				<li data='0' class="dot" style="background-color: #fff;"></li>
+				<li data='1' class="dot"></li>
+				<li data='2' class="dot"></li>
+				<li data='3' class="dot"></li>
+				<li data='4' class="dot"></li>
+				<li data='5' class="dot"></li>
+			</ul>
+			<script type="text/javascript">
+				// 不点的时候，自动切换，点圈，停在选的这张图(停掉计时器)
+				// 鼠标移走，计时器启动，继续切换
+				// 1、封装函数，传参数，把对应的圆和圈设值
+				function change(n){
+					// 获取图片li
+					var img_lis=document.querySelectorAll(".img_li");
+					// 获取小圈li
+					var dot_lis=document.querySelectorAll(".dot");
+					for(i=0;i<img_lis.length;i++){
+						img_lis[i].style.display="none";
+						dot_lis[i].style.backgroundColor="";
+					}
+					img_lis[n].style.display="block";
+					dot_lis[n].style.backgroundColor="#fff"
+				}
+				// 2、自动切换
+				var num=0;
+				var timer;
+				// 封装成函数，后面可以直接调用
+				function setTimer(){
+					timer=setInterval(function(){
+						var img_lis=document.querySelectorAll(".img_li");
+						num++;
+						if(num==img_lis.length){
+							num=0;
+						}
+						change(num);//从上次停止的位置，继续
+					},2000)
+				}
+				setTimer();
+				// 3、鼠标移入切换图片
+				var dot_lis=document.querySelectorAll(".dot");
+				for(i=0;i<dot_lis.length;i++){
+					(function(i){
+						dot_lis[i].onmouseover=function(){
+							change(i);
+							// 如果要让自动切换的图按之前的顺序继续切
+							num=i;
+							clearInterval(timer);
+						}
+						dot_lis[i].onmouseout=function(){
+							setTimer();
+						}
+					})(i)
+				}
+			</script>
+		</div>
+	</body>
+</html>

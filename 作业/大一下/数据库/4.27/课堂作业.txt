@@ -1,0 +1,16 @@
+select  unname,thum from user
+where score > 500;
+
+select  unname as username,thum as telephone from user
+where score < 200;
+
+
+SELECT unname,email from user
+where email like '%qq.com';
+
+
+select * from b_order
+where year(orderdate)='2016' and MONTH(orderdate)='10';
+
+
+select DISTINCT uid from b_order;

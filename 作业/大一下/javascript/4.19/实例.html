@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<input type="button" name="" id="xs" value="显示" onclick="xianshi()" />
+		<input type="button" name="" id="yc" value="隐藏"onclick="yincang()" />
+		
+
+
+		<br>
+		<input type="button" name="" id="" value="变色" onclick="bs()" />
+		<div id="">
+		<p>软件技术</p>
+		<p>物联网技术应用</p>
+		<p id="three" onclick="change()" onmouseover="change()"  onmouseout="back()">移动应用开发</p>
+		<p>区块链技术应用</p>
+		</div>
+		<div id="">
+			<img src="img/QQ图片20220419152403.gif" id="img" class="img" >
+		</div>
+		<script type="text/javascript">
+		// // 1、获取图片
+		// 	var img=document.getElementById("img");
+		// 	console.log(img);
+		// 	// 2、修改dom标签的css样式 标签 style,样式名称=值
+		// 	// 通过js设置图片样式，隐藏
+		// 	img.style.display="none";
+			
+			// 3.通过按钮点击，来显示隐藏
+			// 隐藏函数
+			function yincang(){
+				var img=document.getElementById("img");
+				img.style.display="none";
+				visibility: visible
+			}
+			// 显示函数
+			function xianshi(){
+				var img=document.getElementById("img");
+				img.style.display="block";
+			}
+			function bs(){
+				// 获取到所有的p标签，p为多个标签的一个类数组，不能直接设置一组值
+				var p=document.querySelectorAll("p");
+				p[1].style.color="red"
+				for(i=0;i<p.length;i++){
+					p[i].style.backgroundColor="pink";
+					p[i].style.fontSize="30px";
+					p[i].style.fontWeight="bold";
+				}
+			}
+			function change(){
+				var dg=document.getElementById("three").style.color="blue";
+				var img=document.getElementById("img");
+				img.style.display="none";
+				var dg=document.getElementById("three").innerHTML="一班"
+			}
+			function back(){
+				var img=document.getElementById("img");
+				img.style.display="block";
+				var dg=document.getElementById("three").innerHTML="移动应用开发"
+			}
+		</script>
+	</body>
+</html>

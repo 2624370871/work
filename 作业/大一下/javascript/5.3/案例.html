@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.cls{
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body class="">
+		<input type="button" name="btn" id="btn" value="开关" />
+		<script type="text/javascript">
+			// 网页开关灯效果（给整个页面设置背景颜色）
+			// 1、获取按钮
+			var btn=document.getElementById("btn");
+			// 2、按钮绑定事件
+			btn.onclick=function(){
+				// 3、具体页面背景操作
+				// 获取body标签
+				// var body=document.querySelector("body");
+				var body=document.body;//body是比较特殊的标签。可以直接获取
+				// 操作背景，方法一用类名
+				// if(body.className==""){
+				// 	body.className="cls";//如果没有类名，则添加进去
+				// }else{
+				// 	body.className="";//如果有cls，则删除
+				// }
+				
+				// 方法二:直接操作样式
+				if(body.style.backgroundColor==""){
+					body.style.backgroundColor="black";
+				}else{
+					body.style.backgroundColor="";
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1" class="hehe" abcd="yes">
+			移动应用开发
+		</div>
+		<script type="text/javascript">
+		// 获取这个div
+			var d=document.getElementById("div1");
+			
+			// 属性操作的标准方法
+			// 1、获取属性值
+			console.log(d.getAttribute('id'));
+			console.log(d.getAttribute('abcd'));
+			// 2、设置属性
+			d.setAttribute("class","haha");
+			d.setAttribute("abcd","1000");
+			
+			// 3、判断属性有没有
+			console.log(d.hasAttributes("id"));
+			console.log(d.hasAttributes("aaaa"));
+			
+			// 4、删除属性
+			d.removeAttribute("abcd");
+			
+			// 以上系统定义的我们叫做原生属性，常用的原生属性有：ID，name，value
+			// class是系统关键词，所以用点语法必须换名字为className
+			// 原生操作可以更简化，用点语法直接设置或者获取
+			d.id="hello";
+			d.abcd="xixi";
+			d.className="hkz";
+		</script>
+	</body>
+</html>

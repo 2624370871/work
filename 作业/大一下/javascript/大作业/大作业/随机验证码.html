@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 150px;
+				height: 30px;
+				background-color: antiquewhite;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<input type="text" name="" id="box" value="" /><br>
+		<button type="button" id="btn">验证码</button>
+		<script src="js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				function change(){
+					code=$("#box");
+					var arrays=new Array(
+					       '1','2','3','4','5','6','7','8','9','0',
+					       'a','b','c','d','e','f','g','h','i','j', 
+					       'k','l','m','n','o','p','q','r','s','t', 
+					       'u','v','w','x','y','z', 
+					       'A','B','C','D','E','F','G','H','I','J', 
+					       'K','L','M','N','O','P','Q','R','S','T', 
+					       'U','V','W','X','Y','Z'        
+					       );
+						   codes='';
+						   for(i=0;i<5;i++){
+							   var r=parseInt(Math.random()*arrays.length);
+							   codes+=arrays[r];
+						   }
+						   code.val(codes)
+				}		
+							  change()
+				$("#btn").click(function(){
+					change();
+				})
+			})
+		</script>
+	</body>
+</html>

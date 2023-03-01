@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <style>
+        .box1{
+            width: 600px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            background-color: black;
+        }
+        .box3 ul li{
+            position: absolute;
+            width: 600px;
+            height: 350px;
+            left: 0;
+            top: 0;
+        }
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+        .box2{
+            position: absolute;
+            width: 600px;
+            height: 50px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .box2 a{
+            display: block;
+            float: left;
+            width: 120px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+        }
+        a{
+            color: aliceblue;
+        }
+        .active{
+            background: gray;
+            color: rgb(244, 244, 36);
+        }
+        /* 列表过渡
+        1.使用transition-group包裹需要过渡的效果
+        2、设置过渡的四个类 */
+            /* 图像即将进入的状态 最右侧 */
+            .hero-enter{
+                transform: translateX(100%);
+            }
+            /* 完全进入 即将离开时的时候 在x的正中 */
+            .hero-enter-to,.hero-leave{
+                transform: translateX(0);
+            }
+            /* 图像已经完全离开 在左侧 */
+            .hero-leave-to{
+                transform: translateX(-100%);
+            }
+            /* 图像进入和离开的过程 */
+            .hero-enter-active,.hero-leave-active{
+                transform: all .5s ease;
+            }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="box1">
+        <div class="box3">
+          <transition-group tag="ul">
+            <li v-for="(hero,index) in heros" v-show="currentIndex==index" :key="hero.nick">
+              <a href="">
+                <img :src="hero.url" alt="" srcset="" />
+              </a>
+            </li>
+          </transition-group>
+        </div>
+        <div class="box2">
+ <a href="" v-for="(hero,index) in heros" :class="{'active':currentIndex==index}" @mouseOver="change(index)">{{hero.nick}}</a>           
+        </div>
+      </div>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+            heros:[
+        {url:"/4.10/img/2.png",name:"赵云",role:"武将",nick:"战士"},
+        {url:"/4.10/img/3.png",name:"后羿",role:"射手",nick:"半神之弓"},
+        {url:"/4.10/img/4.png",name:"澜",role:"刺客",nick:"鲨之猎刃"},
+        {url:"/4.10/img/5.png",name:"瑶",role:"辅助",nick:"鹿灵守心"},
+        {url:"/4.10/img/6.png",name:"元歌",role:"刺客",nick:"无间傀儡"},
+        ],
+        currentIndex:0//默认当前选中第0个
+        },
+        methods: {
+            change(value){//value鼠标移入某个a，获取当前英雄下标
+                this.currentIndex=value
+            }
+        },
+      });
+    </script>
+  </body>
+</html>

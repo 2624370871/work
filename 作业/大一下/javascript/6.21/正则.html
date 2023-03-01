@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			input{
+				width: 400px;
+				height: 30px;
+				display: block;
+			}
+		</style>
+		
+	</head>
+	<body>
+	
+		<input type="text" name="" id="str" value="" /><br>
+		st: <input type="text" name="" id="st" value="" /><br>
+		
+		result:<input type="text" name="" id="result" value="" /><br>
+		<button  id="btn">点我</button>
+			<!--<script src="js/jquery-3.6.0.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript">
+			document.getElementById("btn").onclick=function(){
+				var str=document.getElementById("str").value;
+				var st=document.getElementById("st").value;
+				var res=document.getElementById("result");
+				
+//				alert(str.indexOf(st));
+//				for(var i=0;i<str.length;i++){
+//					if(str.indexOf(st)>-1){
+//						str=str.repeat(st,"");
+//					}else{
+//						break;
+//					}
+//				}
+//				res.value=str
+
+
+//				使用正则完成
+				res.value=str.replace(new RegExp(st,"g"),"")
+			}
+		</script>
+	</body>
+</html>

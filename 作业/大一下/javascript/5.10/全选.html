@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>	
+	<style>
+	    table {
+	        border-collapse: collapse;
+	        border-spacing: 0;
+	        border: 1px solid #c0c0c0;
+	        width: 500px;
+	    }
+	
+	    th,
+	    td {
+	        border: 1px solid #d0d0d0;
+	        color: #404060;
+	        padding: 10px;
+	    }
+	</style>
+	</head>
+	<body>
+	    <table>
+	        <thead>
+	            <tr>
+	                <th>
+	                    <input type="checkbox" id="th" />
+	                </th>
+	                <th>课程名</th>
+	                <th>教师</th>
+	            </tr>
+	        </thead>
+	        <tbody id="tb">
+	            <tr>
+	                <td>
+	                    <input type="checkbox" />
+	                </td>
+	                <td>JavaScript程序设计</td>
+	                <td>董老师</td>
+	            </tr>
+	            <tr>
+	                <td>
+	                    <input type="checkbox" />
+	                </td>
+	                <td>Mysql数据库开发</td>
+	                <td>董老师</td>
+	            </tr>
+	            <tr>
+	                <td>
+	                    <input type="checkbox" />
+	                </td>
+	                <td>javaweb应用开发</td>
+	                <td>刘老师</td>
+	            </tr>
+	            <tr>
+	                <td>
+	                    <input type="checkbox" />
+	                </td>
+	                <td>Linux系统操作</td>
+	                <td>刘老师</td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</body>
+	<script>
+		//全选
+		// 1、获取事件源
+		var all=document.getElementById("th");
+		// 2、绑定事件
+		all.onchange=function(){
+			// 3、具体时间的操作
+			// 3.1获取下面一组复选框
+			var td=document.querySelectorAll("input");
+			// 3.2循环遍历每一个元素
+			for(var i=1;i<td.length;i++){
+			// 3.3给每一个复选框的checked、属性设置为全选复选框
+			td[i].checked=all.checked;
+			}
+		}
+		
+		//表格鼠标悬浮高亮
+		var t = document.getElementsByTagName('tbody')[0];
+		t.onmouseover = function(e){
+		    e.target.parentElement.style.background = '#F5F5F5';
+		}
+		t.onmouseout = function(e){
+		    e.target.parentElement.style.background = '#fff';
+		}
+		//高级： 给每个小复选框绑定点击事件
+		// 1、事件源，下面四个一次绑定
+		var td=document.querySelectorAll("input");
+		for(i=1;i<td.length;i++){
+		// 2、事件类型click或change
+		td[i].onchange=function(){
+		// 3、具体操作
+		// 每次点击小框，都要检查是否所有的复选框被选中或取消
+		var flag=true;
+		//循环看看其他的有没有选中
+		for(i=1;i<td.length;i++){
+			if(!td[i].checked){
+				flag=false;
+				break;
+			}
+		}
+		th.checked=flag;
+		}
+		}
+	</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="停止" />
+		<script type="text/javascript">
+			// 1、setTimeout 一次性
+			// 第一种写法(常用)
+			var timer=window.setTimeout(function(){
+				console.log("一次性定时器");
+			},3000)
+			console.log(timer);
+			
+			clearTimeout(timer);
+			// 第二种写法(了解)
+			//setTimeout(f1,3000);
+			// function f1(){
+			// 	alert("hello");
+			// }
+			
+			// 第三种写法(了解)
+			// setTimeout("f1()",3000)
+			
+			
+			// 2、setInterval 反复执行
+			var num=0;
+			var t=setInterval(function(){
+				num++;
+				console.log("hello");
+				if(num==10){
+					clearInterval(t);
+				}
+			},1000)
+			document.getElementById("btn").onclick=function(){
+				clearInterval(t);
+			}
+		</script>
+	</body>
+</html>

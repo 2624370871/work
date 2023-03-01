@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			ul{
+				list-style: none;
+			}
+			.imgs{
+				width: 590px;
+				height: 470px;
+				overflow: hidden;
+			}
+			.dots{
+				width: 164px;
+				position: absolute;
+				left: 250px;
+				top: 440px;
+				z-index: 999;
+			}
+			.dot{
+				width: 10px;
+				height: 10px;
+				border:2px solid #fff;
+				border-radius: 10px;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ad">
+			<ul id="imgs" class="imgs">
+				<li class="img_li"><img src='img/1.jpg'></li>
+				<li class="img_li"><img src='img/2.jpg'></li>
+				<li class="img_li"><img src='img/3.jpg'></li>
+				<li class="img_li"><img src='img/4.jpg'></li>
+				<li class="img_li"><img src='img/5.jpg'></li>
+				<li class="img_li"><img src='img/6.jpg'></li>
+			</ul>
+			<ul class="dots">
+				<li data='0' class="dot" style="background-color: #fff;"></li>
+				<li data='1' class="dot"></li>
+				<li data='2' class="dot"></li>
+				<li data='3' class="dot"></li>
+				<li data='4' class="dot"></li>
+				<li data='5' class="dot"></li>
+			</ul>
+			<script type="text/javascript">
+				// 1、图片自动切换
+				// 方法一
+				// 设置定时器，移动图片，每秒将第一张移动到最后去
+				// setInterval(function(){
+				// 	// 获取第一张图所在的li
+				// 	// var li=document.querySelectorAll(".img_li")[0];
+				// 	var li=document.querySelector(".img_li");
+				// 	// 获取ul
+				// 	var ul=document.getElementById("imgs");
+				// 	// 将第一个li放到ul的最后一个子元素位置
+				// 	ul.appendChild(li);
+				// },1000);
+				
+				// 方法二
+				// 设置定时器，通过css样式display显示隐藏
+				// 设置一个计数器
+				var num =0;
+				setInterval(function(){
+					num++;
+					// 获取所有的li
+					var img_lis=document.querySelectorAll(".img_li")
+					// 将所有的li的display设置为none
+					for(i=0;i<img_lis.length;i++){
+						img_lis[i].style.display="none";
+					}
+					//把num所在的li设置为显示
+					if(num==img_lis.length){
+						num=0;
+					}
+					img_lis[num].style.display="block";
+				},2000)
+				
+				//鼠标悬浮到小圆上，切换到相应的图片上
+				// 获取小圆点的li
+				var dot_lis=document.querySelectorAll(".dot");
+				// 循环，给每一个小圆圈绑定事件
+				for(i=0;i<dot_lis.length;i++){
+					// 鼠标悬停事件
+					(function(i){
+						dot_lis[i].onmouseenter=function(){
+							// 先隐藏所有图片
+							var img_lis=document.querySelectorAll(".img_li");
+							for(j=0;j<img_lis.length;j++){
+							// 把所有小圆圈背景设为透明
+							dot_lis[j].style.backgroundColor="";
+							// 隐藏所有图片
+							img_lis[j].style.display="none";
+							}
+							// 获取当前的圈,设置背景为白色
+							this.style.backgroundColor="#fff";
+							img_lis[i].style.display="block";
+							// //给当前圈对应的图设置属性
+							// var index=this.getAttrbute("data");
+							// console.log(index);
+							// // 设置上面的图片显示
+							// img_lis[index].style.display="block";
+							}
+							
+					})(i)
+				}
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>爱好：
+		<input type="checkbox" name="" id="check" value=""/>吃饭
+		<input type="checkbox" name="" id="check" value="" />睡觉
+		<input type="checkbox" name="" id="check" value="" />打豆豆
+		<br>
+		<input type="checkbox" name="" id="all" value="" />全选
+		<script type="text/javascript">
+			var input=document.getElementById("all");
+			input.onchange=function(){
+				var checks=document.querySelectorAll("#check");
+				// 确定all的状态
+				var status=input.checked;
+				
+				for(i=0;i<checks.length;i++){
+					checks[i].checked=status;
+				}
+			}
+		</script>
+	</body>
+</html>

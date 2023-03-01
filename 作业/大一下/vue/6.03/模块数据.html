@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/6.03/js/vue.js"></script>
+    <script src="/6.03/js/vuex.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <script src="/6.03/js/vue.js"></script>
+            <script src="/6.03/js/vuex.js"></script>
+        </head>
+        <body>
+            <div id="app">
+                <input type="button" value="英雄模块" @click="hero">
+                <input type="button" value="购物车模块" @click="shop">
+            </div>
+            <script>
+                var vm=new Vue({
+                    el:"#app",
+                    store,
+                    data:{
+                        hero(){
+                            return this.$store.state.nameA
+                        },
+                        shop(){
+                            return this.$store.state.nameB
+                        }
+                    }
+                })
+                var moduleA={
+                    state:{nameA:'A'}
+                }
+                var moduleB={
+                    state:{nameB:'B'}
+                }
+                var store=new Vuex.Store({
+                    modules:{
+                        a:moduleA,
+                        b:moduleB
+                    }
+                })
+                console.log(store.state.a)
+                console.log(store.state.b)
+            </script>
+        </body>
+        </html>
+    

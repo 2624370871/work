@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		// 值类型传递，传的是值
+		// 引用类型之间传递的是地址（引用）
+			function f1(x){
+				x=100;
+			}
+			var num=10;
+			f1(num);
+			console.log(num)//10
+			
+			function f2(y){
+				y.name="张三";
+			}
+			var y={name:"李四"};
+			f2(y);
+			console.log(y.name)
+		</script>
+	</body>
+</html>

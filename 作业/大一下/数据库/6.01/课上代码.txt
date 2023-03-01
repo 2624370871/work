@@ -1,0 +1,102 @@
+drop PROCEDURE if exists sp_loop;
+CREATE PROCEDURE sp_loop()
+begin
+DECLARE i int DEFAULT 0;
+DECLARE sum int DEFAULT 0;
+sum_loop:LOOP
+set i=i+1;
+set sum=sum+i;
+if i>=100 then leave sum_loop;
+end if;
+end loop;
+SELECT sum;
+end;
+call sp_loop;
+
+
+
+drop PROCEDURE if EXISTS sp_loop1;
+CREATE PROCEDURE sp_loop1()
+BEGIN
+	DECLARE a int DEFAULT 1;
+	label1:LOOP
+		if a<6 then 
+			select a;
+			set a = a+1;
+			ITERATE label1;
+		end if;
+		leave label1;
+	end loop;
+END;
+
+call sp_loop1;
+
+
+
+
+drop PROCEDURE if exists sp_repeat;
+CREATE PROCEDURE sp_repeat()
+begin
+DECLARE i int DEFAULT 0;
+DECLARE sum int default 0;
+REPEAT
+set i=i+1;
+set sum=sum+i;
+until i>=100
+end repeat;
+SELECT sum;
+end;
+call sp_repeat;
+
+
+
+
+
+drop PROCEDURE if EXISTS sp_while;
+CREATE PROCEDURE sp_while()
+BEGIN
+	DECLARE i int DEFAULT 0;
+	DECLARE sum int DEFAULT 0;
+	while i<100 DO	
+		set i=i+1;
+		set sum = sum +i;
+	end while;
+	select sum;
+END;
+
+call sp_while;
+
+
+
+
+drop PROCEDURE if EXISTS sp_cursor;
+CREATE PROCEDURE sp_cursor()
+BEGIN
+	DECLARE t_name VARCHAR(20);
+	DECLARE t_edu VARCHAR(20);
+	DECLARE no_more_record int DEFAULT 0;
+	declare cur_record cursor FOR
+		select name,edu from teacher;
+	declare CONTINUE HANDLER for not found set no_more_record =1;
+	open cur_record;
+		while no_more_record !=1 DO
+			set t_name = null;
+			set t_edu = null;
+			fetch cur_record into t_name,t_edu;	
+			select t_name,t_edu;
+		end while;
+	close cur_record;
+END;
+
+call sp_cursor();
+
+
+
+
+drop PROCEDURE if EXISTS sp_jiaoshi1;
+CREATE PROCEDURE sp_jiaoshi1()
+BEGIN
+	select * from teacher where edu='硕士研究生';
+END;
+
+call sp_jiaoshi1();

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+    
+    img {
+      vertical-align: top;
+    }
+    
+    .main {
+      margin: 10px auto 0;
+      width: 1000px;
+    }
+    
+    .fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+<script src="../js/jquery-3.6.0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	// 判断滚动条卷曲的高度，超出topPart的高度
+	// 1。让navBar 固定定位
+	// 2.mainPart部分有一个marginTop值
+	
+	$(function(){
+		$(window).scroll(function(){
+			if($(window).scrollTop()>=$("#topPart").height()){
+				$("#navBar").addClass("fixed");
+				$("#mainPart").css("margin-top",$("#navBar").height()+10);
+			}else{
+				$("#navBar").removeClass("fixed");
+				$("#mainPart").css("margin-top",10);
+			}
+		})
+	})
+</script>
+</head>
+<body>
+<div class="top" id="topPart">
+  <img src="images/top.png" alt=""/>
+</div>
+<div class="nav" id="navBar">
+  <img src="images/nav.png" alt=""/>
+</div>
+<div class="main" id="mainPart">
+  <img src="images/main.png" alt=""/>
+</div>
+</body>
+</html>

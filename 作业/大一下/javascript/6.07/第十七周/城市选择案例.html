@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    select {
+      width: 200px;
+      background-color: teal;
+      height: 200px;
+      font-size: 20px;
+    }
+    
+    .btn-box {
+      width: 30px;
+      display: inline-block;
+      vertical-align: top;
+    }
+  </style>
+</head>
+
+<body>
+	<script src="js/jquery-3.6.0.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			// 第一个按钮的单击事件
+			$("#btn1").click(function(){
+				// 参数可以用$("选择器")
+				$("#src-city option").appendTo($("#tar-city"))
+			});
+			// 第二个按钮的单击事件
+			$("#btn2").click(function(){
+				// 参数也可以直接用选择器名
+				$("#tar-city option").appendTo($("#src-city"))
+			});
+			// 第三个按钮的单击事件
+			$("#btn3").click(function(){
+				$("#src-city option:selected").appendTo($("#tar-city"))
+			});
+			// 第四个按钮的单击事件
+			$("#btn4").click(function(){
+				$("#tar-city option:selected").appendTo($("#src-city"))
+			});
+		})
+	</script>
+<h1>城市选择：</h1>
+<select id="src-city" name="src-city" multiple>
+  <option value="1">北京</option>
+  <option value="2">上海</option>
+  <option value="3">深圳</option>
+  <option value="4">广州</option>
+  <option value="5">西红柿</option>
+</select>
+<div class="btn-box">
+  <!--实体字符-->
+  <button id="btn1"> &gt;&gt; </button>
+  <button id="btn2"> &lt;&lt; </button>
+  <button id="btn3"> &gt;</button>
+  <button id="btn4"> &lt; </button>
+</div>
+<select id="tar-city" name="tar-city" multiple>
+	
+</select>
+
+
+</body>
+
+
+
+
+</html>

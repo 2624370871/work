@@ -1,0 +1,110 @@
+drop PROCEDURE if EXISTS sp_iterate;
+create PROCEDURE sp_iterate()
+BEGIN
+	DECLARE a int DEFAULT 1;
+	label1:LOOP
+		if a<6 THEN
+			select a;
+			set a=a+1;
+			ITERATE label1;
+		end if;
+		leave label1;
+	end loop label1;
+end;
+
+call sp_iterate();
+
+drop PROCEDURE if exists sp_repeat;
+create PROCEDURE sp_repeat()
+BEGIN
+DECLARE i int DEFAULT 0;
+DECLARE sum int DEFAULT 0;
+repeat
+set i=i+1;
+set sum=sum+i;
+until i>=100
+end repeat;
+SELECT sum;
+end;
+call sp_repeat();
+
+
+
+drop PROCEDURE if EXISTS sp_while;
+create PROCEDURE sp_while()
+BEGIN
+	DECLARE i int DEFAULT 0;
+	DECLARE sum int DEFAULT 0;
+	while i<100 do
+		set i=i+1;
+		set sum = sum+i;
+	end while;
+	select sum;
+end;
+
+call sp_while();
+
+
+
+drop PROCEDURE if EXISTS sp_cursor;
+create PROCEDURE sp_cursor()
+BEGIN
+	DECLARE no_more_record int DEFAULT 0;
+	DECLARE t_name varchar(20);
+	DECLARE t_edu VARCHAR(20);
+	DECLARE cur_record cursor for
+		select name,edu from teacher;
+	DECLARE CONTINUE HANDLER for not FOUND
+	set no_more_record =1;
+	open cur_record;
+		while no_more_record!=1 do
+			fetch cur_record into t_name,t_edu;
+			select t_name,t_edu;
+		end while;
+	CLOSE cur_record;
+end;
+
+call sp_cursor();
+
+
+drop PROCEDURE if exists sp_jiaoshi;
+create PROCEDURE sp_jiaoshi(in tedu varchar(20))
+BEGIN
+select*from teacher where edu =tedu;
+end;
+call sp_jiaoshi(2);
+call sp_jiaoshi(1);
+set @edu = '3';
+call sp_jiaoshi(@edu);
+
+
+
+drop PROCEDURE if EXISTS sp_jiaoshi1;
+create PROCEDURE sp_jiaoshi1(in tgender varchar(20),out out_num int)
+BEGIN
+	select count(*) into out_num from teacher where gender = tgender;
+end;
+set @gender = 'Ů';
+set @out_num = 0;
+call sp_jiaoshi1(@gender,@out_num);
+select @out_num;
+
+
+SELECT * from mysql.proc where type='procedure'
+
+alter PROCEDURE sp_jiaoshi MODIFIES sql data sql security INVOKER;
+
+drop PROCEDURE sp_cursor;
+
+
+drop PROCEDURE if EXISTS sp_jiaoshi3;
+create PROCEDURE sp_jiaoshi3(in tname varchar(20),out out_classname varchar(20),out out_time int,out out_score int)
+BEGIN
+	select classname,time,score into out_classname,out_time,out_score from teacher where name = tname;
+end;
+set @name = '2';
+set @classname ='';
+set @time = 0;
+set @score =0;
+call sp_jiaoshi3(@name,@classname,@time,@score);
+select @classname,@time,@score

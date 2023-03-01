@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="js/jquery-3.6.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				// 给每个p绑定一个鼠标单击弹窗事件
+				// $("p").click(function(){
+				// 	alert("呵呵")
+				// })
+				// 单击按钮，给div添加一个新的p
+				$("#btn").click(function(){
+					$("<p>我是新来的</p>").appendTo("div")
+				})
+				// 此时新增的p，没有click事件
+				
+				// 事件委托：delegate（代理，委托）
+				// 缺点：只能写委托事件
+				// 给div注册一个委托事件
+				// delegate有三个参数
+				// 第一个参数：selector（选择器），最终事件的执行者
+				// 第二个参数：事件类型
+				// 第三个参数：函数，事件具体要做什么
+				// $("div").delegate("p","click",function(){
+				// 	alert("我是委托事件的呵呵！")
+				// })
+				// 总结，原理是，用委托，内部的p、其实是没有绑定事件的，事件在父元素身上
+				// 由于冒泡原理，会触发div的委托事件
+				// 优点：能够解决动态绑定问题，给父元素注册委托事件就可以了
+				// 之前的每一个p都得绑定事件，现在只用绑定给父元素一次，即可
+				
+				
+				
+				// 使用on注册事件，统一操作
+				// 1.注册普通事件，给p自己注册，注意参数不传选择器即可
+				// 区别在于第二个参数
+				$("p").on("click",function(){
+					alert("我是用on绑定p的普通事件");
+				})
+				// 2.注册委托事件（父元素-->委托给子选择器）
+				// 第一个参数是事件类型，第二个参数是子选择器，第三个参数是事件具体操作函数
+				$("div").on("click","P",function(){
+					alert("我是用on绑给div的委托事件")
+				})
+				$("div").on("click",function(){
+					alert("我是用on绑定div的普通事件");
+				})
+			})
+		</script>
+		<div >
+			<p>哈哈哈1</p>
+			<p>哈哈哈2</p>
+			<p>哈哈哈3</p>
+			<p>哈哈哈4</p>
+		</div>
+		<button  id="btn">按钮</button>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人信息</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p > 姓名:{{name}}</p>
+        <p >年龄:{{age}}</p>
+        <p >电话:{{tel}}</p>
+       
+    </div>
+    
+    <script>
+        //创建vue实例
+        var vm = new Vue({
+            //表示vue控制app
+            el: '#app',
+            //用于存储vue实例需要使用的数据
+            data: {
+                name: '吴泽',
+                age:18,
+                tel:18371912381
+            }
+        });
+        //获取显示vue实例的数据
+        console.log(vm.$data.name)
+        console.log(vm.name)
+    </script>
+</body>
+
+</html>

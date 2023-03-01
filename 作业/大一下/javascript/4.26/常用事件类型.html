@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		  <!-- 用户名<input type="text" value="请输入用户名"  onfocus="f1()" onblur="f2()" id="user"/> -->
+		用户名<input type="text"  id="user"/>
+		<div id="div" style="height: 200px; width: 200px; background-color: aquamarine;">
+			本草纲目
+			<div id="inner" style="width: 100px; height: 100px; background-color: antiquewhite;">
+				哈哈哈
+			</div>
+		</div>
+		
+		<form id="f" action="index.html">
+		姓名:<input type="text" name="" value=""> <br>
+		<input type="submit" name="" value="提交">
+		<input type="reset" name="" value="重置">
+		</form>
+		<script type="text/javascript">
+		var div=document.getElementById("div")
+		var t=document.getElementById("user")
+		var f=document.getElementById("f")
+		// 内容改变且失去焦点时触发
+		f.onchage=function(){
+			console.log("内容改完了")
+		}
+		// 内容改变时触发
+		f.oninput=function(){
+			console.log("修改")
+		}
+		// 获取f表单，给form绑定事件，通常用于检测表单项
+		f.onsubmit=function(){
+			alert("提交了")
+		}
+		f.onreset=function(){
+			alert("搞错了")
+		}
+		// 按下任意键触发
+		t.onkeydown=function(){
+			console.log("keydown")
+		}
+		// 任意键弹起时触发
+		t.onkeyup=function(){
+			console.log("keyup");
+			alert(t.value);
+		}
+		// 任意键按下时触发
+		t.onkeypress=function(){
+			console.log("keypress");
+			
+		}
+		// //整个页面窗口加载完成后（所有的标签加载完成后）执行
+		// 	window.onload=function(){
+		// 		// 常用语：js代码在前，获取标签在后的情况
+		// 		alert("加载完了")
+		// 	}
+		// function f1(){
+		// 	document.getElementById('user').value="";
+		// }
+		// function f2(){
+		// 	var t=document.getElementById("user").value;
+		// 	if(t==""){
+		// 		alert("你还没填写");
+		// 	}else{
+		// 		alert(t);
+		// 	}
+		// }
+		
+		// // 会区分子元素（也就是鼠标移到子元素上也会触发）
+		// var div=document.getElementById("div");
+		// div.onmouseover=function(){
+		// 	console.log("来了--over")
+		// }
+		// div.onmouseout=function(){
+		// 	console.log("走了--out")
+		// }
+		
+		// // 不区分子元素（鼠标从父元素移到子元素，不会触发）
+		// div.onmouseenter=function(){
+		// 	console.log("我来啦--enter")
+		// }
+		// div.onmouseleave=function(){
+		// 	console.log("拜拜--leave")
+		// }
+		
+		
+		// div.onmousedown=function(){
+		// 	console.log("点了--down")
+		// }
+		// div.onmouseup=function(){
+		// 	console.log("松手--up")
+		// }
+		// div.onmousemove=function(){
+		// 	console.log("不动--move")
+		// }
+		
+		// div.oncontextmenu=function(){
+		// 	console.log("右键菜单--menu");
+		// 		// 阻止右键菜单弹出
+		// 	//return false;
+		// }
+		// div.oncopy=function(){
+		// 	console.log("不要抄袭--copy");
+		// 	return false
+		// }
+		</script>
+	</body>
+</html>

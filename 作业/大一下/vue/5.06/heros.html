@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <style>
+        .herolist {
+            width: 90px;
+            height: 90px;
+            list-style: none;
+            float: left;
+            margin-right: 30PX;
+        }
+
+        img {
+            border: 2px solid blue;
+            width: 90px;
+            height: 90px;
+            border-radius: 10px 0 10px 0;
+        }
+
+        P {
+            width: 90PX;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text"  v-model="searchHero"><br>
+        <input type="radio" value="本周免费" v-model="show" />
+        <label>本周免费</label>
+        <input type="radio" value="新手推荐" v-model="show" />
+        <label for="">新手推荐</label>
+        <ul>
+            <li v-for="i in heros" class="herolist">
+                <img :src="i.url" alt="">
+                <p>{{i.name}}</p>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                freeheros: [
+                    { url: "/5.06/img/2.png", name: "赵云" },
+                    { url: "/5.06/img/3.png", name: "后羿" },
+                    { url: "/5.06/img/4.png", name: "澜" },
+                    { url: "/5.06/img/5.png", name: "瑶" },
+                    { url: "/5.06/img/6.png", name: "元歌" },
+                ],
+                tjheros: [
+                    { url: "/5.06/img/5.png", name: "瑶" },
+                    { url: "/5.06/img/6.png", name: "元歌" },
+                ],
+                show: "",
+                searchHero:""
+                },
+                computed:{
+                    heros(){
+                        var heros=this.freeheros;
+                        var searchHero=this.searchHero.trim();
+                        if(this.show=="新手推荐"){
+                            heros=this.tjheros;
+                        }
+                        if(searchHero!=''){
+                            heros=heros.filter(function(a){
+                                if(a.name.indexOf(searchHero)!=-1){
+                                    return a;
+                                }
+                            })
+                        }
+                        return heros;
+                     
+                    },
+            }
+        })
+    </script>
+</body>
+
+</html>

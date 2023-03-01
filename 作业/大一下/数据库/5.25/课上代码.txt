@@ -1,0 +1,132 @@
+drop PROCEDURE if EXISTS sp_test;
+CREATE PROCEDURE sp_test()
+BEGIN
+	DECLARE num int DEFAULT 0;
+	select num;
+	set num = 100;
+	select num;
+	set num = num +100;
+	select num;
+END;
+
+call sp_test();
+
+
+
+drop PROCEDURE if EXISTS sp_change;
+CREATE PROCEDURE sp_change()
+BEGIN
+	DECLARE a int DEFAULT 1;
+	DECLARE b int DEFAULT 2;
+	DECLARE c int DEFAULT 0;
+SELECT a;
+SELECT b;
+
+
+set c=a;
+set a=b;
+set b=c;
+
+SELECT a;
+SELECT b;
+END;
+
+call sp_change();
+
+
+
+
+drop PROCEDURE if EXISTS sp_if;
+CREATE PROCEDURE sp_if()
+BEGIN
+	DECLARE x int DEFAULT 10;
+	DECLARE y int DEFAULT 20;
+	if x>y 
+		then select x;
+		else select y;
+	end if;
+END;
+
+call sp_if();
+
+
+
+
+drop PROCEDURE if EXISTS sp_case;
+CREATE PROCEDURE sp_case()
+BEGIN
+	DECLARE name varchar(20) default '';
+	set name = '王五';
+	case name 
+		when '李四' then select '年轻';
+		when '王五' then select '少女感';
+		when '张三' then select '英俊';
+	end case;		
+END;
+
+call sp_case();
+
+
+
+
+drop PROCEDURE if EXISTS sp_case1;
+CREATE PROCEDURE sp_case1()
+BEGIN
+	DECLARE score int  DEFAULT 60;
+	case 
+		when score>=80 then select '优';
+		when score>=60 and score<80 then select '良';
+		when score<60 then select '差';
+	end case;		
+END;
+
+call sp_case1();
+
+
+
+
+
+
+drop PROCEDURE if EXISTS sp_loop;
+CREATE PROCEDURE sp_loop()
+BEGIN
+	DECLARE i int DEFAULT 0;
+	DECLARE sum int DEFAULT 0;
+	sum_loop:LOOP	
+			set i = i+1;
+			set sum = sum +i;
+		if i>=100 then leave sum_loop;
+		end If;
+	end LOOP sum_loop;
+
+	select sum;
+END;
+
+call sp_loop();
+
+
+
+
+
+
+drop PROCEDURE if EXISTS sp_loop;
+CREATE PROCEDURE sp_loop()
+BEGIN
+	DECLARE i int DEFAULT 0;
+	DECLARE n int DEFAULT 100;
+	sum_loop:LOOP	
+			set i = i+1;
+			insert into student values(i,0);
+		if i>=n then leave sum_loop;
+		end If;
+	end LOOP sum_loop;
+
+	select sum;
+END;
+
+call sp_loop();
+
+
+
+select name 姓名,if(sex=0,'男','女') 性别 from student;
+

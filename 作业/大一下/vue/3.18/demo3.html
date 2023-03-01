@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="app">
+        <!-- v-bind绑定属性 -->
+      <ul class="list-group" style="width: 250px;" v-bind:style="img">
+        <li class="list-group-item"><a href="#">【新闻】{{title1|mySubstr}}</a></li>
+        <li class="list-group-item"><a href="#">【新闻】{{title2|mySubstr}}</a></li>
+        <li class="list-group-item"><a href="#">【新闻】{{title3|mySubstr}}</a></li>
+      </ul>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          title1: "夏洛特永昼音效优化&赵云未来纪元皮肤特性升级预告【老亚瑟的答疑时间】",
+          title2: "互动小任务第15期-元歌皮肤设计大赛总决选语音奖励方案票选开启",
+          title3: "貂蝉五五开黑节皮肤海报线稿方案票选结果公布",
+          img:"backgroundcolor:red"
+        },
+        filters: {
+            //在过滤器中定义方法，如果字符串长度>10,截取前十个
+          mySubstr(value) {
+              //字符串的长度 串.length
+              if(value.length>11){
+                value = value.substr(0, 10)+'...';
+              }
+                return value;
+
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

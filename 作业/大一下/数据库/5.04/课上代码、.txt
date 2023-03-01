@@ -1,0 +1,122 @@
+create database xxgc2;
+
+use xxgc2;
+
+create table studentInfo
+(
+	sno char(8) primary key not null,
+	sname varchar(10) not null,
+	sgender char(2),
+	sbirth date,
+	sclass varchar(20)
+);
+
+insert into studentinfo(sno,sname,sgender,sbirth,sclass)
+values('10101001','张永峰','男','1993-8-1','电子商务101');
+
+insert into studentinfo(sno,sname,sgender)
+values('10101002','何小丽','女');
+
+insert into studentinfo
+values
+('10102001','王斌','男','1991-7-14','网络技术101'),
+('10102003','孙平平','女','1992-2-27','网络技术101');
+
+SELECT * from studentinfo ;
+SELECT sno,sname,sgender from studentinfo;
+SELECT sno,sname,sbirth,sclass,sgender,year(sbirth)出生年,year(now()) as 今年 from studentinfo;
+SELECT DISTINCT sgender from studentinfo;
+SELECT DISTINCT sclass from studentinfo;
+
+select * from studentinfo
+where sage >19;
+
+select * from studentinfo
+where sage <22;
+
+select * from studentinfo
+where sage <22 and sage>19;
+
+select * from studentinfo
+where sage !=20;
+
+select * from studentinfo
+where sage <>20;
+
+select * from studentinfo
+where sage BETWEEN 19 and 22;
+
+select * from studentinfo
+where year(sbirth) BETWEEN 1991 and 1993;
+
+
+select * from studentinfo
+where sno in (10101001,10102001);
+
+select * from studentinfo
+where sno in (select sno from studentinfo where sgender = '女');
+
+select * from studentinfo
+where sname like '%小%';
+
+SELECT * from studentinfo
+where sname like '何__';
+
+SELECT * from studentinfo
+where sbirth is null;
+
+SELECT * from studentinfo
+where sbirth is not null;
+
+select * from studentinfo
+where sage >21 or sage<20;
+
+select * from studentinfo
+where not(year(sbirth)=1992);
+
+
+SELECT * from studentinfo
+order by sno asc;
+
+SELECT * from studentinfo
+order by sno desc;
+
+SELECT * from studentinfo
+order by sbirth;
+
+SELECT * from studentinfo
+order by sage desc;
+
+
+SELECT * from studentinfo
+order by sage desc
+LIMIT 2;
+
+SELECT * from studentinfo
+order by sage desc;
+SELECT * from studentinfo
+order by sage desc
+LIMIT 2,2;
+
+
+select count(*) from studentinfo;
+
+select count(sno) from studentinfo;
+
+select count(1) from studentinfo;
+
+SELECT count(*) 总数,max(sage) 最大年龄,min(sage) 最小年龄,avg(sage) 平均年龄,
+sum(sage) 年龄和
+ from studentinfo;
+
+
+
+SELECT sgender,count(*) from studentinfo
+GROUP BY sgender ;
+SELECT sclass 班级,count(*) 人数,max(sage) as 最大年龄 from studentinfo
+GROUP BY sclass;
+
+
+select sclass,avg(sage) from studentinfo
+GROUP BY sclass
+HAVING avg(sage) >=19

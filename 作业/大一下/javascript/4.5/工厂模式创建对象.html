@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		function createObj(name,age){
+			var person=new Object();
+			person.name=name;
+			person.age=age;
+			person.sayHi=function(){
+				console.log("你好，我叫"+this.name+"今年"+this.age);
+			}
+			return person;
+		}
+		var zs=createObj("吴泽",18);
+		zs.sayHi();
+		</script>
+	</body>
+</html>

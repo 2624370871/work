@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <style>
+        .fade-enter-active,.fade-leave-active{
+transition: opacity .5s ease;
+        }
+        .fade-enter,.fade-leave-to{
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <a href="#" @click="compontentName='e1' ">登录</a>
+        <a href="#" @click="compontentName='e2' ">注册</a>
+        <transition name="fade" mode="in-out">
+        <component :is="compontentName"></component>
+        </transition>
+     </div>
+    <template id="e1">
+        <div>
+            登陆组件
+        </div>
+    </template>
+    <template id="e2">
+        <div>
+          注册组件  
+        </div>
+    </template>
+    <script>
+        Vue.component('e1',{
+            template:"#e1"
+        }),
+        Vue.component('e2',{
+            template:"#e2"
+        })
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                compontentName:''
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//字面量
+			var obj={};//空对象，跟new Object();一样
+			// 添加属性
+			obj.name="小明";
+			obj.age=18;
+			// 添加方法
+			obj.sayHi=function(){
+				console.log("我是"+this.name);
+			}
+			// 调用
+			obj.sayHi();
+			// 写法二：字面量定义属性
+			var obj2={
+				name:"小黄",
+				age:10,
+				sayHi:function(){
+					console.log("我是"+this.name);
+				},
+				play:function(){
+					console.log("上号");
+				}
+			};
+			obj2.sayHi();
+			obj2.name="小白";
+			obj2.sayHi();
+			// 一般一次性数据用这种方式创建，简洁快速
+			
+			// 对象的使用
+			// 点语法，要用什么点就完了 对象.名字=值   对象.名字=函数
+			
+			// 访问属性的另一种写法：参考数组
+			console.log(obj.name);
+			console.log(obj["name"]);
+			obj.sayHi();//对象中确实有这个属性，用这两种方法均可
+			obj["sayHi"]();
+			// 对象中没有这个属性，而是用变量名访问，就只能用这个方法，点方法就点不出来了
+			
+			// 对象的遍历for...in...
+			// key是一个变量，存放该对象的所有属性的名字
+			for(var key in obj){
+				console.log(key);
+				console.log(obj[key]);
+				// console.log(obj.k);不能用这种写法。实际上obj中是没有key这个属性的
+			}
+		</script>
+	</body>
+</html>

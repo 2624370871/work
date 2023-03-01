@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <style>
+        /* 准备进入和已经离开的状态 */
+        .head-enter,.head-leave-to{
+            opacity: 0;
+        }
+        /* 已经进入和准备离开时的状态 */
+        .head-enter-to,.head-leave{
+            opacity: 1;
+        }
+        /* 进入的过程和离开的过程，以及转变的过程 */
+        .head-enter-active,.head-leave-active{
+            transition:opacity 2s;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="show=!show">切换</button>
+      <div>
+        <!-- 1.transition包裹需要过渡的元素 -->
+        <transition name="head">
+          <!-- show为真 图像渲染，否则图像删除 -->
+          <img v-if="show" src="./img/img.jpg" alt="" srcset="" />
+        </transition>
+      </div>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          show: true, //图像初始显示
+        },
+      });
+    </script>
+  </body>
+</html>

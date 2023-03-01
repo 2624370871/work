@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <style>
+      table {
+        width: 100%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <table>
+        <tr>
+          <th>排名</th>
+          <th>电影名</th>
+          <th>票房</th>
+        </tr>
+        <tr v-for="(exam,index) in sorenum">
+          <td>{{index+1}}</td>
+          <td>{{exam.name}}</td>
+          <td>{{exam.boxoffice}}</td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          movie: [
+            { name: "西虹市首富", boxoffice: 25.3 },
+            { name: "毒液", boxoffice: 18.2 },
+            { name: "我不是药神", boxoffice: 19.7 },
+            { name: "红海行动", boxoffice: 20.1 },
+            { name: "侏罗纪世界", boxoffice: 18.6 },
+            { name: "复仇者联盟", boxoffice: 22.5 },
+            { name: "头号玩家", boxoffice: 17.5 },
+            { name: "唐人街探案", boxoffice: 31.0 },
+          ],
+        },
+        computed:{
+       sorenum(){
+         return sortByKey(this.movie,"boxoffice");
+       }
+      }
+      });
+      function sortByKey(array,key){
+        return array.sort(function (a, b) {
+        var x = a[key];
+        var y = b[key];
+        return ((x<y)?-1:((x>y)?1:0));
+      });
+      }
+    </script>
+  </body>
+</html>

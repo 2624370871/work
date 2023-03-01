@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="点击" />
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			document.getElementById("btn").onclick=function(){
+//				1.创建ajax对象
+				var myajax=new XMLHttpRequest();
+//				2.发送请求
+				myajax.open('GET',"demo.txt",true);
+				myajax.send(null);
+//				3.服务器相应
+myajax.onreadystatechange=function(){
+	if(myajax.readyState=4){
+		if(myajax.status==200){
+//			alert("ok");
+//			alert(myajax.responseText);
+			document.getElementById("box").innerHTML=myajax.responseText
+		}else{
+			alert("nook"+"\n"+myajax.status+"\n"+myajax.statusText);
+		}
+	}
+}
+			}
+		</script>
+	</body>
+</html>

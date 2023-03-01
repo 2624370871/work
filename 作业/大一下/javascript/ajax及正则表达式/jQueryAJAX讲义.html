@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>jQueryAJAX</title>
+	<style type="text/css">
+		body{background:#f8f8f8;font-size: 28px;}
+		h1{text-shadow: #A9A9A9 5px 5px 3px;font-family: cszt}
+		header{background: #f5f5f5}
+		table{font-size: 22px;}
+		tr{background: #BC8F8F;}
+		p{color: blue; font-size: 18px;text-indent: 2em}
+		li{
+			margin-left: 2em;
+			line-height: 2em;
+		}
+		details{
+			margin-top: 2em
+		}
+		details>details,h5{
+			text-indent: 2em;
+			line-height: 2em;
+		}
+		b{
+			color: red
+		}
+	</style>
+</head>
+<body>
+<header>
+	<h1>jQuery Ajax</h1>
+	<h1 align="center" style="font-size:1.5em;">&nbsp;</h1>
+	<h3>学习任务</h3> 
+     <p>AJAX是与服务器交换数据的艺术，它在不重载全部页面的情况下，实现了对部分网页的更新。如果没有jQuery,AJAX编程还是有些难度的。<br>
+     通过jQuery AJAX方法，能够使用HTTP Get和HTTP Post 从远程服务器上请求文本、HTML、XML或JSON-同时能够把这些外部数据直接载入网页的被选元素中。</p>
+<hr>
+</header>
+<details>
+<summary>load()方法</summary>
+<p>jQuery load()方法作用是从服务器加载数据，是一个简单但强大的AJAX方法。</p>
+<ul>
+	  <li>.load()从服务器加载数据，然后把返回到HTML放入匹配元素。
+	    <p>语法：load(url,data,function(response,status,xhr))</p>
+	    <p>1.必需的URL参数规定您希望加载的URL。</p>
+    <p>2.可选的data参数规定与请求一同发送的查询字符串键/值对集合。</p>
+    
+	  
+	    <p> 3.可选的callback参数是load()方法完成后所执行的函数名称</p>
+    </li>
+	  <li>回调函数参数含义
+	    <p>1.	responseTxt-包含调用成功时的结果内容
+          </p>
+          <p>2.	statusTXT-包含调用的状态：可能是"success"、"notmodifide"、"error"、'timeout"、"abort"或"parsererror"中的一个，最长见的是：succes成功;error错误
+          </p>
+        <p>3.	Xhr-经过jQuery封装的XMLHttpRequest对象（保留其本身的所有属性和方法） </p>
+      </li>
+  </ul>
+</details>
+<details>
+<summary>get()和post()方法</summary>
+<p>两种在客户端和服务器端进行请求-响应的常用方法是：GET和POST.<br>
+  GET基本上用于从服务器获得（取回）数据。注释：GET方法可能返回缓存数据。<br>
+  POST也可用于从服务器获取数据。不过，POST方法不会缓存数据，并且常用于连同请求一起发送数据。</p>
+<ul>
+	  <li>
+	   $.get（URL,callback);
+<p>参数</p>
+<ol>
+  <li>第一个参数是我们希望请求的URL;</li>
+  <li>第二个参数是回调函数。第一个回调参数存有被请求页面的内容，第二个回调参数存有请求的状态。</li>
+</ol>
+    </li>
+	  <li>
+	   $.post(URL,data,callback);
+<p>参数 </p>
+<ol>
+  <li>必需的URL参数规定您希望请求的URL。 </li>
+  <li>可选的data参数规定连同请求发送的数据 </li>
+  <li>可选的callback参数是请求成功后所执行的函数名。第一个回调参数存有被请求页面的内容，而第二个参数存有请求的状态 </li>
+  <li>type：返回内容格式,xml,html,script,json,text,_default。 </li>
+</ol>
+      </li>
+	</ul>
+</details>
+
+<details>
+<summary>$.getScript()和$.getJSON()方法</summary>
+<p>$.getScript()和$.getJSON()方法专门用来加载JS/JSON文件 </p>
+<ul>
+	  <li>
+	   getScript()通过HTTP GET请求载入并执行javaScript文件。
+
+<ol>
+  <li>语法：$.getScript(url,function(response,status))</li>
+  <li>response-包含来自请求的结果数据 </li>
+  <li>3.Status-包含请求的状态（&ldquo;success&rdquo;,&rdquo;error&rdquo;,&rdquo;notmodified&rdquo;,&rdquo;timeout&rdquo;或&ldquo;parsererror&rdquo;)</li>
+</ol>
+    </li>
+	  <li>
+	   .getJSON(url,data,success(data,status,xhr))
+<ol>
+  <li>ur必需。规定将请求发送的哪个URL.</li>
+  <li>data可选。规定连同请求发送到服务器的数据。</li>
+  <li>function(response,status,xhr)可选。规定当请求成功时运行的函数。</li>
+</ol>
+         <br>
+    </li>
+  </ul>
+</details>
+
+
+<details>
+<summary>$.ajax()</summary>
+<p>$.ajax()方法是jQuery底层AJAX实现。之前讲的简单易用的$.get,$.post 等为高层实现见。$.ajax()返回其创建的XMLHttpRequest 对象。大多数情况下我们无需直接操作该函数。除非你需要操作不常用的选项，以获得更多的灵活性。 </p>
+<ul>
+	  <li>
+	  语法：$.ajax([settings])settings可选。用于配置Ajax请求的键值对集合。
+<p>参数</p>
+<ol>
+  <li>第一个参数是我们希望请求的URL;</li>
+  <li>第二个参数是回调函数。第一个回调参数存有被请求页面的内容，第二个回调参数存有请求的状态。</li>
+</ol>
+    </li>
+	  <li>
+	  常用参数：
+<ol>
+  <li>url默认值：当前页地址。发送请求的地址。</li>
+  <li>type请求方式(&ldquo;POST&rdquo;或&rdquo;GET&rdquo;),默认为&rdquo;GET&rdquo;。</li>
+  <li>Success类型：Function请求成功后的回调函数。</li>
+  <li>error请求失败时调用此函数。</li>
+  <li>.........</li>
+</ol>
+      </li>
+  </ul>
+</details>
+
+<details>
+<summary>表单序列化</summary>
+<ul>
+	  <li>
+	  语法：$（selector).serialize()
+<p>jQuery的serialize()方法通过序列化表单值，创建URL编码文本字符串，这样，我们就可以把序列化的值传给ajax()作为url的参数，轻松使用ajax()提交form表单了，而不需要一个一个获取表单中的值然后传给ajax()</p>
+    </li>
+	  <li>
+	serializeArray()序列化表格元素（类似'.serialize()'方法返回JSON数据结构数据。
+	  <p>’’’注意’’’此方法返回的是JSON对象而非JSON字符串。 </p>
+      </li>
+  </ul>
+</details>
+
+<details>
+<summary>ajax事件</summary>
+<p>$.ajax()方法是jQuery底层AJAX实现。之前讲的简单易用的$.get,$.post 等为高层实现见。$.ajax()返回其创建的XMLHttpRequest 对象。大多数情况下我们无需直接操作该函数。除非你需要操作不常用的选项，以获得更多的灵活性。 </p>
+<ul>
+	  <li>ajaxStart()AJAX请求开始时执行函数。<br>
+    </li>
+	  <li>ajaxStop()AJAX请求结束时执行函数。<br>
+      </li>
+	  <li>ajaxComplete()AJAX请求完成时执行函数。<br>
+      </li>
+	  <li>ajaxError()AJAX请求发生错误时执行函数。<br>
+      </li>
+	  <li>ajaxSuccess()AJAX请求成功时执行函数。<br>
+      </li>
+	  <li>ajaxSend()AJAX请求发送前执行函数。Ajax事件。
+	 
+	  </li>
+	 
+  </ul>
+</details>
+
+</details>
+
+</details>
+	<details>
+	  <summary style="color: orange">温馨提示</summary>
+			<p>关于JS进阶课程就告一段落，希望经过这个课程的学习，js编写应用能有所提高，所谓学无止境，希望同学们平时多练习，学会查阅资料，学会自学的能力，举一反三。后继网站还有其他web开发的课程，大家可以继续学习。最后祝大家学业有成。</p>
+</details>
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

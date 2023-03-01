@@ -1,0 +1,123 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    
+    .wrap {
+      width: 300px;
+      margin: 100px auto 0;
+    }
+    
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: 1px solid #c0c0c0;
+      width: 300px;
+    }
+    
+    th,
+    td {
+      border: 1px solid #d0d0d0;
+      color: #404060;
+      padding: 10px;
+    }
+    
+    th {
+      background-color: #09c;
+      font: bold 16px "微软雅黑";
+      color: #fff;
+    }
+    
+    td {
+      font: 14px "微软雅黑";
+    }
+    
+    tbody tr {
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+    
+    tbody tr:hover {
+      cursor: pointer;
+      background-color: #fafafa;
+    }
+  </style>
+  <script src="js/jquery-3.6.0.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+  	$(function(){
+		$("#j_cbAll").click(function(){
+			$("#j_tb input").prop("checked",$(this).prop("checked"));
+			
+		});
+		$("#j_tb input").click(function(){
+			// 先拿到下面4个input中被选中的个数
+			// 如果这个个数==4，则上面那个input要被选中，否则上面那个不选
+			if($("#j_tb input:checked").length==$("#jb_tb input").length){
+				$("#j_cbAll").prop("checked",true)
+			}else{
+				$("#j_cbAll").prop("checked",false)
+			}
+		})
+	})
+  </script>
+</head>
+<body>
+<div class="wrap">
+  <table>
+    <thead>
+    <tr>
+      <th>
+        <input type="checkbox" id="j_cbAll"/>
+      </th>
+      <th>课程</th>
+      <th>教师</th>
+    </tr>
+    </thead>
+    <tbody id="j_tb">
+    <tr>
+      <td>
+        <input type="checkbox"/>
+      </td>
+      <td>JavaScript</td>
+      <td>董老师</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox"/>
+      </td>
+      <td>MySQL数据库</td>
+      <td>汪老师老师</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox"/>
+      </td>
+      <td>HTML5</td>
+      <td>许老师</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox"/>
+      </td>
+      <td>java编程基础</td>
+      <td>刘老师</td>
+    </tr>
+    
+    </tbody>
+  </table>
+</div>
+
+
+
+</body>
+</html>

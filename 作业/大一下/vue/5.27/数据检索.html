@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/5.27/js/vue.js"></script>
+    <script src="/5.27/js/vuex.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>列表查询</h2>
+        <input type="text" v-model="searchName">
+        <button @click="search">搜索</button>
+        <p>搜索结果:{{this.$store.getters.search}}</p>
+        <ul>
+            <li v-for="item in this.$store.state.heros">{{item}}</li>
+        </ul>
+    </div>
+    <script>
+        const store=new Vuex.Store({
+            state:{
+                heros:[
+                    {name:1,text:'列表1'},
+                    {name:2,text:'列表2'}
+                ],
+                name:0
+            },
+            mutations:{
+                search(state,searchName){
+                    state.name=searchName
+                }
+            },
+            getters:{
+                search(state){
+                    return state.heros.filter(heros=>heros.name==state.name)
+                }
+            },
+        })
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                searchName:""
+            } ,
+            store,
+                methods:{
+                search(){
+                    this.$store.commit('search',this.searchName)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

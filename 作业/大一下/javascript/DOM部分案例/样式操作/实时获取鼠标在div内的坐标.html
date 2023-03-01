@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	    <div id="div3">3
+	       <p id="p"></p>
+	    </div>
+	
+	</body>
+	<script>
+	    var p = document.getElementById('p');
+	    document.getElementById('div3').onmousemove = function(e){
+			//在div3的区域内移动鼠标会获取坐标值
+	        p.innerHTML = e.clientX+','+e.clientY;
+	        p.style.top = e.clientY+"px";
+	        p.style.left = e.clientX+"px";
+	    }
+	</script>
+</html>

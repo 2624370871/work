@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		
+		//删除0元素
+			var arr=[3,5,0,345,0,23,0,0,46,8];
+			var arr1=[];
+			for(i=0;i<=arr.length;i++){
+				if(arr[i]!=0){
+					arr1.push(arr[i]);
+				}
+			}
+			console.log(arr1)
+			
+			//翻转数组
+			var arr2=["a", "b", "c", "d"]
+			arr2.reverse();
+			console.log(arr2);
+			//二次翻转
+			function myReverse(arr2){
+				return arr2.reverse();
+			}
+			console.log(myReverse(arr2));
+			
+			// 数组检索
+			var arr3=["c", "a", "z", "a", "x", "a"]
+			for(i=0;i<=arr3.length;i++){
+				if(arr3.indexOf("a",i)>=0){
+					console.log(arr3.indexOf("a",i)+1);
+				}
+			}
+			
+			
+			// 移除添加数组
+			var arr4=[3,5,0,345,0,23,0,0,46,8];
+			console.log(arr4.splice(3,2,100));
+			console.log(arr4);
+			
+			
+		</script>
+		
+	</body>
+</html>

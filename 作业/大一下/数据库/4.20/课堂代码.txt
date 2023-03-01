@@ -1,0 +1,71 @@
+create table studentInfo
+(
+	sno char(8) PRIMARY key not null,
+sname VARCHAR(10) not null,
+sgender char(2),
+sbirth date,
+sclass VARCHAR(20)
+);
+
+
+insert into studentinfo values('20','张三','男','2003-06-25','移动应用开发');
+
+INSERT into studentinfo(sno,sname,sgender) values('12','李四','女');
+
+INSERT into studentinfo(sgender,sno,sname) values('女','13','王五');
+INSERT into studentinfo (sgender,sno,sname,sbirth,sclass) values('男','14','赵六','2002-1-1','计算机技术');
+
+INSERT into studentinfo values
+('15','孙七','女','2001-10-25','物联网'),
+('16','张三','男','2000-01-10','计算机');
+
+UPDATE studentinfo set sclass = '移动' WHERE sname='何大丽'
+
+UPDATE studentinfo set sclass = '移动' WHERE year(sbirth) = 2010
+
+UPDATE studentinfo set sclass = '移动' WHERE year(sbirth) < 1994 and year(sbirth) > 1992
+
+update studentinfo set sbirth = '2010-1-2' ,sname = '张三' where sno= '20101005'
+
+delete from studentinfo
+
+delete from studentinfo where sname = '张三'
+
+delete from studentinfo
+
+truncate TABLE studentinfo
+
+
+create table dept
+(
+	id int primary key,
+	name varchar(22),
+	location varchar(50),
+	description varchar(200)
+);
+
+create table emp
+(
+	id int(11) PRIMARY key,
+	name varchar(25),
+	dept_id int(11),
+	salary float,
+	CONSTRAINT fk_emp_dept FOREIGN key(dept_id) REFERENCES dept(id)
+);
+
+insert into emp(id,name) values(1,'张三')
+
+
+insert into dept values(1,'11','111','1111');
+insert into dept values(2,'22','222','2222');
+insert into dept values(3,'33','333','3333');
+insert into dept values(4,'44','444','4444');
+
+
+update emp set  dept_id=1 WHERE id =1;
+
+DELETE from dept where id =2;
+
+DELETE from dept where id =1;
+
+DELETE from dept;

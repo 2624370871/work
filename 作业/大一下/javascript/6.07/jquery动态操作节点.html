@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 300px;
+				height: 300px;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="js/jquery-3.6.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				// 清空元素里面的内容可以用html()(不推荐)和empty()(推荐)
+				// $("#box").html("");//清空内容，不清除事件，占内存
+				// $("#box").empty("");//清空内容和事件
+				// remove()移除自己
+				// $("#box").remove();
+				// 复制，用clone()，和前面的移动元素函数一起使用
+				// 可以有参数，false(默认值,浅拷贝,不带事件)，true（深拷贝，带事件）
+				// $("#hou").clone.appendTo("#box");
+				$("#hou").clone(true).appendTo("#box");
+				
+				//创建jquery对象
+				// var $p=$("<p>我是一个段落</p>");
+				// console.log($p);
+				// var $a=$("<a href='http://628mc.xyz'>百度一下</a>")
+				// 把元素放到另一个元素的方法有几个，注意区别append
+				// $("#box").append($a);
+				// append()添加到子元素的后面，追加，用父亲调用，用孩子做参数
+				// appendTo()添加到子元素的后面，追加，用孩子调用，父亲做参数
+				// prepend()添加到子元素的前面，追加，用父亲调用，孩子做参数
+				// prependTo()添加到子元素的前面，追加，用孩子调用，父亲做参数
+				// after()添加到自己的后面，作为兄弟
+				// before()添加到自己的前面，作为兄弟
+				// $("#box").append($("p"));
+				// $("p").appendTo($("#box"));
+				// $("#box").prepend($("p"));
+				// $("p").prependTo($("#box"));
+				// $("#box").after($("p"));
+				// $("#box").before($("p"));
+			})
+		</script>
+		<div id="box">
+			我是盒子
+			<p>呵呵呵</p>
+			<p>哈哈哈</p>
+		</div>
+		<p id="hou">我是段落</p>
+		<span >
+			我是span
+		</span>
+	</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <script src="/js/jquery.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<style>
+.fade-enter,.fade-leave-to{
+    opacity: 0;
+}
+.fade-enter-to,.fade-leave{
+    opacity: 1;
+}
+.fade-enter-active,.fade-leave-active{
+    transition: opacity .5s ease;
+}
+.col-sm-10{
+  width: 300px;
+}
+</style>
+</head>
+<body>
+    <div id="app">
+        <a href="#" @click="showComponent='Login' ">登录</a>
+        <a href="#" @click="showComponent='Register' ">注册</a>
+           <!-- 动态组件 -->
+           <transition name="fade" mode="out-in">
+           <component v-bind:is="showComponent"></component>
+           </transition>
+    </div> 
+          <!-- 1、定义登录组件的模板 -->
+        <template id="Login">
+          <div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入您的邮箱">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="请输入您的密码">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> 记住我
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">登录</button>
+                  </div>
+                </div>
+              </form>
+          </div>
+        </template>
+        <!--1、 定义注册组件的模板 -->
+        <template id="Register">
+            <div>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+                      <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="请输入您的邮箱">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                      <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="请输入您的密码">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">再次输入</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="inputPassword3" placeholder="请确认您的密码">
+                        </div>
+                      </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">注册</button>
+                      </div>
+                    </div>
+                  </form>
+            </div>
+        </template>
+    <script>
+        // 2、注册登录组件 组件的名字 组件的配置信息
+        Vue.component('Login',{
+            // 使用模板
+            template:'#Login'
+        }),
+        Vue.component('Register',{
+            // 使用模板
+            template:'#Register'
+        })
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                showComponent:'Login',
+            }
+        })
+    </script>
+</body>
+</html>

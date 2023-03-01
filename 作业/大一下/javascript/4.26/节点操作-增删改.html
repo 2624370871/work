@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="d">
+			<span>11</span>
+		</div>
+		<ul>
+			<li id="m">移动应用</li>
+			<li>软件技术</li>
+			<li>物联网</li>
+			<li>区块链</li>
+		</ul>
+		<script type="text/javascript">
+			// // 创建元素节点
+			// var p=document.createElement("p");
+			// // console.log(div)
+			// // 创建文本节点
+			// var t=document.createTextNode("哈哈哈");
+			// // 创建文本节点
+			// p.appendChild(t);
+			// // 尾部添加子节点
+			// p.appendChild(t);
+			// // 获取页面中的div
+			// var d=document.querySelector("#d");
+			// // 将p放到div末尾处，添加子元素
+			// d.appendChild(p);
+			
+			var ul=document.querySelector("ul");
+			console.log(ul.hasChildNodes("li"));
+			var li1=document.getElementById("m");
+			console.log(li1.hasChildNodes());
+			
+			ul.removeChild(li1)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        div{
+            float: left;
+            margin-left: 50px
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <my-hero v-for="i in 6"></my-hero>
+    </div>
+    <template id="hero">
+        <div>
+            <img src="img/2.png" alt="" srcset="">
+            <p>姓名:{{name}}</p>
+            <p>昵称：{{n}}</p>
+        </div>
+    </template>
+    <script>
+        var com1={
+            template:"#hero",
+            data(){
+                return{
+                    name:"赵云",
+                    n:"战士"
+                }
+            }
+        }
+        var vm=new Vue({
+            el:"#app",
+            data:{
+            },
+            components:{
+                myHero:com1
+            }
+        })
+    </script>
+</body>
+</html>

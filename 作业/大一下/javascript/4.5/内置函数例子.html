@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" >
+			
+		</div>
+		<button type="button" onclick="test() " >点一下</button>
+		<script type="text/javascript">
+			// 随机生成颜色函数
+			function randomColor(){
+				var r=Math.floor(Math.random()*256);
+				var g=Math.floor(Math.random()*256);
+				var b=Math.floor(Math.random()*256);
+				return "rgb("+r+","+g+","+b+")";
+			}
+			console.log(randomColor());
+			function test(){
+			 var obj=document.getElementById("box");
+			 obj.style.cssText="background-color:"+randomColor()+";";
+			 obj.innerHTML=formatDate(new Date())+"<br>"+new Date();
+			 }
+			 
+			 function formatDate(d){
+				 if(!d instanceof Date){
+					 return ;
+				 }
+				 var year=d.getFullYear();
+				 var month=d.getMonth()+1;
+				 var date=d.getDate();
+				 var hour=d.getHours();
+				 var minute=d.getMinutes();
+				 var second=d.getSeconds();
+				 month=month<10?'0'+month:month;
+				  date=date<10?'0'+date:date;
+				   hour=hour<10?'0'+hour:hour;
+				    minute=minute<10?'0'+minute:minute;
+					 second=second<10?'0'+second:second;
+					 return year+"-"+month+"-"+date+" "+hour+":"+minute+":"+second;
+			 }
+		</script>
+	</body>
+</html>

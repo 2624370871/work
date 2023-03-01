@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="js/jquery-3.6.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				// 1.获取这个文本框的初始值
+				// console.log($("#text").val());
+				
+				// 2.文本框获得焦点，如果是默认值则清空“默认值”，让用户输入
+				$("#text").focus(function(){
+					if($("#text").val()=="默认值"){
+						$(this).val("")
+					}
+				})
+				// 3.文本框失去焦点，如果为空则填充“默认值”
+				$("#text").blur(function(){
+					if($(this).val()==""){
+						$(this).val("默认值")
+					}
+				})
+			})
+		</script>
+		<input type="text" name="" id="text" value="默认值" />
+		<!-- <button type="button" id="btn">点我</button> -->
+	</body>
+</html>

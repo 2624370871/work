@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				widows: 400px;
+				height: 400px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="js/jquery-3.6.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+//					$("#box").load("text.html")//仅url参数
+//					注意这里的url可以带选择器
+//					$("#box").load("text.html .p1")
+
+					$("#box").load("test.php");
+				})
+			})
+		</script>
+		<input type="button" name="btn" id="btn" value="value" />
+		<div id="box">
+		</div>
+	</body>
+</html>

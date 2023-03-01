@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			div {
+				height: 100px;
+				background-color: pink;
+				margin-bottom: 30px;
+				display: none;
+			}
+		</style>
+		<!-- <script type="text/javascript">
+		window.onload=function(){
+						//1.点击显示按钮，将3个div显示出来
+						var btn1=document.getElementById("btn1");
+						btn1.onclick=function(){
+							var div=document.querySelectorAll('div');
+							for (var i=0;i<div.length;i++) {
+								div[i].style.display='block';
+							}
+						}
+						//2.点击设置文字按扭，将3个div中设置内容
+						var btn2=document.getElementById("btn2");
+						btn2.onclick=function(){
+							var div=document.querySelectorAll("div");
+							for (i=0;i<div.length;i++) {
+								div[i].innerText="今天星期二，天气不错！"
+							}
+						}
+					}
+		</script> -->
+		
+		<!-- 引入jquery文件 -->
+		<script src="js/jquery-3.6.0.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 写jquery入口函数 -->
+		<script type="text/javascript">
+		// js入口函数
+		window.onload=function(){
+			console.log("我是js入口函数");
+		}
+		
+		// 第一种jq入口函数的写法
+			$(document).ready(function(){
+				// // 获取按钮，绑定事件
+				// $("#btn1").click(function(){
+				// 	// $("div").show(1000);//左上角显示
+				// 	$("div").slideDown(1000);//从上到下显示,隐式迭代，悄悄的循环
+				// });
+				// $("#btn1").click(function(){
+				// 	alert("haha");
+				// });
+				// $("#btn2").click(function(){
+				// 	$("div").text("今天星期二");//浏览器兼容性好
+				// })
+				console.log("第一种写法");
+			});
+			// 第二种jq入口函数的写法
+			$(function(){
+			console.log("第二种写法");	
+			});
+			
+			// jq入口函数会等待页面加载完成后再执行，但不会等图片的加载
+			// js的入口函数，会等待图片加载完成才执行，会相对慢一些
+		</script>
+	</head>
+	<body>
+		<input type="button" name="" id="btn1" value="显示" />
+		<input type="button" name="" id="btn2" value="设置文字" />
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

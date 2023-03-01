@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">软件工程学院1
+		<p>哈哈哈</p></div>
+		<div id="div2">软件工程学院2</div>
+		<div id="div3">软件工程学院3</div>
+		<div id="div4">软件工程学院4</div>
+		<input type="button" name="" id="btn" value="点我" />
+		<p class="haha">段落</p>
+		<p class="haha">段落</p>
+		<p class="haha">段落</p>
+		性别：
+		男<input type="radio" name="sex" id="" value="" />
+		女<input type="radio" name="sex" id="" value="" />
+		<script type="text/javascript">
+			// 1、通过id属性查找元素
+			// 因为ID要求是不重复的，所以这个函数获取到的是一个标签（dom对象）
+			// 如果页面id重复了，他获取到的是这个id的标签
+			// var div1=document.getElementById("div1");
+			// var btn=document.getElementById("btn");
+			// console.log(div1);
+			// console.log(btn);
+			// console.log(typeof btn);
+			
+			// // 2、通过标签名称获取元素getElementsByTagName
+			// // 返回的是htmlCollection集合，他是一个类数组的特殊对象，可以直接当数组用
+			// // 里面的每一个对象，是一个具体的标签
+			// var divs=document.getElementsByTagName("div");
+			// console.log(divs);
+			// console.log(divs[1]);
+			// var input=document.getElementsByTagName("input");
+			// console.log(input);
+			
+			// // 3、通过类名获取class
+			// // 返回的是htmlCollection集合，他是一个类数组的特殊对象，可以直接当数组用
+			// // 里面的每一个元素，是一个具体的标签
+			// var ha=document.getElementsByClassName("haha");
+			// console.log(ha);
+			
+			// 4、通过name属性获取对象
+			// 返回的是Nodelist节点列表，他是一个类数组的特殊对象，可以直接当数组用
+			// 里面的每一个元素，是一个具体的标签
+			var xb=document.getElementsByName("sex");
+			console.log(xb);
+			
+			//5、H5新增的document.querySelector()
+			// 查询选择器，他们的参数为css选择器，可以简单，也可以复杂
+			// 参数 #div1   .haha   div   p,div   div p   div>p
+			// input[name=sex]
+			// querySelector返回一个具体的标签，如果选择器的标签有多个，只返回第一个
+			var div=document.querySelector("div");
+			console.log(div);
+			// querySelectorAll 返回一个nodelist节点列表，是一个类数组对象
+			// 如果只有一个标签满足，也是一组，当成数组用即可
+			var divs=document.querySelectorAll("div");
+			console.log(divs);
+			
+			var p=document.querySelector("div>p");
+			console.log(p);
+		</script>
+	</body>
+</html>

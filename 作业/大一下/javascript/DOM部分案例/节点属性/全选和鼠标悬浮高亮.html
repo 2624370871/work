@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>	
+	<style>
+	    table {
+	        border-collapse: collapse;
+	        border-spacing: 0;
+	        border: 1px solid #c0c0c0;
+	        width: 500px;
+	    }
+	
+	    th,
+	    td {
+	        border: 1px solid #d0d0d0;
+	        color: #404060;
+	        padding: 10px;
+	    }
+	</style>
+	</head>
+	<body>
+	    <table>
+	        <thead>
+	            <tr>
+	                <th>
+	                    <input type="checkbox" id="th" />
+	                </th>
+	                <th>课程名</th>
+	                <th>教师</th>
+	            </tr>
+	        </thead>
+	        <tbody id="tb">
+	            <tr>
+	                <td>
+	                    <input type="checkbox" />
+	                </td>
+	                <td>JavaScript程序设计</td>
+	                <td>董老师</td>
+	            </tr>
+	            <tr>
+	                <td>
+	                    <input type="checkbox" />
+	                </td>
+	                <td>Mysql数据库开发</td>
+	                <td>董老师</td>
+	            </tr>
+	            <tr>
+	                <td>
+	                    <input type="checkbox" />
+	                </td>
+	                <td>javaweb应用开发</td>
+	                <td>刘老师</td>
+	            </tr>
+	            <tr>
+	                <td>
+	                    <input type="checkbox" />
+	                </td>
+	                <td>Linux系统操作</td>
+	                <td>刘老师</td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</body>
+	<script>
+	    document.getElementById('th').onclick = function () {
+	        var tb = document.getElementsByTagName('input');
+	        if (this.checked == true) {
+	            // console.log(tb);
+	            for (var i = 0; i < tb.length; i++) {
+	                tb[i].checked = true;
+	            }
+	        } else {
+	            for (var i = 0; i < tb.length; i++) {
+	                tb[i].checked = false;
+	            }
+	        }
+	    }
+		//表格鼠标悬浮高亮
+		var t = document.getElementsByTagName('tbody')[0];
+		t.onmouseover = function(e){
+		    e.target.parentElement.style.background = '#F5F5F5';
+		}
+		t.onmouseout = function(e){
+		    e.target.parentElement.style.background = '#fff';
+		}
+	</script>
+</html>

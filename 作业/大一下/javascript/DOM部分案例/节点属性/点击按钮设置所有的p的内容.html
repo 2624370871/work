@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<input type="button" value="改变内容" id="btn"/>
+	<p>青椒肉丝</p>
+	<p>宫保鸡丁</p>
+	<p>飘香水煮鱼</p>
+	<p>鱼香肉丝</p>
+	<p>凉拌海带丝</p>
+	<script>	
+	  //document.getElementsByTagName("标签的名字");	
+	  //点击按钮,修改所有的p的内容
+	  //根据id获取按钮,注册点击事件,添加事件处理函数
+	  document.getElementById("btn").onclick = function () {
+	    //获取所有的p标签---根据标签名字来获取---伪数组
+	    var pObjs = document.getElementsByTagName("p");
+	    //循环遍历这个伪数组
+	    for (var i = 0; i < pObjs.length; i++) {
+	      pObjs[i].innerText = "我们都是p";
+	    }
+	  };	
+	</script>
+	
+	</body>
+</html>

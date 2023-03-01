@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#outer{
+				width: 500px;
+				height: 500px;
+				background-color: pink;
+			}
+			#inner{
+				width: 200px;
+				height: 200px;
+				background-color: lightblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="outer">
+			外面的盒子
+			<div id="inner">
+				里面的盒子
+				<a href="http://628mc.xyz" id="a">走吧。。。。</a>
+			</div>
+			<script type="text/javascript">
+				// document.getElementById("outer").onclick=function(e){
+				// 	console.log(e);
+				// }
+				document.getElementById("outer").onclick=function(){
+					alert("outer");
+				}
+				document.getElementById("inner").onclick=function(){
+					alert("inner");
+				}
+				var a=document.getElementById("a");
+				a.onclick=function(e){
+					// 阻止浏览器事件传播
+					alert("hahaha");
+					//阻止浏览器的默认事件
+					//e.preventDefault();
+				}
+			</script>
+		</div>
+	</body>
+</html>

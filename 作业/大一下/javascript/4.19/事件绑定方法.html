@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<input type="button" name="" id="btn" value="变色"/>
+	<div id="">
+		<p>软件技术</p>
+		<p>物联网技术应用</p>
+		<p id="three" onmouseover="change()"  onmouseout="back()">移动应用开发</p>
+		<p>区块链技术应用</p>
+		</div>	
+		<script type="text/javascript">
+		// 1、行内绑定事件，直接写在事件标签内,s事件类型=“js代码”
+			function change(){
+				document.getElementById("three").style.color="blue"
+			}
+			function back(){
+				document.getElementById("three").style.color="skyblue"
+			}
+			
+			// 2、动态绑定
+			
+			// var btn=document.getElementById("btn");
+			// btn.onclick=function bs(){
+			// 	var p=document.querySelectorAll("p");
+			// 	p[1].style.color="red"
+			// 	for(i=0;i<p.length;i++){
+			// 		p[i].style.backgroundColor="pink";
+			// 		p[i].style.fontSize="30px";
+			// 		p[i].style.fontWeight="bold";
+			// 	}
+			// }
+			
+			// document.getElementById("three").onclick=function f1(){
+			// 	this.innerHTML="1班";
+			// 	this.style.backgroundColor="skyblue"
+			// }
+			
+			// 事件监听addEventLister(不带on事件类型，匿名函数事件处理)
+			var btn=document.getElementById("btn");
+			btn.addEventListener('click',function(){
+				var p=document.querySelectorAll("p");
+					p[1].style.color="red";
+					for(i=0;i<p.length;i++){
+						p[i].style.backgroundColor="pink";
+						p[i].style.fontSize="30px";
+						p[i].style.fontWeight="bold";
+						}
+			})
+			btn.addEventListener('click',function f1(){
+				document.getElementById("btn").value="点我"
+			})
+		</script>
+	</body>
+</html>

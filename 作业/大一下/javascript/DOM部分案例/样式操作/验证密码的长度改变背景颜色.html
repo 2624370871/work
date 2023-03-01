@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" value="" id="txt"/>
+		<script>
+		  //根据id获取文本框---失去焦点的事件
+		  document.getElementById("txt").onblur=function () {
+		    //判断文本框中输入的内容长度是否在6到10个之间,如果是这样的,则背景颜色为绿色
+		    if(this.value.length>=6&&this.value.length<=10){
+		      this.style.backgroundColor="green";
+		    }else{
+		      this.style.backgroundColor="red";
+		    }
+		  };
+		</script>
+	</body>
+</html>

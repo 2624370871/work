@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.6.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			// dom中操作元素样式有两种方法
+			// 1、元素.style.样式=""(行内)
+			// 2、设置class值切换css样式，样式代码写在style中(内部样式)
+			// dom中class操作
+			// 元素.className=""
+			// jquery设置样式
+			// 1、使用css函数设置
+			// 2、使用class操作样式
+			// addClass()    removeClass()     toggleClass()
+			$(function(){
+				$("input").eq(0).click(function(){
+					$("li").addClass("a");
+				})
+				$("input").eq(1).click(function(){
+					$("li").addClass("b");
+				})
+				$("input").eq(2).click(function(){
+					$("li").removeClass("a");
+				})
+				$("input").eq(3).click(function(){
+					$("li").removeClass("b");
+				})
+				
+				//toggle 如果元素本来有这个样式，就移除，否则就添加
+				$("input").eq(4).click(function(){
+					$("li").toggleClass("a");
+				})
+				$("input").eq(5).click(function(){
+					$("li").toggleClass("b");
+				})
+				
+				// 修改单个样式,用css（name样式名，value样式值）
+				// 小提示：jq里面css写法和dom写法都认，推荐dom写法
+				// $("li").css("background-color","pink")
+				// .css("font-size","32px").css("color","skyblue")
+				// .css("margin-bottom","5px");
+				
+				// 获取元素样式
+				//console.log($("li").css("font-size"))
+				// 设置多个样式（传对象），用css（obj）
+				// var obj={
+				// 	name:"张三",
+				// 	age:18,
+				// 	sex:"男"
+				// }
+				// $("li").css({
+				// 	"backgroundColor":"pink",
+				// 	"color":"green",
+				// 	"fontSize":"32px"
+				// })
+				// $("li").eq(0).css("fontSize","15px");
+				// $("li").eq(1).css("fontSize","20px");
+				// $("li").eq(2).css("fontSize","25px");
+				// $("li").eq(3).css("fontSize","30px");
+				// $("li").eq(4).css("fontSize","35px");
+				
+				
+				// console.log($("li").css("fontSize"))
+				// css设置样式时，会给所有的jq内部元素都设置相同的值
+				// 获取时，返回第一个元素对应的样式，因为逻辑上他认为都是一样的，所以返回第一个
+			})
+		</script>
+		<style type="text/css">
+			.a{
+				background-color: pink;
+				font-size: 35px;
+				color: skyblue;
+			}
+			.b{
+				border: 1px solid green;
+				margin-bottom: 5px;
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<input type="button" name="" id="" value="添加a" />
+		<input type="button" name="" id="" value="添加b" />
+		<input type="button" name="" id="" value="移除a" />
+		<input type="button" name="" id="" value="移除b" />
+		<input type="button" name="" id="" value="切换a" />
+		<input type="button" name="" id="" value="切换b" />
+		<ul>
+			<li>哈哈1</li>
+			<li>哈哈2</li>
+			<li>哈哈3</li>
+			<li>哈哈4</li>
+			<li>哈哈5</li>
+		</ul>
+	</body>
+</html>

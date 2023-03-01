@@ -1,0 +1,18 @@
+SELECT books.bname 图书名称,books.price 图书价格,category.cname 图书类别
+FROM books join category on books.cid=category.cid;
+
+
+SELECT unname as 会员昵称,thum 联系电话,ordernum 订购数量 from user a JOIN b_order b ON
+a.uid=b.bid join books c on b.uid=c.bid
+WHERE c.bname="平凡的世界"
+
+SELECT DISTINCT unname as 会员昵称,thum as 联系电话
+from user a join b_order b on a.uid=b.bid join books c on b.uid=c.bid
+
+SELECT bname as 图书名称,price as 价格
+FROM books c join b_order b on c.bid=b.uid
+WHERE not EXISTS(SELECT*FROM);
+
+
+SELECT unname as 会员昵称,thum 联系电话,ordernum 订购数量,bname 图书名称,price 图书价格,discount 折扣价
+from user a join b_order b on a.uid=b.bid JOIN books c on b.uid=c.bid

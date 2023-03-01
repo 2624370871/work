@@ -1,0 +1,148 @@
+一、首先创建项目 导入vuex
+二、在src(源代码)中新建store(仓库)文件夹，在其中新建index.js。
+三、模仿router中的index.js导入Vue和Vuex，在main.js中注册并导入Store
+四、在components中创建英雄检索页面的模板 后缀为.vue
+五、改变路由主页( '/' )指向的模板为英雄检索模板，并导入模板。
+	现在，已经成功在浏览器中显示想要的模板
+六、在模板中编写html代码，store的index.js的Store实例中编写vuex仓库代码，模板中的script里写Vue实例代码。注意：编写规则与静态页面中在Vue实例里全局注册组件一样，所以 data需要加（）里面的数据要带上return{}
+七、最后在模板中编写css代码 让页面更好看
+
+思路及注意事项：
+	列表渲染所有英雄及检索到的英雄
+	用文本框输入的名字 与仓库中存放的英雄数据内的英雄名进行检索
+	1、在state里存放英雄信息， 图片路径一般为 ../../static/01.png'
+	2、state里存放与文本框对应的用于搜索的英雄名
+	3、使用mutations改变state里的英雄名，因为html部分不能直接使用仓库的状态数据，所以需要使用commit来进行传递文本框输入的参数
+	4、Vue实例中创建传递参数的方法。渲染以及改变状态英雄名已经完成，接下来只需要进行检索
+	5、使用getters进行检索，getters类似于计算属性。filter来过滤满足条件的名字并返回数据。注意：计算属性内不能调用自己，目前学到的所有Store参数里除了state都需要向其传参state。
+
+html部分：
+<template>
+    <div id="app">
+        <div class="text">
+            <!-- 搜索英雄的文本框  与Vue实例中data数据里的英雄名字绑定 添加状态变化事件触发时调用search方法 -->
+            请输入英雄名：<input type="text" v-model="heroName" @change="search" id="inputText">
+        </div>
+        <hr>
+        <ul>
+            <!-- 列表渲染Vuex仓库中的计算属性search -->
+            <li v-for="i in $store.getters.search" :key="i.index">
+                <!-- 单向绑定图片地址 -->
+                <img :src="i.url">
+                <p>{{ i.name }}</p>
+            </li>
+        </ul>
+    </div>
+</template>
+
+vuex部分：
+export default new Vuex.Store({
+    state: {
+        // 仓库中所有的英雄信息
+        heros: [
+            { url: '../../static/01.png', name: '暗裔剑魔' },
+            { url: '../../static/02.png', name: '安妮' },
+            { url: '../../static/03.png', name: '格温' },
+            { url: '../../static/04.png', name: '金克斯' },
+            { url: '../../static/05.png', name: '莉莉娅' },
+            { url: '../../static/06.png', name: '厄运小姐' },
+            { url: '../../static/07.png', name: '亚索' },
+            { url: '../../static/07.png', name: '亚索' },
+            { url: '../../static/08.png', name: '永恩' },
+            { url: '../../static/08.png', name: '永恩' },
+            { url: '../../static/08.png', name: '永恩' }
+        ],
+        // 用于检索的英雄名
+        heroName: ''
+    },
+    mutations: {
+        // 需要使用mutations来改变Vuex仓库中的值
+        search: (state, heroName) => {  //第一个参数必须为state
+            // 将仓库里的英雄名，赋值为 Vue实例中传递过来的英雄名，也就是文本框输入的名字
+            state.heroName = heroName
+        }
+    },
+    getters: {  //类似与计算属性
+        search: state => {  //箭头函数，getters同样第一个参数必须为state
+            // 如果Store中的英雄名为空，也就是mutations没有被修改，Vue实例没有向仓库传参(commit没有触发)，文本框没有被修改
+            if (state.heroName == '') {
+                return state.heros  //返回显示所有的英雄
+            } else {
+                // 使用filter过滤器来检索符合条件的英雄
+                let arr = []
+                state.heros.filter(hero => {
+                    if (hero.name.indexOf(state.heroName) != -1) {
+                        arr.push(hero)
+                    }
+                })
+                return arr
+            }
+        }
+    }
+})
+
+Vue实例部分：
+export default {
+    data() {
+        return { heroName: '' }
+    },
+    methods: {
+        // 因为仓库中的数据不能直接进行双向绑定
+        search() {
+            // 所以调用Vuex仓库中的方法commit 来进行数据传递
+            // 第一个参数为Vue实例中调用仓库里的mutations的方法名
+            // 第二个参数为需要进行传递的值
+            this.$store.commit('search', this.heroName)
+        }
+    }
+}
+
+css部分：
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        ul {
+            margin-left: 50px;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        li img {
+            border-radius: 15px 0 15px 0;
+            border: 2px solid skyblue;
+        }
+
+        li p {
+            width: 120px;
+            text-align: center;
+        }
+
+        #app {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .text {
+            width: 40%;
+            display: inline-block;
+            margin-top: 50px 0 20px 0;
+            font-size: 20px;
+        }
+
+        #inputText {
+            width: 300px;
+            height: 30px;
+        }
+
+        #free,
+        #recommend,
+        #all {
+            width: 18px;
+            height: 18px;
+        }

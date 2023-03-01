@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-for</title>
+    <script src="/js/vue.js"></script>
+    <style>
+        tr:nth-child(odd){background:rgb(252, 248, 248);}
+        th,td{width: 230px;height: 40px;text-align: center;}
+        td{font-size: 20px;}
+        tr{border: 1px solid gainsboro;}
+
+    </style>
+
+</head>
+<body>
+    <body>
+        <div id="app">
+            <table style="margin: 0 auto; border-collapse: collapse;">
+                <tr>
+                    <th>排名</th>
+                    <th>电影名称</th>
+                    <th>票房</th>
+                </tr>
+                <tr v-for="item in movie">
+                    <td>{{rank++-1010}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.boxoffice}}亿</td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            var exam=new Vue({
+                el:'#app',
+            data:{
+                movie:[
+                    {name:'浩哥爱情故事',boxoffice:29.9},
+                    {name:'西红柿首富',boxoffice:25.4},
+                    {name:'无限',boxoffice:18.6},
+                    {name:'好想去你的世界爱你',boxoffice:15.9},
+                    {name:'我不是药神',boxoffice:30.9},
+                    {name:'误杀2',boxoffice:28.2},
+                    {name:'长津湖',boxoffice:31.5},
+                    {name:'弱点',boxoffice:29.7},
+                    {name:'七号房的礼物',boxoffice:26.7},
+                    {name:'头文字D',boxoffice:30.3},
+                ],
+                rank:1,
+            },
+            
+            })
+            exam.movie.sort(function compare(a,b){
+                var x=a.boxoffice;
+                var y=b.boxoffice;
+                return  x<y ? 1 : -1;
+            });
+        </script>
+    </body>
+    

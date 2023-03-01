@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="hkz"></div>
+		<script type="text/javascript">
+			var tag=document.createElement("div");
+			console.log(tag,typeof tag,tag.nodeType);
+			//tag.innerText="哈哈哈";
+			
+			
+			tag.innerHTML="<ul><li>移动应用开发</li><li>区块链</li><li>软件技术</li></ul>";
+			console.log(tag);
+			
+			var ul=document.createElement("ul");
+			var div=document.getElementById("hkz");
+			div.appendChild(ul);
+			for(var i=0;i<3;i++){
+				var li=document.createElement("li");
+				li.innerHTML="软件工程学院"+(i+1);
+				ul.appendChild(li);
+			}
+			
+			var li0=document.createElement("li");
+			li0.innerHTML="湖科职";
+			var lis=document.querySelectorAll("li");
+			console.log(lis);
+			ul.insertBefore(li0,lis[1])
+			
+			// 移动和复制标签
+			var li5=li.cloneNode();//无参数，表示仅复制标签，无内部元素
+			var li6=li0.cloneNode(true);//有参数true，表示复制标签和其内容
+			ul.appendChild(li5);
+			ul.appendChild(li6);
+			
+			// 删除标签
+			var lis=document.querySelectorAll("li");
+			ul.removeChild(lis[4]);
+		</script>
+	</body>
+</html>

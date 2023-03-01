@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式案例</title>
+	<style type="text/css">
+		body{background:#f8f8f8;font-size: 28px;}
+		h1{text-shadow: #A9A9A9 5px 5px 3px;font-family: cszt}
+		header{background: #f5f5f5}
+		table{font-size: 22px;}
+		tr{background: #BC8F8F;}
+		p{color: blue; font-size: 18px;text-indent: 2em}
+		li{
+			margin-left: 2em;
+			line-height: 2em;
+		}
+		details{
+			margin-top: 2em
+		}
+		details>details{
+			text-indent: 2em;+
+			line-height: 2em;
+		}
+		b{
+			color: red
+		}
+	</style>
+</head>
+<body>
+<header>
+	<h1><img src="../img/HTML5LOGO.png" alt="" width="80PX">第14章 </h1>
+	<h1 align="center" style="font-size:1.5em;">案例实战练习</h1>
+	<h3>学习任务</h3>
+	<ul>
+		<li>通过练习回顾学过的知识点,掌握常用的正则表达式</li>
+	</ul> <hr>
+</header>
+	<details>
+		<summary>练习1：验证邮政编码</summary>
+		<ul>
+			<li>实例描述：<p>验证用户的邮政编码是否合法。</p>
+			</li>
+			<li>案例要点：
+				<p>字符串中的内容必须是数字</p>	
+				<p>	位数必须是6位。</p>
+			</li>
+			<li> HTML5 中的新属性 pattern。
+				<p>pattern 属性规定用于验证输入字段的模式。</p>
+				<p>pattern 属性适用于以下 input 类型：text, search, url, telephone, email 以及 password 。</p>
+			</li>
+		</ul>		
+	</details>
+	
+	<details>
+			<summary>练习2：验证身份证号码</summary>
+			<ul>
+				<li>实例描述：<p>验证用户输入的身份证号码是否合法</p>
+				</li>
+				<li>案例要点：
+					<ol>
+						<li>身份证号码有15位和18位两种</li>
+						<li>18位身份证号最后一位是数字或X</li>
+					</ol>
+				</li>
+			</ul>	
+		 <p>注：身份证号码由地址码，出生日期，顺序码组成</p>
+		 <p>substr() 方法可在字符串中抽取从 start 下标开始的指定数目的字符。</p>	
+	</details>
+	
+	<details>
+			<summary>练习3：验证电话号码</summary>
+			<ul>
+				<li>实例描述：验证输入的固定电话号码是否合法
+				</li>
+				<li>案例要点：
+					<p>区号部分为3-4位数字</p>
+					<p>使用“-”作为分隔符</p>
+					<p>电话号码部分为7/8位数字</p>
+				</li>
+			</ul>		
+	</details>
+	
+	<details>
+			<summary>练习4：验证邮箱</summary>
+			<ul>
+				<li>实例描述：验证用户邮箱是否合法</p>
+				</li>
+				<li>
+					<ol>可以分为三部分：
+						<li>用户名部分为英文、字母、数字、"_"</li>
+						<li>@部分</li>
+						<li>域名部分，可以分解为英文字母+‘.’+字母三部分</li>
+					</ol>
+				</li>
+			</ul>	
+
+	</details>
+	<details>
+			<summary>练习5：过滤HTML标签</summary>
+			<ul>
+				<li>实例描述：将一段带有HTML标签的文本的HTML标签过滤掉，转化为纯文本输出</p>
+				</li>
+			</ul>		
+	</details>
+	<details>
+			<summary style="color: orange">温馨提示</summary>
+			<p>
+			  我们在本章介绍了正则表达式的常用语法，最后通过几个简单的例子加深大家对正则表达式的理解。然而要想熟练使用正表达式还需要课下多加练习，可以自己在网上查找一些常用的正则表达式学习和练习。
+			</p>
+			<p>
+				本章介绍的是正则表达式常用的知识点，并非全部，如果大家对此感兴趣可在课下进一步的查阅有关资料进一步深入学习。
+			</p>
+	</details>
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

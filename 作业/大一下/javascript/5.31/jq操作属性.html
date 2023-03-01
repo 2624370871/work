@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-3.6.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//jq操作属性函数用attr,具体用法同css
+			$(function(){
+				$("input").click(function(){
+					// $("img").attr("src","img/2.jpg")
+					$("img").attr({
+						"src":"img/2.jpg",
+						"title":"456",
+						"class":"b"
+					})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" name="" id="" value="换一张" />
+		<img src="img/1.jpg" alt="123" class="a">
+		
+	</body>
+</html>

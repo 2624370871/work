@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        边框宽度：<input type="text" name="" id="" v-model:value="border"><br>
+        <img width="200px" src="./img/1.jpg" alt="" srcset="" v-set-border="border">
+    </div>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                //定义变量 表示图像的边框宽度
+                border:''
+            },
+            //使用全局api自定义指令 directives
+            directives:{
+                //set-border 违法 setborder
+                setBorder:{
+                    //表示自定义指令，设置边框
+                    //update钩子函数，被绑定的元素值进行设置
+                    update(el,binding){//参数：新值和旧值
+                        el.border=binding.value//设置元素边框
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

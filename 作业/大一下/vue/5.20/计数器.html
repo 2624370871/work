@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/5.20/js/vue.js"></script>
+    <script src="/5.20/js/vuex.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="increment">+</button>
+        <p>{{this.$store.state.count}}</p>
+    </div>
+    <script>
+        const store =new Vuex.Store({
+            state:{
+                count:0
+            },
+            mutations:{
+                increase(state){
+                    state.count++
+                }
+            }
+        })
+        var vm=new Vue({
+            el:"#app",
+            store,
+            methods:{
+                increment(){
+                    
+                    this.$store.commit('increase')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<style>
+    ul{
+        width: 230px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+    <div id="app">
+        <my-parent></my-parent>
+    </div>
+    <template id="parent">
+        <div>
+            <h3>学生信息检索</h3>
+            姓名：<input type="text" v-model:value="snoName">
+            <my-child v-bind:name="snoName"></my-child>
+        </div>
+    </template>
+    <template id="child">
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item">学号：{{show.sno}}</li>
+                <li class="list-group-item">姓名：{{show.name}}</li>
+                <li class="list-group-item">成绩：{{show.score}}</li>
+            </ul>
+        </div>
+        
+    </template>
+    <script>
+        Vue.component("my-parent",{
+            template:"#parent",
+            data(){
+            return{
+                snoName:"",
+            }
+            }
+        })
+        Vue.component("my-child",{
+            template:"#child",
+            data(){//有返回值的方法
+                return{
+                    show:{sno:"",name:"",score:""},
+                    students:[
+                        {sno:"1",name:"张三",score:"89"},
+                        {sno:"2",name:"李四",score:"78"},
+                        {sno:"3",name:"王五",score:"90"},
+                        {sno:"4",name:"赵六",score:"77"},
+                        {sno:"5",name:"孙七",score:"92"},
+                        {sno:"6",name:"周八",score:"69"},
+                        {sno:"7",name:"吴九",score:"70"},
+                    ]
+                }
+            },
+            // 使用props可以传递多个参数
+            props:['name'],//name是子组件的一个自定义属性
+            // 监听从文本框输入的的名字
+            watch:{
+                // 监听谁，就写一个同名方法
+                name(){
+                    // 查询众多学生中有没有叫张三的
+                    // foreach循环遍历数组中的每个元素item
+                    if(this.name){
+                        this.students.forEach((item,index) => {
+                            // 如果这个元素的名字==键盘输入的名字
+                            if(item.name==this.name)//this.$props.name
+                            // 这个符合条件的元素显示在子组件中
+                            this.show=item;
+                        });
+                    }
+                }
+            }
+        })
+        var vm=new Vue({
+            el:"#app",
+            data:{
+
+            }
+        })
+    </script>
+</body>
+</html>

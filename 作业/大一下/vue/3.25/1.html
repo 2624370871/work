@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/js/vue.js"></script>
+    <!-- Bootstrap -->
+    <link href="./bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <!--这个就是我们mvvm所说的v-->
+    <p v-fontweight="'red'" v-fontsizerr="'90'">{{msg}}</p>
+    <div>
+        <label>
+            搜索：
+            <!--注意：Vue中调用自定义指令的时候，都要， v-开头-->
+            <input type="text" class="form-control"  v-focus v-color="'green'">
+        </label>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    //使用Vue.firective()定义全局的指令，v-focus
+    //其中：参数1指令的名称，，注意在定义的时候指令的名称前面，不要加v-前缀
+    //当是：在调用的时候必须在指令名称前面加上v- 前缀
+    //参数2：是一个对像，这个对象身上，有一些指令相关的函数，这些函数可以在特定的阶段，执行相关操作
+    Vue.directive('focus',{
+        bind:function (el) {//注意每个指令的元素上第一个参数永远是el，表示被绑定了指令的那个元素
+            //在元素刚被绑定了指令的时候，还没有插入DOM中去，这个时候调用focus方法没有作用
+            //因为，一个元素，只用插入DOM之后，才能获取焦点
+
+        },
+        inserted:function (el) { //inserted表示元素插入到DOM中的时候，会执行inserted函数（触发一次）
+            //和行为有关的最好放在inserted里面
+            el.focus()
+
+        },
+        updated:function (el) { //但VNode更新的时候，会执行updated，可能会触发多次
+
+
+        }
+    })
+
+
+//自定义一个这只字体颜色的指令
+    Vue.directive('color',{
+        //样式，只要通过指令绑定给了元素，不管这个元素时候插入到页面中，这个元素肯定有了一个内联样式
+        //将来元素肯定会到页面中，这时候，浏览器的渲染引擎必然会解析样式，应用给这个元素
+        bind:function (el,binding) {
+            //和样式相关的操作，一般都可以在bind执行
+            el.style.color=binding.value
+
+        }
+
+    })
+
+
+    //2.创建一个实例
+    //这里：new出来的这个就是我们mvvm中的vm调度者
+    new Vue({
+        el:'#app',//表示我们new的这个vue实例要控制的区域
+        data: {//data就是mvvm中的m
+            //data属性中，存放的是el中要用到的数据
+            msg:'hellfo  vue.js.'
+        },
+        //自定义私有指令
+        directives:{
+            'fontweight':{
+                bind:function (el,binding) {
+                    el.style.color=binding.value
+                }
+
+            },
+            'fontsizerr':function (el,bind) {
+                //等同于把代码同时写到，bind和update中去了
+                el.style.fontSize=parseInt(bind.value)+'px'
+            }
+
+    }
+    });
+</script>
+</body>
+</html>
+

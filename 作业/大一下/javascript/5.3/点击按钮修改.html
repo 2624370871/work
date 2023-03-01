@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="设置p的内容" id="btn"/>
+		<p id="p1">这是一个p</p>
+		<script type="text/javascript">
+			// document.getElementById("btn").onclick=function(){
+			// 	document.getElementById("p1").innerText="移动应用开发"
+			// }
+			
+			var t=document.getElementById("btn");
+			t.addEventListener('click',function(){
+				document.getElementById("p1").innerText="移动应用开发"
+			})
+		</script>
+	</body>
+</html>

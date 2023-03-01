@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="隔行变色" id="btn" />
+		<ul id="uu">
+		<li>移动应用开发</li>
+		<li>软件技术</li>
+		<li>区块链技术应用</li>
+		<li>物联网应用技术</li>
+		<li>大数据开发</li>
+		<li>计算机应用技术</li>
+		<li>软件工程</li>
+		<li>信息安全技术</li>
+		</ul>
+		<script type="text/javascript">
+		// 获取事件源
+			var btn=document.getElementById("btn");
+			// 绑定事件
+			btn.onclick=function(){
+				// 事件处理
+				// 获取li标签
+				var lis=document.querySelectorAll("li");
+				// 遍历li标签--设置背景颜色
+				for(i=0;i<lis.length;i++){
+					if(i%2==0){
+						lis[i].style.backgroundColor="pink";
+					}else{
+						lis[i].style.backgroundColor="aqua";
+					}
+				}
+				
+				
+				// 标签遍历对象，不要用for in遍历
+				// console.log(lis);
+				// for(i in lis){
+				// 	console.log(i);
+				// }
+				
+			}
+		</script>
+	</body>
+</html>

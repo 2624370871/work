@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="按钮" />
+		
+		<script type="text/javascript">
+		// 鼠标事件对象
+			document.getElementById("btn").onclick=function(e){
+			// 	// 获取事件对象
+			// 	console.log(e);//w3c标准浏览器用这个
+			// console.log(e.screenX);
+			// // 事件处理函数中的第一个参数，会自动传过来一个事件对象
+			// // 浏览器的兼容性问题
+			// console.log(window.event);//ie浏览器用这个
+			// // 我们使用兼容方式获取事件对象这么写
+			var evt=e||window.event;
+			console.log(evt);
+			
+			}
+			
+			// 键盘事件
+			window.onkeyup=function(e){
+				console.log(e);
+			}
+			
+			
+		</script>
+	</body>
+</html>

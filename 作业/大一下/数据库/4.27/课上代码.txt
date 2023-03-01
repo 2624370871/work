@@ -1,0 +1,106 @@
+create database xxgc1;
+
+use xxgc1;
+
+create table studentInfo
+(
+	sno char(8) primary key not null,
+	sname varchar(10) not null,
+	sgender char(2),
+	sbirth date,
+	sclass varchar(20)
+);
+insert into studentinfo values('10101001','张永峰','男','1993-8-1','电子商务101');
+
+INSERT into studentinfo(sno,sname,sgender,sbirth,sclass)
+values('10101002','张三丰','女','1992-8-1','电子商务101');
+
+insert into studentinfo(sno,sgender,sname) 
+values('10101003','女','何小丽');
+
+insert into studentinfo
+values
+('10102001','王斌','男','1991-7-14','网络技术101'),
+('10102002','孙平平','男','1992-7-14','网络技术101'),
+('10102003','刘依依','女','1993-7-14','电子商务101')
+
+update studentinfo
+set sclass = '计算机';
+
+
+update studentinfo
+set sclass = '计算机'
+where sname = '何小丽';
+
+update studentinfo
+set sbirth = '1994-1-10'
+where sno = '10101003';
+
+delete from studentinfo;
+
+delete from studentinfo
+where sno = '10101003';
+
+delete from studentinfo
+where year(sbirth) = 1992 
+
+
+SELECT * from studentinfo
+
+select sno,sname,sgender,sbirth,sclass 
+from studentinfo;
+
+select sno as 学号,sname 姓名,sgender 性别,sbirth 生日,sclass 班级 
+from studentinfo;
+
+select *,sno 学号,year(sbirth),now()
+from studentinfo;
+
+select DISTINCT sclass from studentinfo; 
+
+select * from studentinfo
+where sno = '10102001';
+select * from studentinfo
+where sage > 17;
+select * from studentinfo
+where sage >= 17;
+select * from studentinfo
+where sage < 20;
+select * from studentinfo
+where sage <= 20;
+select * from studentinfo
+where sage >=16 and sage <=18;
+select * from studentinfo
+where sage BETWEEN 16 and 18;
+select * from studentinfo
+where sage <> 16;
+select * from studentinfo
+where sage != 16;
+
+select * from studentinfo
+where sname like '张__';
+select * from studentinfo
+where sname like '张%';
+select * from studentinfo
+where sname like '张_丰'
+select * from studentinfo
+where sname like '_三_'
+select * from studentinfo
+where sname like '%丽%'
+
+select * from studentinfo
+WHERE sno in ('10101003','10102001');
+select * from studentinfo
+WHERE sno in (select sno from studentinfo
+where sname like '%丽%');
+
+select * from studentinfo
+where sname like '%丽%' and sgender = '男';
+select * from studentinfo
+where sname like '%丽%' or sname like '%三%';
+select * from studentinfo
+where not(sgender='男');
+select * from studentinfo
+where not(year(sbirth)='1992');
+select * from studentinfo
+where year(sbirth)!='1992';

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 	给定一个字符串如：“abaasdffggghhjjkkgfddsssss3444343” 
+			var arr='abaasdffggghhjjkkgfddsssss3444343';
+			// 5、 截取指定开始位置到结束位置的字符串，如：取得1-5的字符串
+			console.log(arr.slice(1, 5));
+			
+			// 6、 找出以上字符串中出现次数最多的字符和出现的次数 
+			var arr1={};
+			for(i=0;i<=arr.length;i++){
+				var chars=arr.charAt(i);
+				if(arr1[chars]){
+					arr1[chars]++;
+				}else{
+					arr1[chars]=1;
+				}
+			}
+			var max=0;
+			var ch='';
+			for(var k in arr1){
+				if(arr1[k]>max){
+					max=arr1[k];
+					ch=k;
+				}
+			}
+			console.log("出现最多的字符是"+ch+",共出现了"+max+"次");
+			
+			
+			// 1、 获取字符串的长度 
+			console.log(arr.length);
+			
+			// 2、 取出指定位置的字符，如：9号位置
+			console.log(arr[10]);
+			
+			// 3、 查找指定字符是否在以上字符串中存在，如：i字符是否存在 
+				if(arr.indexOf("i")==-1){
+					console.log("不存在");
+				}else{
+					console.log("j存在");
+				}
+		
+		// 4、 替换指定的字符，如：ss替换为X
+				for(i=0;i<=arr.length;i++){ 
+					if(arr.indexOf("ss")>-1){
+						arr=arr.replace('ss',"x");
+					}
+				}
+				console.log(arr);
+				
+			
+		</script>
+	</body>
+</html>
