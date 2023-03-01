@@ -1,0 +1,34 @@
+package com.java;
+
+public class Demo1 {
+//成员属性
+	byte a;
+	short b;
+	int c;
+	long d;
+	float e;
+	char f;
+	boolean g;
+//成员方法
+	public  void a() {
+		System.out.println("byte的初始值："+a);
+	}//创建方法
+	public void b() {
+		System.out.println("short的初始值："+b);
+	}
+	public void c() {
+		System.out.println("int的初始值："+c);
+	}
+	public void d() {
+		System.out.println("long的初始值："+d);
+	}
+	public void e() {
+		System.out.println("float的初始值："+e);
+	}
+	public void f() {
+		System.out.println("char的初始值："+f);
+	}
+	public void g() {
+		System.out.println("boolean的初始值："+g);
+	}
+}

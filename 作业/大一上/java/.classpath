@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="11.09/src/|week14/src/|week16/src/|11.16/src/|11.18/src/|week1603/src/|class13/src/|week13/src/|week15/src/|11.17/src/|week1602/src/|week1502/src/|12.01/src/|week1703/src/" kind="src" path=""/>
+	<classpathentry kind="src" path="11.09/src"/>
+	<classpathentry kind="src" path="11.16/src"/>
+	<classpathentry kind="src" path="11.17/src"/>
+	<classpathentry kind="src" path="11.18/src"/>
+	<classpathentry kind="src" path="12.01/src"/>
+	<classpathentry kind="src" path="class13/src"/>
+	<classpathentry kind="src" path="week13/src"/>
+	<classpathentry kind="src" path="week14/src"/>
+	<classpathentry kind="src" path="week15/src"/>
+	<classpathentry kind="src" path="week1502/src"/>
+	<classpathentry kind="src" path="week16/src"/>
+	<classpathentry kind="src" path="week1602/src"/>
+	<classpathentry kind="src" path="week1603/src"/>
+	<classpathentry kind="src" path="week1703/src"/>
+	<classpathentry kind="output" path="11.09/bin"/>
+</classpath>

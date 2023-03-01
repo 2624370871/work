@@ -1,0 +1,24 @@
+package week13;
+
+public class Y {
+	public static int getMax(int [] arr01) {
+		int max=0;
+		int a=1;
+		for (int i = 0; i < arr01.length; i++) {
+			if (arr01[i]>max) {
+				max=arr01[i];
+				a++;
+			}
+		}
+		System.out.print("是第"+a+"个");
+		return max;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int []arr01= {90,88,99,100,77,98,90,60,66,100};
+		int max=getMax(arr01);
+		System.out.print(max);
+	}
+
+}

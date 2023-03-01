@@ -1,0 +1,16 @@
+package com.java;
+public class Demo {
+
+	public static void main(String[] args) {
+		Demo1 wuze=new Demo1();//对象实例化
+//调用对象中的方法
+		wuze.a();
+		wuze.b();
+		wuze.c();
+		wuze.d();
+		wuze.e();
+		wuze.f();
+		wuze.g();
+	}
+
+}
