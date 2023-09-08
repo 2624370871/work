@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户留言列表</title>
+    <link rel="stylesheet" href="../../public/css/admin-css/user-message.css">
+    <link rel="stylesheet" href="../../public/css/admin-css/top.css">
+    <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+</head>
+<body>
+<div class="main">
+    <div class="top">
+        <span class="path">
+            <span class="location">当前位置:</span>
+            <a href="/admin/userList">用户管理</a>
+            <span> ></span>
+            <a href="">用户留言</a>
+        </span>
+        <a class="fresh" href="javascript:location.reload()"  title="刷新" style="float: right;padding-right: 20px"> <span class="glyphicon glyphicon-repeat"></span></a>
+    </div>
+    <div class="header">
+        <h3>用户留言管理列表</h3>
+    </div>
+    <div class="mid" style="">
+ <table class="table table-striped" style="text-align: center;">
+    <thead style="font-weight: bolder;">
+    <tr>
+    <td>留言人昵称</td>
+    <td>留言内容</td>
+    <td>留言时间</td>
+    </tr>
+    </thead>
+    <tbody>
+    <%messageList.forEach(function(value){%>
+    <tr>
+        <td><%=value.user_nick%></td>
+        <td><%=value.message%></td>
+        <td><%=value.message_time.toLocaleString()%></td>
+    </tr>
+    <%})%>
+    </tbody>
+</table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<!--pages/list/temp/temp.wxml-->
+<view class="box">
+  <view class="title">摄氏温度转华氏温度</view>
+  <input type="text" bindinput="input" placeholder="请输入摄氏度"/>
+  <text >华氏温度为：{{F}}</text>
+</view>

@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+.header {
+  height: 82px;
+  border-bottom: 2px solid #b1191a;
+}
+.header .logo {
+  padding: 20px 0 0 5px;
+}
+.content {
+  height: 486px;
+  background-color: #7e00ff;
+}
+.content .content_focus {
+  position: relative;
+  text-align: center;
+}
+.content .content_focus .content_pic {
+  height: 486px;
+}
+.content .content_focus .login {
+  position: absolute;
+  top: 62px;
+  right: 115px;
+  width: 379px;
+  height: 362px;
+  background-color: #fff;
+}
+.content .content_focus .login .login_hd {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  background: white;
+}
+.content .content_focus .login .login_hd button {
+  width: 190px;
+  background-color: #fff;
+  color: #666;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.content .content_focus .login .login_hd button#btn_1 {
+  border-right: 1px solid #ccc;
+}
+.content .content_focus .login .login_hd .red {
+  color: #c81623;
+}
+.content .content_focus .login .login_ft p {
+  width: 300px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid #f5eecf;
+  background-color: #fffdee;
+  font-size: 12px;
+  color: #666;
+}
+.content .content_focus .login .login_ft #form div {
+  width: 300px;
+  height: 34px;
+  margin: 0 auto;
+}
+.content .content_focus .login .login_ft #form .zhanghao,
+.content .content_focus .login .login_ft #form .password {
+  border: 1px solid #bbbaba;
+}
+.content .content_focus .login .login_ft #form .zhanghao {
+  margin-top: 10px;
+}
+.content .content_focus .login .login_ft #form .password {
+  margin-top: 17px;
+}
+.content .content_focus .login .login_ft #form .zhanghao > span,
+.content .content_focus .login .login_ft #form .password > span {
+  float: left;
+  width: 37px;
+  height: 34px;
+}
+.content .content_focus .login .login_ft #form .zhanghao input,
+.content .content_focus .login .login_ft #form .password input {
+  float: left;
+  height: 34px;
+  width: 200px;
+  margin-left: 10px;
+  border: none;
+  outline: none;
+}
+.content .content_focus .login .login_ft #form .auto_login {
+  margin-top: 18px;
+  font-size: 14px;
+}
+.content .content_focus .login .login_ft #form .auto_login span {
+  float: left;
+  font-size: 14px;
+  color: #b2b2b2;
+}
+.content .content_focus .login .login_ft #form .auto_login span input {
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+}
+.content .content_focus .login .login_ft #form .auto_login a {
+  float: right;
+  text-decoration: none;
+  color: #333;
+}
+.content .content_focus .login .login_ft #form .login_btn input[type="button"] {
+  width: 300px;
+  height: 40px;
+  border: none;
+  background: #c81623;
+  font-size: 16px;
+  color: #fff;
+}
+.content .content_focus .login .login_ft #form .else_login {
+  margin-top: 30px;
+}
+.content .content_focus .login .login_ft #form .else_login a.else {
+  float: left;
+  width: 34px;
+  height: 40px;
+  margin-right: 5px;
+  background: url(../images/regetype.png) no-repeat;
+}
+.content .content_focus .login .login_ft #form .else_login a#register_now {
+  float: right;
+  margin-right: 14px;
+  line-height: 34px;
+  font-size: 14px;
+  color: #1474af;
+  text-decoration: none;
+}
+.content .content_focus .login #QR_code {
+  margin-top: 60px;
+}
+.content .content_focus .login #QR_code img {
+  width: 150px;
+}
+.mod_copyright {
+  margin-top: 40px;
+  text-align: center;
+  padding-top: 18px;
+  font-size: 12px;
+}
+.mod_copyright_links a {
+  color: #333;
+}
+.mod_copyright_links a:hover {
+  color: #e33333;
+}
+.mod_copyright_info {
+  margin-top: 10px;
+  line-height: 20px;
+}

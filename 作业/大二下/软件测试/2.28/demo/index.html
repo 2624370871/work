@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.box{
+				width: 500px;
+				height: 250px;
+				border: 1px solid cadetblue;
+				margin: 0 auto;
+				text-align: center;
+				border-radius: 5px;
+			}
+			.box>*{
+				margin:8px 0;
+			}
+			.output{
+				font-size: 20px;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h2>工资计算</h2>
+			请输入年龄：<input type="number" value="" class="ageinput"><br>
+			请输入性别：<select class="sexinput">
+				<option value="man" class="man">男</option>
+				<option value="woman" class="wonman">女</option>
+			</select><br>
+			请输入基本工资：<select class="moneyinput">
+				<option value="1500" class="a">1500</option>
+				<option value="2000" class="b">2000</option>
+				<option value="2500" class="c">2500</option>
+			</select><br>
+			<input type="number" disabled class="output"><br>
+			<button onclick="btn()">计算</button>
+		</div>
+		<script>
+			function btn() {
+				var ageinput = document.querySelector(".ageinput").value;//获取年龄
+				var sexinput = document.querySelector(".sexinput").value;//获取性别
+				var moneyinput = document.querySelector(".moneyinput")//获取基本工资
+				var index = moneyinput.selectedIndex;//获取基本工资的选中项
+				var select = moneyinput.options[index].value;//获取选中项的值
+				var output=document.querySelector(".output");//获取输出的值
+				var money=Number(select);
+				if (ageinput == "") {
+					alert("请先输入年龄！！")
+				}
+				if (ageinput>25 && sexinput=="man") {
+					money=money+150;
+				} else{
+					money=money;
+				}
+				if (ageinput>50 || money>2000) {
+					money=money-200;
+				}
+				output.value=money;
+			}
+		</script>
+	</body>
+</html>

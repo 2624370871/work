@@ -1,0 +1,12 @@
+/* pages/list/camera/camera.wxss */
+button{
+  margin: 30rpx 0;
+}
+image{
+  background-color: gainsboro;
+  width: 100%;
+  height: 500rpx;
+}
+.video{
+  width: 100%;
+}

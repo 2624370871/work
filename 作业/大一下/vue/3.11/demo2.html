@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- v-on 绑定事件，click点击事件 调用方法 -->
+        <button v-on:click="showInfo">修改个人信息</button>
+        <!-- 插值表达式 -->
+        <p style="font-size: large;color: aqua;">姓名:{{name}}</p>
+        <p style="font-size: medium;color: pink;">年龄:{{age}}</p>
+    </div>
+    <script>
+        //创建vue实例
+var vm=new Vue({
+    //属性el
+    el:'#app',
+    //属性data初始化的数据
+    data:{
+        name:"wz",
+        age:19
+
+    },
+    //methods方法
+    methods:{
+        //定义一个方法
+        showInfo(){
+        this.name="吴泽";
+        this.age=18
+        }
+    }
+});
+    </script>
+</body>
+</html>

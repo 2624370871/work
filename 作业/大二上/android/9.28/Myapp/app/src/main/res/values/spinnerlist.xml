@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnerlist">
+        <item>人文类科学</item>
+    <item>自然类科学</item>
+    <item>基础科学</item>
+    <item>应用学科</item>
+    <item>泛论学科</item>
+    </string-array>
+</resources>

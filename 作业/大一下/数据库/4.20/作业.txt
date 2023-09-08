@@ -1,0 +1,71 @@
+create table user(
+uid CHAR(4) PRIMARY key NOT NULL,
+unname VARCHAR(20),
+email VARCHAR(20),
+thum VARCHAR(15),
+score INT
+);
+CREATE table books(
+bid INT PRIMARY key NOT NULL,
+bname VARCHAR(50) NOT NULL,
+author char(8),
+price float,
+publisher VARCHAR(50),
+discount FLOAT,
+cid int 
+);
+create table category(
+cid int PRIMARY key NOT NULL,
+cname VARCHAR(16)
+);
+create table b_order(
+bid int not null,
+uid char(4) not null,
+ordernum int DEFAULT 1,
+orderdate datetime,
+deliverydate datetime
+);
+
+INSERT into USER VALUES
+('1001','何仙姑','Hxg18@163.com','13320101991','20'),
+('1002','平平人生','Lp011@163.com','13545158219',''),
+('1003','四十不惑','12345@163.com','18688168818','1000'),
+('1004','桃花岛主','810124@163.com','13068011234','600'),
+('1005','水灵','zs123@163.com','15938182503','150'),
+('1006','感动心灵','gandong@163.com','13641151234','500');
+
+INSERT into books VALUES
+('1','中国时代','师永刚','39.0','作家出版社','27.8','1'),
+('2','中国历史的屈辱','王重旭','26.0','华夏出版社','18.2','2'),
+('3','择业要趁早','海文','28.0','海天出版社','19.3','3'),
+('4','房间','爱玛','37.6','人民文学出版社','26.3','4'),
+('5','平凡的世界','路遥','75.0','北京出版社','63.75','4'),
+('6','心灵鸡汤','关然','27.0','大豫出版社','20.0','3'),
+('7','蜕','赵婷','32.0','上海出版社','28.5','3');
+
+INSERT into category VALUES
+('1','历史'),
+('2','家教'),
+('3','文化'),
+('4','小说');
+
+INSERT into b_order VALUES
+('1001','1','2','2016-03-12','2016-03-12'),
+('1001','3','1','2016-04-15','2016-03-12'),
+('1001','1','1','2016-09-15','2016-03-12'),
+('1003','7','1','2015-12-14','2016-03-12'),
+('1003','3','1','2016-10-10','2016-03-12'),
+('1005','5','1','2015-08-17','2016-03-12'),
+('1005','7','3','2016-11-12','2016-03-12'),
+('1006','5','1','2016-09-18','2016-03-12'),
+('1006','1','2','2016-10-21','2016-03-12'),
+('1006','7','2','2015-11-21','2016-03-12');
+UPDATE user set unname='何大姑' WHERE uid='1001'
+
+UPDATE b_order SET ordernum='10',orderdate='2016-10-01',deliverytdate='2016-10-03' WHERE uid='1003' and bid='3'
+
+DELETE FROM b_order WHERE year(2015);
+
+DELETE FROM book;
+
+

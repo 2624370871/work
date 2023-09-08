@@ -1,0 +1,4 @@
+/* pages/list/audioShow/audioShow.wxss */
+button{
+  margin: 20px 0;
+}

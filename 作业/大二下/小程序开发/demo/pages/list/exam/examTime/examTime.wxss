@@ -1,0 +1,43 @@
+/* pages/zj/CandidateInforReg/detail/detail.wxss */
+
+.flex {
+  /* 设置text组件和input组件的布局 */
+  display: flex;
+  margin: 5px 0;
+  justify-content: center;
+  align-items: center; /* 设置垂直方向居中对齐 */
+}
+
+input {
+  /* 设置input组件样式 */
+  width: 150px;
+  height: 30px;
+  border: 2px solid gray; /* 设置input组件边框样式 */
+  margin: 5px;
+}
+
+input:hover {
+  /* 设置输入时input组件边框样式 */
+  border: 2px solid chocolate;
+}
+
+picker{
+text-align: center;
+}
+picker view{
+  margin: 20rpx 0;
+  padding: 20rpx 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+.btnLayout {
+  /* 设置button组件布局 */
+  display: flex;
+  justify-content: center;
+  margin: 20rpx 0;
+}
+
+button {
+  /* 设置button组件样式 */
+  width: 80px;
+}

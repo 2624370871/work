@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/4.29/js/vue.js"></script>
+    <script src="/4.29/js/vue-router.js"></script>
+    <style>
+        ul,li,h1{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #app{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        ul{
+            width: 200px;
+            flex-direction: column;
+            color: #fff;
+        }
+        li{
+            flex: 1;
+            background: #000;
+            margin: 5px auto;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        li:hover{
+            background-color: #6f7474;
+        }
+        .about-detail{
+            flex: 1;
+            margin-left: 30px;
+        }
+        .about-detail h1{
+            font-size: 24px;
+            color: blue;
+        }
+        span{
+            color: cornflowerblue;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <router-link to="/about" tag="li">关于公司</router-link>
+            <router-link to="/contact" tag="li">联系我们</router-link>
+        </ul>
+        <router-view></router-view>
+    </div>
+    <template id="about-tmp">
+        <div class="about-detail">
+            <h1>北京科技有限公司</h1>
+            <router-link to="/about/detail" tag="span">公司简介</router-link>
+            <router-link to="/about/governance" tag="span">公司治理</router-link>
+            <router-view></router-view>
+        </div>
+    </template>
+    <template id="contact-tmp">
+        <div class="about-tetail">
+            <h1>联系我们</h1>
+            <p>公私位于北京市海淀区中关村科技园内</p>
+        </div>
+    </template>
+    <script>
+        var about={template:'#about-tmp'}
+        var contact={template:'#contact-tmp'}
+        var detail={
+            template:"<p>xx是全球领先的</p>"
+        }
+        var governance={
+            template:"<p>公司坚持以客户为中心</p>"
+        }
+        var router=new VueRouter({
+            routes:[
+                {path:"/",redirect:"/about"},
+                {
+                    path:"/about",
+                    component:about,
+                    children:[
+                        {path:"detail",component:detail},
+                        {path:"governance",component:governance}
+                    ]
+                },
+                {path:"/contact",component:contact}
+            ]
+        })
+        var vm=new Vue({
+            el:"#app",
+            router
+        })
+    </script>
+</body>
+</html>

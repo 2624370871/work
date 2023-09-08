@@ -1,0 +1,39 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< org.example:mvn-demo >------------------------
+[INFO] Building mvn-demo Maven Webapp 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- dependency:2.8:tree (default-cli) @ mvn-demo ---
+[INFO] org.example:mvn-demo:war:1.0-SNAPSHOT
+[INFO] +- org.springframework:spring-context:jar:5.3.22:compile
+[INFO] |  +- org.springframework:spring-beans:jar:5.3.22:compile
+[INFO] |  +- org.springframework:spring-core:jar:5.3.22:compile
+[INFO] |  |  \- org.springframework:spring-jcl:jar:5.3.22:compile
+[INFO] |  \- org.springframework:spring-expression:jar:5.3.22:compile
+[INFO] +- org.springframework:spring-webmvc:jar:5.3.22:compile
+[INFO] |  \- org.springframework:spring-web:jar:5.3.22:compile
+[INFO] +- org.springframework:spring-aop:jar:5.3.22:compile
+[INFO] +- org.springframework:spring-aspects:jar:5.3.22:compile
+[INFO] |  \- org.aspectj:aspectjweaver:jar:1.9.7:compile
+[INFO] +- javax.servlet:servlet-api:jar:2.5:compile
+[INFO] +- javax.servlet:javax.servlet-api:jar:4.0.1:compile
+[INFO] +- javax.servlet.jsp:jsp-api:jar:2.2:compile
+[INFO] +- javax.servlet:jstl:jar:1.2:compile
+[INFO] +- org.projectlombok:lombok:jar:1.18.24:compile
+[INFO] +- mysql:mysql-connector-java:jar:8.0.30:compile
+[INFO] |  \- com.google.protobuf:protobuf-java:jar:3.19.4:compile
+[INFO] +- org.springframework:spring-jdbc:jar:5.3.22:compile
+[INFO] +- org.springframework:spring-tx:jar:5.3.22:compile
+[INFO] +- junit:junit:jar:4.11:test
+[INFO] |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] \- com.fasterxml.jackson.core:jackson-databind:jar:2.9.9:compile
+[INFO]    +- com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0:compile
+[INFO]    \- com.fasterxml.jackson.core:jackson-core:jar:2.9.9:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.811 s
+[INFO] Finished at: 2023-04-19T09:26:48+08:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+    <Text
+        ohos:height="100vp"
+        ohos:width="match_parent"
+        ohos:text="第一题：以下哪个是鸿蒙开发所运用的语言？"
+        ohos:text_size="30fp"></Text>
+<RadioContainer
+    ohos:id="$+id:rc"
+    ohos:height="300vp"
+    ohos:width="match_parent">
+    <RadioButton
+        ohos:height="60vp"
+        ohos:width="match_parent"
+        ohos:text="A:java"
+        ohos:text_size="30fp"
+        ohos:text_alignment="vertical_center"
+        ohos:text_color_off="#0066ff"
+        ohos:text_color_on="#ff1493"
+        ohos:id="$+id:rb1">
+    </RadioButton>
+    <RadioButton
+        ohos:height="60vp"
+        ohos:width="match_parent"
+        ohos:text="B:C++"
+        ohos:text_size="30fp"
+        ohos:text_alignment="vertical_center"
+        ohos:text_color_off="#0066ff"
+        ohos:text_color_on="#ff1493">
+    </RadioButton>
+    <RadioButton
+        ohos:height="60vp"
+        ohos:width="match_parent"
+        ohos:text="C:python"
+        ohos:text_size="30fp"
+        ohos:text_alignment="vertical_center"
+        ohos:text_color_off="#0066ff"
+        ohos:text_color_on="#ff1493">
+    </RadioButton>
+    <RadioButton
+        ohos:height="60vp"
+        ohos:width="match_parent"
+        ohos:text="D:php"
+        ohos:text_size="30fp"
+        ohos:text_alignment="vertical_center"
+        ohos:text_color_off="#0066ff"
+        ohos:text_color_on="#ff1493">
+    </RadioButton>
+</RadioContainer>
+<Text
+    ohos:height="100vp"
+    ohos:width="match_parent"
+    ohos:id="$+id:text"
+    ohos:text_size="20fp"
+    ohos:text_color="#ff1493">
+</Text>
+</DirectionalLayout>

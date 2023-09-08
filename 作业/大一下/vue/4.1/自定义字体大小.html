@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span>选择文字大小</span>
+        <select name="" id="" v-model:value="size" >
+            <option value="20px">20px</option>
+            <option value="30px">30px</option>
+            <option value="40px">40px</option>
+            <option value="50px">50px</option>
+            <option value="60px">60px</option>
+        </select>
+        <p v-set-size="size">天生我材必有用</p>
+    </div>
+</body>
+<script>
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            size:"10px"
+        }
+    })
+    Vue.directive('set-size',{
+        update(el,binding){
+            el.style.fontSize=binding.value;
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,17 @@
+<!--pages/list/canvasReserve/canvasReserve.wxml-->
+<view class="box">
+  <view class="title">
+    参数绘图
+  </view>
+<canvas canvas-id="canvas"></canvas>
+<form bindsubmit="draw" bindreset="clear">
+  <input type="number" placeholder="请输入圆心x坐标" name="x"/>
+  <input type="number" placeholder="请输入圆心y坐标" name="y"/>
+  <input type="number" placeholder="请输入圆的半径" name="r"/>
+  <view class="btn">
+    <button type="primary" style="width: 200rpx;"  form-type='submit'>画圆</button>
+    <button type="primary" style="width: 200rpx;" form-type="reset">清空</button>
+  </view>
+</form>
+
+</view>

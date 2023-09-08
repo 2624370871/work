@@ -1,0 +1,8 @@
+<!--pages/list/factorial/factorial.wxml-->
+<view class="box">
+  <view class="title">
+    阶乘计算器
+  </view>
+  <input type="text" class="num" placeholder="请输入要求阶乘的数" bindinput="changeNum"/>
+  <view class="txt">结果为:{{result}}</view>
+</view>

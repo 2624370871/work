@@ -1,0 +1,6 @@
+<!--pages/list/draw/draw.wxml-->
+<view wx:for="{{forText}}" wx:key="index">
+  <view>
+    {{index}}---{{item}}
+  </view>
+</view>

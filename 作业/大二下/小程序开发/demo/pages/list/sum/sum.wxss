@@ -1,0 +1,10 @@
+/* pages/list/sum/sum.wxss */
+input{
+  border-bottom: 1px solid blue;
+  margin: 20px 0;
+}
+button{
+  color: white;
+  background-color: green;
+  margin: 30rpx 0;
+}

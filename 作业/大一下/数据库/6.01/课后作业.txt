@@ -1,0 +1,6 @@
+drop PROCEDURE if exists proc_1;
+create PROCEDURE proc_1()
+begin
+SELECT * from user;
+END;
+call proc_1();

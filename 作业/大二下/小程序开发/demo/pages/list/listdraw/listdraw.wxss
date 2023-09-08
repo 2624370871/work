@@ -1,0 +1,8 @@
+/* pages/list/listdraw/listdraw.wxss */
+view{
+  text-align: center;
+}
+.item{
+  width: 100%;
+  height: 5px;
+}

@@ -1,0 +1,59 @@
+/* pages/list/float/float.wxss */
+.box1{
+  background-color: red;
+}
+.box2{
+background-color: yellow;
+}
+.box3{
+  background-color: #ffd700;
+}
+.box4{
+  background-color: #a1fb11;
+}
+/* 第一个盒子 */
+#box1{
+  margin-bottom: 20px;
+}
+#box1 view{
+  margin: 0 auto;
+  width: 150px;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+}
+#box1 .box2{
+  float: left;
+}
+#box1 .box3{
+  float: left;
+}
+#box1 .box4{
+  clear: both;
+}
+
+/* 第二个盒子 */
+#box2 view{
+  text-align: center;
+}
+#box2 .box1{
+ height: 50px;
+ line-height: 50px;
+ clear: both;
+}
+#box2 view:not(.box1){
+  height: 100px;
+  line-height: 100px;
+}
+#box2 .left{
+  float: left;
+  width: 25%;
+  }
+#box2 .right{
+  float: left;
+  width: 25%;
+  }
+  #box2 .box4{
+   float: left;
+   width: 50%;
+  }

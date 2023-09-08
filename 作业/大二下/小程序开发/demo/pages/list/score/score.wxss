@@ -1,0 +1,24 @@
+/* pages/list/score/score.wxss */
+page{
+  background-color: #f1f0f6;
+}
+input{
+  padding-left: 10rpx;
+  background-color: white;
+  margin: 30rpx 0;
+  border: 1px solid rgba(192, 190, 190, 0.89);
+  height: 100rpx;
+  text-indent:0.5em;
+}
+button{
+  background-color: rgba(255, 0, 0, 0.788);
+  color: white;
+  margin-bottom: 20rpx;
+}
+.content{
+  background-color: white;
+  color:rgba(255, 0, 0, 0.788);
+}
+.content-item{
+  padding: 20rpx 10rpx;
+}

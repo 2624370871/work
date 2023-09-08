@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:orientation="vertical">
+
+   <DatePicker
+       ohos:height="350vp"
+       ohos:width="match_parent"
+       ohos:normal_text_color="#00ff7f"
+       ohos:id="$+id:datepicker"
+       ohos:selected_text_color="#00ff7f"
+       ohos:selected_text_size="40fp"
+       ohos:top_line_element="#0066ff"
+       ohos:bottom_line_element="#0066ff"
+       ohos:shader_color="#DAA520">
+   </DatePicker>
+
+    <Text
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:id="$+id:text"
+        ohos:text_size="40fp">
+    </Text>
+
+</DirectionalLayout>

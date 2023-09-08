@@ -1,0 +1,18 @@
+<!--pages/list/grade/grade.wxml-->
+<view class="box">
+<view class="title">
+  成绩等级计算器
+</view>
+<view>
+  请输入你的考试成绩
+</view>
+<input type="number" bindinput="gradeinput"/>
+<view wx:if="{{result==''}}">请先输入成绩</view>
+    <view wx:elif="{{result<0||result>100}}" style="color: red;">输入成绩有误</view>
+    <view wx:elif="{{result<60}}" style="color: red;">成绩等级:不合格</view>
+    <view wx:elif="{{result<70}}" style="color:green;">成绩等级:合格</view>
+    <view wx:elif="{{result<80}}" style="color: green;">成绩等级:中等</view>
+    <view wx:elif="{{result<90}}" style="color: green">成绩等级:良好</view>
+    <view wx:elif="{{result<=100}}" style="color: green">成绩等级:优秀</view>
+    <view wx:else style="color: red;">请输入正确数字</view>
+</view>

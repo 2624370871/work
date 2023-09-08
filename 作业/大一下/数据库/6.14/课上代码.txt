@@ -1,0 +1,142 @@
+drop PROCEDURE if exists  sp_addsum;
+CREATE PROCEDURE sp_addsum()
+BEGIN
+DECLARE i int DEFAULT 0;
+DECLARE sum int DEFAULT 0;
+sum_loop:LOOP
+set i=i+1;
+set sum=sum+i;
+if i>=100 then leave sum_loop;
+end if;
+end LOOP;
+SELECT sum;
+END;
+call sp_addsum();
+
+
+
+drop function if EXISTS f_addsum;
+CREATE FUNCTION f_addsum()
+returns SMALLINT
+BEGIN
+	DECLARE i int DEFAULT 0;
+	DECLARE sum int DEFAULT 0;
+	sum_loop:LOOP
+		set i =i+1;
+		set sum = sum +i;
+		if i>=100 then leave sum_loop;
+		end if;
+	end LOOP;
+return sum;
+end;
+
+select f_addsum();
+set @sum = f_addsum();
+select @sum;
+
+
+
+drop FUNCTION if EXISTS maxNum;
+CREATE FUNCTION maxNum(x SMALLINT UNSIGNED,y SMALLINT UNSIGNED)
+returns SMALLINT
+begin
+DECLARE max SMALLINT UNSIGNED default 0;
+if x>y
+then set max=x;
+else set max=y;
+end if;
+return max;
+end;
+SELECT maxNum(3,4);
+SELECT maxNum(199,100);
+
+
+
+select CEILING(rand()*100);
+
+
+
+
+SELECT * from mysql.proc where type='FUNCTION' and db = 'xxgc7';
+
+
+
+
+SELECT abs(-100);
+SELECT bin(10);
+SELECT ceiling(9.9);
+SELECT ceiling(9.1);
+SELECT floor(9.1);
+SELECT FLOOR(9.9);
+SELECT ROUND(9.1);
+SELECT ROUND(9.9);
+SELECT mod(100,3);
+SELECT MOD(101,3);
+SELECT PI();
+SELECT rand();
+SELECT sign(-10);
+SELECT SIGN(10);
+SELECT SQRT(100);
+SELECT SQRT(225);
+
+
+
+SELECT ASCII("a");
+SELECT ASCII("A");
+SELECT CONCAT('Hello',' ','World');
+SELECT LCASE('Hello World');
+SELECT UCASE('Hello World');
+SELECT left('Hello World',5);
+SELECT right('Hello World',5);
+SELECT LENGTH('Hello World');
+select ltrim('  admin ');
+select rtrim('  admin ');
+select trim('  admin ');
+select POSITION('llo' IN 'Hello World');
+select REVERSE('Hello World');
+select strcmp('41','5');
+select strcmp('6','5');
+
+
+
+
+SELECT CURDATE();
+SELECT CURTIME();
+SELECT NOW();
+SELECT DAYOFWEEK(NOW());
+SELECT DAYOFMONTH(NOW());
+SELECT DAYOFYEAR(NOW());
+SELECT HOUR(NOW());
+select minute(now());
+select month(now());
+select monthname(now());
+select now();
+select QUARTER(now());
+select week(now());
+select year(now());
+
+
+
+
+START TRANSACTION;
+insert into teacher VALUES('1',30);
+insert into teacher VALUES('2',40);
+insert into teacher VALUES('1',30);
+insert into teacher VALUES('2',40);
+
+insert into teacher VALUES('1',30);
+insert into teacher VALUES('2',40);
+
+insert into teacher VALUES('1',30);
+insert into teacher VALUES('2',40);
+
+insert into teacher VALUES('1',30);
+insert into teacher VALUES('2',40);
+
+
+COMMIT;
+
+ROLLBACK;
+
+
+

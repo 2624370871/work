@@ -1,0 +1,19 @@
+/* pages/list/exchange/exchange.wxss */
+input{
+  border-bottom: blue 1px solid;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.button{
+  margin: 10px 0;
+  display: flex;
+justify-content: space-around;
+}
+.out view{
+  width: 70%;
+  font-size: 18px;
+margin: 10px 0;
+margin-left: 8%;
+}

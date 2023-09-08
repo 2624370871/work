@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <form action="">
+            <label for="">设置边框：</label>
+            <input type="text" v-model:value="border">
+        </form>
+        <!-- 给图片绑定自定义指令控制图像输入的值，作为指令配置信息 -->
+        <img src="img/1.jpg" alt="" srcset="" v-set-border="border">
+    </div>
+    <script>
+        var vm=new Vue({
+            // 唯一的根标签
+            el:"#app",
+            data:{
+                // 控制数据
+                border:10
+            }
+           
+        })
+        // 配置指令名字和功能
+        Vue.directive('set-border',{
+            // 指令的配置信息
+                update(el,binding){
+                    // el:这个指令绑定的元素（img） binding：这个指令的信息
+                    // 将这个binding的值（border）传递给el的边框
+                    el.border=binding.value;//value就是指令的值
+                }
+            })
+    </script>
+</body>
+</html>

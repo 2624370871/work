@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=0, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <style>
+        .fade-enter,.fade-leave-to{
+            opacity: 0;
+        }   
+        .fade-enter-to,.fade-leave{
+            opacity: 1;
+        }
+        .fade-enter-active,.fade-leave-active{
+            transition: opacity .5s;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" name="fade">
+        <button @click="isedit=!isedit">切换按钮</button>
+        <div>
+        <transition>
+            <button v-if="isedit" key="edit">编辑</button>
+            <button v-else key="save">保存</button>
+        </transition>
+        </div>
+    </div>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                isedit:true
+            }
+        })
+    </script>
+</body>
+</html>

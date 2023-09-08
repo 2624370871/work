@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		    img {
+		        position: absolute;
+		        width: 50px;
+		        height: 50px;
+		    }
+		</style>
+	<body>
+	    <img src="/img/tianshi.jpg" alt="">
+	</body>
+	<script>
+		//思路：给整个dom绑定鼠标点击事件，获取点击位置后修改图片位置
+	    var im = document.getElementsByTagName('img')[0];
+	    document.onclick = function (e) {
+	        im.style.left = e.clientX + 'px';
+	        im.style.top = e.clientY + 'px';
+	    }
+	</script>
+	</body>
+</html>

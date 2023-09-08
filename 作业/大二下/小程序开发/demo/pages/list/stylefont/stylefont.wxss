@@ -1,0 +1,5 @@
+/* pages/list/stylefont/stylefont.wxss */
+
+radio,checkbox{
+margin: 10px 0;
+}

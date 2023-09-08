@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- v-bind绑定href属性 -->
+        <a href="url">百度</a>
+        <!-- v-model 双向绑定 -->
+
+        <input type="text" v-model:value="name">
+        <!-- v-text 插入文本 -->
+        <p v-text="name"></p>
+
+        <!-- v-html 插入包含html的文本 -->
+        <p v-html="title"></p>
+
+        <!-- v-if 绑定的逻辑表达式 如果为假 元素直接删除-->
+        <!-- <img src="img/1.jpg" alt=""> -->
+
+        <!-- v-show 绑定的逻辑表达式 如果为假 元素被隐藏 -->
+        <input type="button" v-model:value="text" v-on:click="toggle" style="position: relative;">
+        <img src="img/1.jpg" alt="" v-show="show">
+
+        <!-- v-for 列表渲染，要循环显示谁，就绑定谁v v-for="数组的元素 in 数组名" -->
+        <ul>
+            <!-- 遍历数组students中的每一个元素stu，stu是个对象，有很多属性 -->
+            <li v-for="stu in students">{{stu}}</li>
+        </ul>
+    </div>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                url:"https://www.baidu.com",
+                name:"这是一个名字",
+                title:'<h1>这是一个一级标题</h1>',
+                show:true,
+                text:"隐藏图片",
+                students:["张三","李四","王五"]
+            },
+            methods:{
+                toggle(){
+                    this.show=!this.show;
+                    if(this.text=="隐藏图片"){
+                        this.text="显示图片";
+                    }else {
+                        this.text="隐藏图片";
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

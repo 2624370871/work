@@ -1,0 +1,7 @@
+<!--pages/list/math/math.wxml-->
+<view class="box">
+  <view class="title">条件结构和数学函数</view>
+  <input type="digit" bindinput="input" placeholder="请输入x的值"/>
+  <text >计算y的值为：{{y}}</text>
+</view>
+

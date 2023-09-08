@@ -1,0 +1,4 @@
+/* pages/changeFace/changeFace.wxss */
+image{
+    width: 100%;
+}

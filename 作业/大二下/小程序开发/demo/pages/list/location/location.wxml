@@ -1,0 +1,12 @@
+<!--pages/list/location/location.wxml-->
+<view class="box">
+  <view class="title">
+    位置和地图
+  </view>
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}"
+  markers="{{markers}}" show-location="true"></map>
+  <view class="btn">
+    <button bindtap="chooseLocation" type="primary" style="width: 300rpx;">选择位置</button>
+    <button bindtap="openLocation" type="primary" style="width: 300rpx;">打开位置</button>
+  </view>
+</view>

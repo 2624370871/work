@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="chapter9.po.StudentMapper">
+    <select id="findStudentByStuno" parameterType="Integer"
+            resultType="chapter9.po.Student">
+        select * from t_student where stuno = #{stuno}
+    </select>
+
+<!--    <select id="findListStudent" parameterType="chapter9.po.Person"-->
+<!--            resultType="chapter9.po.Student">-->
+<!--        select * from t_student where stuno = #{id} or stuname=#{name}-->
+<!--    </select>-->
+
+
+<!--    <select id="findStudentByStuname" parameterType="String"-->
+<!--            resultType="chapter9.po.Student">-->
+<!--        select * from t_student where stuname = #{stuname}-->
+<!--    </select>-->
+
+<!--    <select id="countStudent"-->
+<!--            resultType="Integer">-->
+<!--        select count(*) from t_student-->
+<!--    </select>-->
+
+<!--    <select id="findStudentList"-->
+<!--            resultType="chapter9.po.Student">-->
+<!--        select * from t_student-->
+<!--    </select>-->
+
+<!--    <select id="findStudentSpList" parameterType="chapter9.po.Student"-->
+<!--            resultType="chapter9.po.Student">-->
+<!--        select * from t_student where stuno = #{stuno} or stuname = #{stuname}-->
+<!--    </select>-->
+</mapper>

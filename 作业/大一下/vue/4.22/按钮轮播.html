@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <link rel="stylesheet" href="/4.22/css/animate.css">
+    <style>
+        .box{
+            width: 400px;
+            height: 300px;
+           overflow: hidden;
+           position: relative;
+        }
+        img{
+            width: 400px;
+            height: 300px;
+        }
+        li{                     
+            list-style: none;
+            position: absolute;
+            width: 400px;
+            height: 300px;
+        }
+
+      /* 图像进入前 */
+      .head-enter {
+        transform: translateX(100%);
+      }
+      .head-enter-active {
+        transition: all 2s;
+      }
+      .head-enter-to,.head-leave {
+        transition: translateX(0%);
+      }
+    .head-leave-to{
+        transform: translateX(-100%);
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="toggle">点击</button>
+        <div class="box">
+            <transition-group tag="ul" name="head" >
+                <li  v-show="index==showIndex" v-for="(img,index) in imgs" :key="index">
+                <img  :src="img.url" alt="" >
+            </li>
+            </transition-group>
+        </div>
+    </div>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                showIndex:0,
+                imgs:[
+        {url:"./img/2.png"},
+        {url:"./img/3.png"},
+        {url:"./img/4.png"},
+        {url:"./img/5.png"},
+        {url:"./img/6.png"},
+        ],
+            },
+            methods:{
+                toggle(){
+                    this.showIndex++;
+                    if(this.showIndex==this.imgs.length){
+                this.showIndex=0      
+            }
+        }
+    }
+        })
+    </script>
+</body>
+</html>

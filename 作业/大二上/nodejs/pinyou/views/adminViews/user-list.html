@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/admin-css/top.css">
+
+</head>
+<body>
+<div class="main">
+    <div class="top">
+         <span class="path">
+            <span class="location">当前位置:</span>
+            <a href="/admin/userList">用户管理</a>
+             <a href=""><%=spce%></a>
+        </span>
+        <a class="fresh" href="javascript:location.reload()"  title="刷新" style="float: right;padding-right: 20px"> <span class="glyphicon glyphicon-repeat"></span></a>
+    </div>
+    <div class="header">
+        <h3>用户信息管理列表</h3>
+    </div>
+    <div class="search">
+        <form action="/admin/searchUser" method="get">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="input-group">
+                <input type="text" class="form-control" name="search" placeholder="请输入用户昵称进行查询">
+                <span class="input-group-btn">
+        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+      </span>
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div>
+        </form>
+    </div>
+    <div class="second">
+        <table class="table table-hover">
+            <thead>
+             <tr>
+                <td>用户编号</td>
+                <td>用户昵称</td>
+                <td>用户头像</td>
+                <td>联系电话</td>
+                <td>状态</td>
+                <td>操作</td>
+             </tr>
+            </thead>
+            <tbody>
+            <% userList.forEach(function(value){%>
+            <tr>
+                <td><%=value.user_id%></td>
+                <td><%=value.user_nick%></td>
+                <td>
+                    <%if(value.user_img){%>
+                    <img src="../../public/img/user_img/<%=value.user_img%>">
+                    <% }else {%>
+                    <span style="opacity: 0.7;">该用户暂无头像</span>
+                    <%}%>
+                </td>
+                <td><%=value.user_num%></td>
+                <td><input type="radio" name="userval" value="<%=value.user_freeze%>" style="display: none;"><span class="showSex"></span></td>
+                <td><a href="/admin/userDetail/<%=value.user_id%>" title="查看用户详细信息"><span class="glyphicon glyphicon-search"></span></a>
+                   </td>
+            </tr>
+            <%})%>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="../../public/js/admin-js/user-list.js"></script>
+</body>
+</html>

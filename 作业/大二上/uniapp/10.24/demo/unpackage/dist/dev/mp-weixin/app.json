@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/tabBar/component/component",
+    "pages/components/button/button",
+    "pages/components/progress/progress",
+    "pages/components/checkbox/checkbox",
+    "pages/components/picker/picker",
+    "pages/components/slider/slider",
+    "pages/components/input/input",
+    "pages/components/cities/cities",
+    "pages/components/switch/switch",
+    "pages/components/navigator/navigator",
+    "pages/components/user/user",
+    "pages/tabBar/api/api",
+    "pages/components/video/video",
+    "pages/components/image/image",
+    "pages/components/audio/audio"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "backgroundColor": "#dcdcdc",
+    "color": "#989898",
+    "list": [
+      {
+        "text": "组件",
+        "pagePath": "pages/tabBar/component/component",
+        "iconPath": "static/组件2.png",
+        "selectIconPath": "static/组件1.png"
+      },
+      {
+        "text": "api",
+        "pagePath": "pages/tabBar/api/api",
+        "iconPath": "static/API2.png",
+        "selectIconPath": "static/API1.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

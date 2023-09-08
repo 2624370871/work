@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品信息展示</title>
+    <script src="/js/vue.js"></script>
+    <style>
+        #app{
+            margin: auto;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p>商品单价:{{price}}</p>
+        <p>商品数量:{{num}}</p>
+        <p>总价:{{total}}</p>
+        <button v-on:click="add">增加数量</button>
+        
+        <button v-on:click="minus">减少数量</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            //属性el
+            el: '#app',
+            //属性data初始化的数据
+            data: {
+                price:50,
+                num:0,
+            },
+            //计算属性，某些变量如果值不确定，并且他的值受其他变量影响
+            computed: {
+                total(){
+                    return this.price*this.num;//计算总价
+                }
+            },
+         methods:{
+             add(){
+                 this.num++;
+             },
+             minus(){
+                if(this.num>0){
+                    this.num--;
+                }
+             }
+         }
+        });
+    </script>
+</body>
+
+</html>

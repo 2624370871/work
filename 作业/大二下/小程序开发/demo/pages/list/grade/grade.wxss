@@ -1,0 +1,8 @@
+/* pages/list/grade/grade.wxss */
+input{
+  border: 1px solid black;
+  width: 60%;
+  height: 40px;
+  margin: 20px 0;
+  font-size: 20px;
+}

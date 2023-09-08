@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <!-- 1、引入animate.css -->
+    <link rel="stylesheet" href="./css/animate.css" />
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="app">                               
+      <button @click="show=!show">切换</button>
+      <div> 
+        <transition appear appear-active-class="animated rollIn"  enter-active-class="animated fadeInLeftBig"  leave-active-class="animated fadeOutRightBig">
+          <!-- 2、使用transition包装需要设置动画的元素 -->
+          <img v-if="show" src="./img/1.gif" alt="" />
+        </transition>
+      </div>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data:{
+          show: true,
+        },
+      });
+    </script>
+  </body>
+</html>

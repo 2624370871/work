@@ -1,0 +1,136 @@
+{
+  "string": [
+    {
+      "name": "entry_MainAbility",
+      "value": "entry_MainAbility"
+    },
+    {
+      "name": "mainability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "mainability_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_Login",
+      "value": "登录"
+    },
+    {
+      "name": "login_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "login_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_register",
+      "value": "登录"
+    },
+    {
+      "name": "register_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "register_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_reset",
+      "value": "重置密码"
+    },
+    {
+      "name": "reset_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "reset_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_Home",
+      "value": "主页"
+    },
+    {
+      "name": "home_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "home_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_My",
+      "value": "我的"
+    },
+    {
+      "name": "my_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "my_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_Scan",
+      "value": "扫码点餐"
+    },
+    {
+      "name": "scan_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "scan_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_order",
+      "value": "点餐系统"
+    },
+    {
+      "name": "order_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "order_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_foodInfo",
+      "value": "entry_foodInfo"
+    },
+    {
+      "name": "foodinfo_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "foodinfo_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_Pay",
+      "value": "entry_Pay"
+    },
+    {
+      "name": "pay_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "pay_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_Success",
+      "value": "entry_Success"
+    },
+    {
+      "name": "success_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "success_HelloWorld",
+      "value": "你好，世界"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/6.10/js/vue.js"></script>
+    <script src="/6.10/js/vuex.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>英雄列表展示</h1>
+        <div>
+            <ul v-for="i in $store.state.a.state">
+                <li><img :src="i.url" alt=""></li>
+            </ul>
+        </div>
+        <h1>购物车展示</h1>
+    </div>
+    <script>
+        var a={
+            state:{
+                heros: [
+        { url: './static/2.png', name: '赵云',m:"10"},
+        { url: './static/3.png', name: '后羿',m:"20"},
+        { url: './static/4.png', name: '澜',m:"30"},
+        { url: './static/5.png', name: '瑶',m:"40"},
+        { url: './static/6.png', name: '元歌',m:"50" }
+    ],
+            }
+        }
+        var b={
+            state:{
+                heros: [
+        { url: './static/2.png', name: '赵云',m:"10"},
+    ],
+            }
+        }
+        var store=new Vuex.Store({
+            modules:{
+                a,
+                b
+            }
+        })
+        var vm=new Vue({
+            el:"#app",
+            store
+        })
+    </script>
+</body>
+</html>

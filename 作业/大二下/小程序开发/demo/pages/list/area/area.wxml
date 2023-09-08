@@ -1,0 +1,22 @@
+<!--pages/list/area/area.wxml-->
+<view class="box">
+  <view class="title">
+    三角形面积计算器
+  </view>
+  <form bindsubmit="getarea">
+  <view>
+    输入三角形的三条边
+  </view>
+  <input type="number" placeholder="第1条边长" name="a" value="{{a}}"/>
+  <input type="number" placeholder="第2条边长" name="b" value="{{b}}"/>
+  <input type="number" placeholder="第3条边长" name="c" value="{{c}}"/>
+  <view class="btn">
+    <button type="primary" form-type="submit" style="width: 100px;">计算</button>
+  <button type="warn" form-type="reset" style="width: 100px;">清除</button>
+  </view>
+  <view>
+    三角形的面积为：{{result}}
+  </view>
+</form>
+
+</view>

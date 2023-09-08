@@ -1,0 +1,14 @@
+<!--pages/list/score/score.wxml-->
+<view class="box">
+  <view class="title">成绩计算器</view>
+<input type="text" bindinput="nameinput" placeholder="请输入你的名字" class="placeolder"/>
+<input type="number" bindinput="chineseinput" placeholder="请输入语文成绩" class="placeolder"/>
+<input type="number" bindinput="mathinput" placeholder="请输入数学成绩" class="placeolder"/>
+  <button bindtap="submit">提交</button>
+<view class="content" hidden="{{hidden}}">
+  <view class="content-item">姓名：{{name}}</view>
+  <view class="content-item">语文成绩：{{chinese}}</view>
+  <view class="content-item">数学成绩：{{math}}</view>
+  <view class="content-item">平均分：{{score}}</view>
+</view>
+</view>

@@ -1,0 +1,256 @@
+{
+  "string": [
+    {
+      "name": "entry_MainAbility",
+      "value": "entry_MainAbility"
+    },
+    {
+      "name": "mainability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "mainability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_MyAbility",
+      "value": "entry_MyAbility"
+    },
+    {
+      "name": "myability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "myability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "texttruncationslice_description",
+      "value": "hap sample empty provider"
+    },
+    {
+      "name": "entry_TextTruncationSlice",
+      "value": "entry_TextTruncationSlice"
+    },
+    {
+      "name": "texttruncationslice_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_TextTruncation",
+      "value": "entry_TextTruncation"
+    },
+    {
+      "name": "texttruncation_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "texttruncation_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_scenarioexample",
+      "value": "entry_scenarioexample"
+    },
+    {
+      "name": "scenarioexample_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "scenarioexample_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_TextFile",
+      "value": "entry_TextFile"
+    },
+    {
+      "name": "textfile_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "textfile_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_Image",
+      "value": "entry_Image"
+    },
+    {
+      "name": "image_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "image_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_picker",
+      "value": "entry_picker"
+    },
+    {
+      "name": "picker_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "picker_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_PickerM",
+      "value": "entry_PickerM"
+    },
+    {
+      "name": "pickerm_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "pickerm_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_PickerMR",
+      "value": "entry_PickerMR"
+    },
+    {
+      "name": "pickermr_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "pickermr_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_FirstAbility",
+      "value": "entry_FirstAbility"
+    },
+    {
+      "name": "firstability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "firstability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_SecondAbility",
+      "value": "entry_SecondAbility"
+    },
+    {
+      "name": "secondability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "secondability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_PgAbility",
+      "value": "entry_PgAbility"
+    },
+    {
+      "name": "pgability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "pgability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_APgAbility",
+      "value": "entry_APgAbility"
+    },
+    {
+      "name": "apgability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "apgability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_BPgAbility",
+      "value": "entry_BPgAbility"
+    },
+    {
+      "name": "bpgability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "bpgability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_DatePicker",
+      "value": "entry_DatePicker"
+    },
+    {
+      "name": "datepicker_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "datepicker_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_TimePicker",
+      "value": "entry_TimePicker"
+    },
+    {
+      "name": "timepicker_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "timepicker_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_RadioButton",
+      "value": "entry_RadioButton"
+    },
+    {
+      "name": "radiobutton_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "radiobutton_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_CheckBox",
+      "value": "entry_CheckBox"
+    },
+    {
+      "name": "checkbox_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "checkbox_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_toast",
+      "value": "entry_toast"
+    },
+    {
+      "name": "toast_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "toast_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_TabList",
+      "value": "entry_TabList"
+    },
+    {
+      "name": "tablist_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "tablist_HelloWorld",
+      "value": "Hello World"
+    }
+  ]
+}

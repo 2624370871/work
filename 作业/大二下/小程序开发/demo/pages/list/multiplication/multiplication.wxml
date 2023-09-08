@@ -1,0 +1,13 @@
+<!--pages/list/multiplication/multiplication.wxml-->
+<view class="box">
+  <view class="title">
+    九九乘法表
+  </view>
+<view wx:for="{{array}}" wx:for-item="i">
+<view wx:for="{{array}}" wx:for-item="j" class="inline">
+  <view wx:if="{{j<=i}}" style="font-size: 10px;">
+    {{i}}*{{j}}={{i*j}}
+  </view>
+</view>
+</view>
+</view>

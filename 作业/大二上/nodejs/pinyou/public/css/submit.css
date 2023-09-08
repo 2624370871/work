@@ -1,0 +1,174 @@
+.logo h3 {
+  position: absolute;
+  top: 50%;
+  left: 190px;
+  margin-top: -16px;
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 19px;
+  color: #333;
+  letter-spacing: 5px;
+}
+.order_form {
+  /*height: 500px;*/
+}
+.order_form .div_list {
+  height: 40px;
+  line-height: 40px;
+  background-color: red;
+  color: #fff;
+  font-size: 18px;
+}
+.order_form .div_list .checked_qx {
+  width: 80px;
+}
+.order_form .div_list .checked_qx input {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  outline: none;
+}
+.order_form .div_list div {
+  float: left;
+  width: 200px;
+  text-align: center;
+}
+.order_form .div_list .message {
+  width: 300px;
+}
+ul.order_form_list li {
+  height: 120px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+ul.order_form_list li div {
+  float: left;
+  width: 200px;
+  height: 120px;
+}
+ul.order_form_list li .checked_dx {
+  width: 80px;
+  line-height: 120px;
+  text-align: center;
+}
+ul.order_form_list li .checked_dx input {
+  width: 16px;
+  height: 16px;
+  outline: none;
+}
+ul.order_form_list li div:nth-child(2) {
+  width: 300px;
+}
+ul.order_form_list li div:nth-child(2) .sp_pic {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+}
+ul.order_form_list li div:nth-child(2) .sp_pic img {
+  width: 100px;
+  height: 100px;
+}
+ul.order_form_list li div:nth-child(2) P {
+  width: 190px;
+  margin-top: 10px;
+  margin-left: 110px;
+  font-size: 14px;
+}
+ul.order_form_list li div.alike {
+  text-align: center;
+}
+ul.order_form_list li div.alike .dangjia {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 16px;
+}
+ul.order_form_list li div.alike div.change {
+  width: 80px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 60px;
+}
+ul.order_form_list li div.alike div.change p {
+  float: left;
+  width: 20px;
+  height: 20px;
+  background-color: #c9c9c9;
+  user-select: none;
+  cursor: pointer;
+}
+ul.order_form_list li div.alike div.change input {
+  float: left;
+  width: 40px;
+  height: 20px;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+ul.order_form_list li div.alike .remove {
+  width: 60px;
+  height: 20px;
+  margin: 20px 0 0 70px;
+}
+ul.order_form_list li div.alike .remove button {
+  width: 60px;
+  height: 20px;
+  border: none;
+  user-select: none;
+  outline: none;
+}
+ul.order_form_list li div.alike .sum span {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 16px;
+  color: red;
+}
+.ready {
+  height: 40px;
+  line-height: 40px;
+  background-color: #ccc;
+}
+.ready .ready_qx {
+  float: left;
+  width: 80px;
+  margin-left: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+.ready .ready_qx input {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  outline: none;
+}
+.ready .ready_ct {
+  float: right;
+  width: 500px;
+  height: 40px;
+}
+.ready .ready_ct .select_count {
+  float: left;
+  width: 300px;
+  height: 40px;
+}
+.ready .ready_ct .select_count p {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  outline: none;
+  border: none;
+  user-select: none;
+  color: red;
+  font-size: 16px;
+}
+.ready .ready_ct .wind_up {
+  text-align: center;
+  float: right;
+  width: 80px;
+  background-color: red;
+  margin-right: 76px;
+  font-size: 18px;
+  color: #fff;
+}

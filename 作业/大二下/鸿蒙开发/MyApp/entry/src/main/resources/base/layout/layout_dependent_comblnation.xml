@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DependentLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:background_element="#ededed">
+    <Text
+        ohos:id="$+id:text_center"
+        ohos:height="210vp"
+        ohos:width="210vp"
+        ohos:background_element="#878787"
+        ohos:center_in_parent="true"
+        ohos:text="center"
+        ohos:text_alignment="center"
+        ohos:text_size="20fp"
+        ohos:text_color="#FFFFFF"/>
+
+    <Text
+        ohos:id="$+id:text_left_and_above"
+        ohos:height="match_content"
+        ohos:width="100vp"
+        ohos:left_of="$id:text_center"
+        ohos:above="$id:text_center"
+        ohos:background_element="#FF9912"
+        ohos:padding="8vp"
+        ohos:multiple_lines="true"
+        ohos:text="left_of and above"
+        ohos:text_size="18fp"
+        ohos:text_color="#FFFFFF"/>
+
+    <Text
+        ohos:id="$+id:text_left_and_below"
+        ohos:height="match_content"
+        ohos:width="100vp"
+        ohos:left_of="$id:text_center"
+        ohos:below="$id:text_center"
+        ohos:background_element="#FF9912"
+        ohos:padding="8vp"
+        ohos:multiple_lines="true"
+        ohos:text="left_of and below"
+        ohos:text_size="18fp"
+        ohos:text_color="#FFFFFF"/>
+
+    <Text
+        ohos:id="$+id:text_right_and_above"
+        ohos:height="match_content"
+        ohos:width="100vp"
+        ohos:right_of="$id:text_center"
+        ohos:above="$id:text_center"
+        ohos:background_element="#FF9912"
+        ohos:padding="8vp"
+        ohos:multiple_lines="true"
+        ohos:text="right_of and above"
+        ohos:text_size="18fp"
+        ohos:text_color="#FFFFFF"/>
+
+    <Text
+        ohos:id="$+id:text_right_and_below"
+        ohos:height="match_content"
+        ohos:width="100vp"
+        ohos:right_of="$id:text_center"
+        ohos:below="$id:text_center"
+        ohos:background_element="#FF9912"
+        ohos:padding="8vp"
+        ohos:multiple_lines="true"
+        ohos:text="right_of and below"
+        ohos:text_size="18fp"
+        ohos:text_color="#FFFFFF"/>
+
+    <Text
+        ohos:id="$+id:text_align_top_and_left"
+        ohos:height="match_content"
+        ohos:width="100vp"
+        ohos:align_top="$id:text_center"
+        ohos:left_of="$id:text_center"
+        ohos:background_element="#228B22"
+        ohos:padding="8vp"
+        ohos:multiple_lines="true"
+        ohos:text="align_top and left"
+        ohos:text_size="18fp"
+        ohos:text_color="#FFFFFF"/>
+
+    <Text
+        ohos:id="$+id:text_align_top_and_right"
+        ohos:height="match_content"
+        ohos:width="100vp"
+        ohos:align_top="$id:text_center"
+        ohos:right_of="$id:text_center"
+        ohos:background_element="#228B22"
+        ohos:padding="8vp"
+        ohos:multiple_lines="true"
+        ohos:text="align_top and right"
+        ohos:text_size="18fp"
+        ohos:text_color="#FFFFFF"/>
+
+    <Text
+        ohos:id="$+id:text_align_bottom_and_left"
+        ohos:height="match_content"
+        ohos:width="100vp"
+        ohos:align_bottom="$id:text_center"
+        ohos:left_of="$id:text_center"
+        ohos:background_element="#228B22"
+        ohos:padding="8vp"
+        ohos:multiple_lines="true"
+        ohos:text="align_bottom and left"
+        ohos:text_size="18fp"
+        ohos:text_color="#FFFFFF"/>
+
+    <Text
+        ohos:id="$+id:text_align_bottom_and_right"
+        ohos:height="match_content"
+        ohos:width="100vp"
+        ohos:align_bottom="$id:text_center"
+        ohos:right_of="$id:text_center"
+        ohos:background_element="#228B22"
+        ohos:padding="8vp"
+        ohos:multiple_lines="true"
+        ohos:text="align_bottom and right"
+        ohos:text_size="18fp"
+        ohos:text_color="#FFFFFF"/>
+
+    <Text
+        ohos:id="$+id:text_align_left_and_above"
+        ohos:height="match_content"
+        ohos:width="100vp"
+        ohos:align_left="$id:text_center"
+        ohos:above="$id:text_center"
+        ohos:background_element="#228B22"
+        ohos:padding="8vp"
+        ohos:multiple_lines="true"
+        ohos:text="align_left and above"
+        ohos:text_size="18fp"
+        ohos:text_color="#FFFFFF"/>
+
+    <Text
+        ohos:id="$+id:text_align_left_and_below"
+        ohos:height="match_content"
+        ohos:width="100vp"
+        ohos:align_left="$id:text_center"
+        ohos:below="$id:text_center"
+        ohos:background_element="#228B22"
+        ohos:padding="8vp"
+        ohos:multiple_lines="true"
+        ohos:text="align_left and below"
+        ohos:text_size="18fp"
+        ohos:text_color="#FFFFFF"/>
+
+    <Text
+        ohos:id="$+id:text_align_right_and_above"
+        ohos:height="match_content"
+        ohos:width="100vp"
+        ohos:align_right="$id:text_center"
+        ohos:above="$id:text_center"
+        ohos:background_element="#228B22"
+        ohos:padding="8vp"
+        ohos:multiple_lines="true"
+        ohos:text="align_right and above"
+        ohos:text_size="18fp"
+        ohos:text_color="#FFFFFF"/>
+
+    <Text
+        ohos:id="$+id:text_align_right_and_below"
+        ohos:height="match_content"
+        ohos:width="100vp"
+        ohos:align_right="$id:text_center"
+        ohos:below="$id:text_center"
+        ohos:background_element="#228B22"
+        ohos:padding="8vp"
+        ohos:multiple_lines="true"
+        ohos:text="align_right and below"
+        ohos:text_size="18fp"
+        ohos:text_color="#FFFFFF"/>
+
+</DependentLayout>

@@ -1,0 +1,49 @@
+<!--pages/list/picker/picker.wxml-->
+<view class="box">
+  <view class="title">
+    个人信息填写
+  </view>
+<view class="list">
+  <text>姓名：</text><input type="text" placeholder="请输入姓名" bindinput="nameInput" />
+</view>
+<view class="list">
+  <text>性别：</text><picker mode="selector" bindchange="bindSex" range="{{sex}}">
+    <view>
+      {{Sex}}
+    </view>
+  </picker>
+</view>
+<view class="list">
+  <text>籍贯：</text><picker mode="region" bindchange="bindBirPlace" value="{{birPlace}}">
+    <view>
+      {{BirPlace}}
+    </view>
+  </picker>
+</view>
+
+<view class="list">
+  <text>出生日期：</text><picker mode="date" value="{{birDay}}"  bindchange="bindbirDay">
+    <view>
+      {{BirDay}}
+    </view>
+  </picker>
+</view>
+<view class="list">
+  <text>身高(CM)：</text><input type="text" placeholder="请输入身高" bindinput="heightInput"/>
+</view>
+<view class="list">
+  <text>体重(KG)：</text><input type="text" placeholder="请输入体重" bindinput="weightInput"/>
+</view>
+<view class="btn">
+  <button type="primary" bindtap="show" style="width: 45%;font-size: 13px;height: 40px;">显示个人信息</button>
+<button type="warn" bindtap="del" style="width: 45%;font-size: 13px;height: 40px;">清除个人信息</button>
+</view>
+<view hidden="{{flag}}">
+  <view>姓名：{{person.name}}</view>
+ <view>性别：{{person.sex}}</view>
+ <view>籍贯：{{person.birPlace}}</view>
+ <view>出生日期：{{person.birDay}}</view>
+  <view>身高(CM)：{{person.height}}</view>
+  <view>体重(KG)：{{person.weight}}</view>
+</view>
+</view>

@@ -1,0 +1,9 @@
+<!--pages/list/sum/sum.wxml-->
+<view class="box">
+  <view class="title">利用循环语句求和</view>
+  <input type="digit" placeholder="请输入起点数值" bindblur="start"/>
+  <input type="digit" placeholder="请输入终点数值" bindblur="end"/>
+  <text >两个数之间的和为：{{sum}}</text>
+  <button bindtap="sum" style="width: 80%;">求和</button>
+</view>
+

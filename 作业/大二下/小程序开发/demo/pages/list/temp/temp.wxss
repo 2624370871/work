@@ -1,0 +1,5 @@
+/* pages/list/temp/temp.wxss */
+input{
+  border-bottom: 1px solid blue;
+  margin: 20px 0;
+}

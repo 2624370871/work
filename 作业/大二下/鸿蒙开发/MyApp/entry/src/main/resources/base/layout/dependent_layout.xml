@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DependentLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+<Text
+    ohos:height="60vp"
+    ohos:width="100vp"
+    ohos:align_parent_left="true"
+    ohos:background_element="$graphic:color_green_element"
+    ohos:text="Text"
+    ohos:text_size="50vp">
+
+</Text>
+    <Text
+        ohos:height="60vp"
+        ohos:width="100vp"
+        ohos:align_parent_right="true"
+        ohos:background_element="$graphic:color_green_element"
+        ohos:text="Text"
+        ohos:text_size="50vp">
+    </Text>
+    <Text
+        ohos:height="60vp"
+        ohos:width="100vp"
+        ohos:align_parent_top="true"
+        ohos:background_element="$graphic:color_green_element"
+        ohos:text="Text"
+        ohos:text_size="50vp">
+    </Text>
+    <Text
+        ohos:height="60vp"
+        ohos:width="100vp"
+        ohos:align_parent_bottom="true"
+        ohos:background_element="$graphic:color_green_element"
+        ohos:text="Text"
+        ohos:text_size="50vp">
+    </Text>
+</DependentLayout>

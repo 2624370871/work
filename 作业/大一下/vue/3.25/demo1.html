@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<script src="/js/vue.js"></script>
+<script src="/js/jquery.js"></script>
+<style>
+  input{
+    width: 80px;
+    margin-right: 50px;
+  }
+</style>
+</head>
+<body>
+  <div id="app">
+    <h1 align="center">21级移动应用开发1班<small>学生信息表</small></h1><hr>
+    <form action="" class="form-inline">
+      学号：<input type="text" v-model="sno" />
+      姓名：<input type="text" v-model="name" />
+      年龄：<input type="text" v-model="age"/>
+        <label for="searchStr">搜索</label>
+        <input  type="text" placeholder="输入学号" id="searchStr"  v-model:value="searchString"  style="width: 120px;">
+    </form><hr>
+    <div style="margin: 20px;">
+        <button class="btn btn-success" v-on:click="add" style="margin-right:120px; font-size:15px; padding:10px 20px;">添加学生</button>
+        <button class="btn btn-danger" v-on:click="del" style="margin-right:120px; font-size:15px; padding:10px 20px;">删除学生</button>
+        <button class="btn btn-info" v-on:click="asc" style="margin-right:120px; font-size:15px; padding:10px 20px;">学号升序</button>
+        <button class="btn btn-info"v-on:click="desc" style="margin-right:120px; font-size:15px; padding:10px 20px;">学号降序</button>
+    </div>
+    <table class="table">
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+        <tr v-for="stu in result">
+          <td>{{stu.sno}}</td>
+          <td>{{stu.name}}</td>
+          <td>{{stu.age}}</td>
+        </tr>
+    </table>
+</div>
+<script>
+  var vm = new Vue({
+    el:'#app',
+    data: {
+      students: [
+        //每个元素为对象
+      ],
+      //初始化查询字符串
+      searchString:'',
+      sno:"",
+      name:"",
+      age:""
+    },
+    computed:{
+        //result表格中显示的内容，受文本框输入的影响 计算属性，带返回值的方法
+        result(){
+            var r=this.students;//获取数组
+            var searchString=this.searchString.trim();//trim()去掉前后空格
+            if(searchString=='')//文本框没有输入内容
+            return r;//返回原始数组
+            //数组r中过滤filter出符合条件的元素，并返回
+           r=r.filter(function(a){
+                if(a.sno.indexOf(searchString)!=-1){
+                    return a;
+                }
+            });
+            return r;
+        }
+    },
+    methods:{
+                //添加学生信息
+                add(){
+                  if (this.sno ==""||this.name == ""||this.age=="") {
+              alert("请输入完整");
+            } else {
+              var student = {
+                sno: this.sno,
+                name: this.name,
+                age: this.age,
+              }
+              this.students.push(student);
+            }
+                },
+                del(){
+                    this.students.pop();
+                },
+                asc(){
+                    this.students.sort(function(a,b){
+                       return a.sno>b.sno?1:-1;
+                    });
+                },
+                desc(){
+                    this.students.sort(function(a,b){
+                       return a.sno<b.sno?1:-1;
+                    });
+                },
+            }
+  });
+</script>
+</body>
+</html>

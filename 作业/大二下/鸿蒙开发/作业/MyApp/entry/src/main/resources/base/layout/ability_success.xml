@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <Text
+        ohos:layout_alignment="center"
+        ohos:margin="50vp"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:background_element="$graphic:background_ability_success"
+        ohos:text="支付成功!"
+        ohos:text_size="50vp"
+        />
+<Button
+    ohos:id="$+id:confirm"
+    ohos:layout_alignment="center"
+    ohos:height="100vp"
+    ohos:width="200vp"
+    ohos:text_size="50fp"
+    ohos:text="确定"
+    ohos:background_element="$graphic:background_button"></Button>
+</DirectionalLayout>

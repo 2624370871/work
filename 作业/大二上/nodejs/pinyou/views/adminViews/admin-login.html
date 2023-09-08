@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员登录</title>
+    <link rel="stylesheet" href="../../public/css/admin-css/reg.css">
+    <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/admin-css/button.css">
+</head>
+<body>
+<div id="div">
+    <div id="div1">
+        <h2>管理员登录</h2>
+        <hr>
+    </div>
+    <form method="post" action="/admin/dologin" id="login-form" autocomplete="on" onsubmit="return reg()">
+        <div class="input-group">
+        <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-user"></span></button>
+      </span>
+            <input type="text" id="adminname" class="form-control" name="adminname" placeholder="请输入用户名." style="width:200px;">
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="input-group">
+        <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon glyphicon-lock"></span></button>
+      </span>
+        <input type="password" id="password" class="form-control" name="password" placeholder="请输入密码" style="width:200px;">
+</div>
+        <br/>
+        <input type="submit" class="btn btn-lg btn-primary" id="login_btn"  value="登录" style="width: 230px;  ">
+        <br/>
+    </form>
+</div>
+<div class="tent">
+    © 所有权归品优购商城
+</div>
+<script src="../../public/js/admin-js/admin-login.js"></script>
+</body>
+</html>

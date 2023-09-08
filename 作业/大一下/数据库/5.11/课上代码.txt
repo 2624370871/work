@@ -1,0 +1,196 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : test
+Source Server Version : 50067
+Source Host           : localhost:3306
+Source Database       : xxgc
+
+Target Server Type    : MYSQL
+Target Server Version : 50067
+File Encoding         : 65001
+
+Date: 2022-05-09 15:16:16
+*/
+
+create database xxgc3;
+
+use xxgc3;
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for course
+-- ----------------------------
+DROP TABLE IF EXISTS `course`;
+CREATE TABLE `course` (
+  `cno` char(4) NOT NULL,
+  `cname` varchar(40) default NULL,
+  `cperiod` int(11) default NULL,
+  `credit` decimal(3,1) default NULL,
+  `ctno` char(4) default NULL,
+  PRIMARY KEY  (`cno`),
+  UNIQUE KEY `cname` (`cname`),
+  KEY `fk_teacher_course` (`ctno`),
+  CONSTRAINT `fk_teacher_course` FOREIGN KEY (`ctno`) REFERENCES `teacher` (`tno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of course
+-- ----------------------------
+INSERT INTO `course` VALUES ('1', '1', '1', '1.0', '1');
+INSERT INTO `course` VALUES ('2', '2', '2', '2.0', '2');
+INSERT INTO `course` VALUES ('3', '3', '3', '3.0', '3');
+
+-- ----------------------------
+-- Table structure for elective
+-- ----------------------------
+DROP TABLE IF EXISTS `elective`;
+CREATE TABLE `elective` (
+  `sno` char(8) NOT NULL default '',
+  `cno` char(4) NOT NULL default '',
+  `score` int(11) default NULL,
+  PRIMARY KEY  (`sno`,`cno`),
+  KEY `fk_course_elective` (`cno`),
+  CONSTRAINT `fk_course_elective` FOREIGN KEY (`cno`) REFERENCES `course` (`cno`),
+  CONSTRAINT `fk_stu_elective` FOREIGN KEY (`sno`) REFERENCES `studentinfo` (`sno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of elective
+-- ----------------------------
+INSERT INTO `elective` VALUES ('10101001', '1', '90');
+INSERT INTO `elective` VALUES ('10101001', '2', '80');
+INSERT INTO `elective` VALUES ('10101001', '3', '70');
+INSERT INTO `elective` VALUES ('10101002', '1', '91');
+INSERT INTO `elective` VALUES ('10101002', '2', '81');
+INSERT INTO `elective` VALUES ('10101002', '3', '71');
+INSERT INTO `elective` VALUES ('10102001', '1', '92');
+INSERT INTO `elective` VALUES ('10102001', '2', '82');
+INSERT INTO `elective` VALUES ('10102001', '3', '72');
+
+-- ----------------------------
+-- Table structure for studentinfo
+-- ----------------------------
+DROP TABLE IF EXISTS `studentinfo`;
+CREATE TABLE `studentinfo` (
+  `sno` char(8) NOT NULL,
+  `sname` varchar(10) NOT NULL,
+  `sgender` char(2) default NULL,
+  `sbirth` date default NULL,
+  `sclass` varchar(20) default NULL,
+  PRIMARY KEY  (`sno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of studentinfo
+-- ----------------------------
+INSERT INTO `studentinfo` VALUES ('10101001', '张永峰', '男', '1993-08-01', '电子商务101');
+INSERT INTO `studentinfo` VALUES ('10101002', '何小丽', '女', null, null);
+INSERT INTO `studentinfo` VALUES ('10102001', '王斌', '男', '1991-07-14', '网络技术101');
+INSERT INTO `studentinfo` VALUES ('10102003', '孙平平', '女', '1992-02-27', '网络技术101');
+
+-- ----------------------------
+-- Table structure for teacher
+-- ----------------------------
+DROP TABLE IF EXISTS `teacher`;
+CREATE TABLE `teacher` (
+  `tno` char(4) NOT NULL,
+  `tname` varchar(10) NOT NULL,
+  `tgender` char(2) default NULL,
+  `tedu` varchar(10) default NULL,
+  `tpro` varchar(8) default '讲师',
+  PRIMARY KEY  (`tno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of teacher
+-- ----------------------------
+INSERT INTO `teacher` VALUES ('1', '1', '1', '1', '讲师');
+INSERT INTO `teacher` VALUES ('2', '2', '2', '2', '讲师');
+INSERT INTO `teacher` VALUES ('3', '3', '3', '3', '讲师');
+
+
+
+SELECT * FROM COURSE CROSS JOIN TEACHER
+ORDER BY CNO
+
+SELECT s.sname,e.sno,e.cno,e.score from studentinfo as s join elective as e on s.sno=s.sno
+where score<80;
+
+SELECT s.sno as 学号 ,sname as 姓名 ,cno 课程编号,score 分数 from studentinfo as s,elective as e
+where s.sno= e.sno
+and score<80;
+
+SELECT studentinfo.*,elective.*,course.* from studentinfo join elective on studentinfo.sno=elective.sno
+join course on course.cno=elective.cno
+WHERE score<80
+
+
+select * from teacher as t
+left join course as c on t.tno= c.ctno;
+
+SELECT 
+ s2.sno,s2.sname
+from
+studentinfo as s1 join studentinfo as s2
+on s1.sclass= s2.sclass
+where 
+s1.sno='10102001' and s2.sno!='11101001';
+
+
+
+SELECT sno 学号,score 数据库成绩
+from elective
+where cno=(SELECT cno from course where cname="数据库")
+
+select sname from studentinfo
+where sbirth=(
+SELECT min(sbirth) from studentinfo
+);
+
+select sname from studentinfo
+where sno in
+(select sno from elective
+where score<80 and cno=(select cno from course where cname ='数据库')
+);
+
+SELECT sname from studentinfo
+where sno in(SELECT sno from elective WHERE score<80);
+
+
+SELECT sname from studentinfo
+where sno not in(SELECT sno from elective WHERE score<80);
+
+SELECT sname from studentinfo
+where sno != any(select sno from elective where score < 80);
+
+select sname from studentinfo
+where sno = all(select sno from elective where score<80);
+
+select * from teacher
+where not exists (select * from teacher where tpro='教授');
+
+select * from elective
+where EXIsts (select * from elective where score<60);
+
+select sno 编号,sname 姓名 from  studentinfo
+union
+select tno 编号,tname 姓名 from teacher;
+
+CREATE TABLE studs
+(sno char(8),
+sname VARCHAR(10),
+sclass VARCHAR(20));
+
+insert into studs(sno,sname,sclass)
+SELECT sno,sname,sclass from studentinfo WHERE sclass like "电子商务";
+
+insert into studs(sno,sname,sclass)
+select sno,sname,sclass from studentinfo;
+
+update course set cperiod = cperiod-6
+where ctno in (SELECT tno from teacher where tpro <> '教授');
+
+delete from elective
+where sno in (select sno from studentinfo where sname<>'王斌')

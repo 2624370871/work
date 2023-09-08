@@ -1,0 +1,4 @@
+/* pages/Audio/Audio.wxss */
+.img{
+    width: 650rpx;
+}

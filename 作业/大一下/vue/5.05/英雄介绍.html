@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/5.05/js/vue.js"></script>
+    <style>
+        .heroslist{
+            width: 83px;
+            height: 83px;
+            list-style: none;
+            float: left;
+            margin: 30px;
+        }
+        img{
+            width: 83px;
+            height: 83px;
+            border: 2px solid aqua;
+            border-radius: 10px 0 10px 0;
+        }
+        p{
+            width: 83px;
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-model绑定单选按钮 获取按钮的value -->
+      <input type="radio" value="本周免费" v-model="show" />
+      <label>本周免费</label>
+      <input type="radio" value="新手推荐" v-model="show" />
+      <label for="">新手推荐</label>
+      <ul>
+        <li v-for="i in heros" class="heroslist">
+          <img :src="i.url" alt="" srcset="" />
+          <p>{{i.name}}</p>
+        </li>
+      </ul>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          show: "本周免费",
+          // 显示的英雄数组
+          //heros:[],
+          // 免费英雄
+          freeHeros: [
+            { url: "/5.05/img/2.png", name: "赵云" },
+            { url: "/5.05/img/3.png", name: "后羿" },
+            { url: "/5.05/img/4.png", name: "澜" },
+            { url: "/5.05/img/5.png", name: "瑶" },
+            { url: "/5.05/img/6.png", name: "元歌" },
+          ],
+          // 推荐英雄
+          recommondHeros: [
+            { url: "/5.05/img/5.png", name: "瑶" },
+            { url: "/5.05/img/6.png", name: "元歌" },
+          ],
+        },
+        // 计算属性
+        computed: {
+          heros() {
+              if(this.show=="本周免费"){
+                  return this.freeHeros;
+              }else{
+                  return this.recommondHeros;
+              }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

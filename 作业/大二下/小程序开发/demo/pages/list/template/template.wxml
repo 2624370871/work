@@ -1,0 +1,8 @@
+<!--pages/list/template/template.wxml-->
+<view class="box">
+  <view class="title">
+    模板的定义和引用
+  </view>
+  <import src="myTemplate.wxml"/>
+  <template is="student" data="{{...stu}}"></template>
+</view>

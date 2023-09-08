@@ -1,0 +1,34 @@
+<!--pages/list/swiper/swiper.wxml-->
+<view class="box">
+  <view class="title">
+    轮播图和开关选择器
+  </view>
+  <swiper indicator-dots="{{dots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}">
+<block wx:for="{{background}}" wx:key="index">
+  <swiper-item>
+    <view class="{{item}}"></view>
+  </swiper-item>
+</block>
+  </swiper>
+  <view class="switch">
+    <text>指示点</text>
+    <switch checked="true" bindchange="dotsChange"/>
+  </view>
+  <view>
+    <view class="switch">
+    <text>自动播放</text>
+    <switch bindchange="autoplayChange"/>
+  </view>
+
+  </view>
+
+  <view class="switch">
+    <text>衔接滑动</text>
+    <switch bindchange="circularChange"/>
+  </view>
+  <view class="switch">
+    <text>竖向</text>
+    <switch bindchange="verticalChange"/>
+  </view>
+</view>
+

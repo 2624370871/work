@@ -1,0 +1,12 @@
+/* pages/list/picker/picker.wxss */
+.list{
+  display: flex;
+  margin: 10px 0;
+}
+input{
+  border-bottom: 1px solid black;
+  padding-bottom: 3px;
+}
+.btn{
+  display: flex;
+}

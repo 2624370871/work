@@ -1,0 +1,16 @@
+<!--pages/list/Network/Network.wxml-->
+<view class="box">
+  <view class="title">
+    网络状态
+  </view>
+  <view>
+    当前网络状态:{{status}}
+  </view>
+  <button type="primary" bindtap="wifiStatus">Wi-Fi状态</button>
+  <view class="view">
+    <view>SSID:{{res.SSID}}</view>
+    <view>BSSID:{{res.BSSID}}</view>
+    <view>安全性:{{res.secure}}</view>
+    <view>信号强度:{{res.signalStrength}}</view>
+  </view>
+</view>

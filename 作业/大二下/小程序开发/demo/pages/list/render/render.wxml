@@ -1,0 +1,25 @@
+<!--pages/list/render/render.wxml-->
+<view class="box">
+  <view class="title">
+    条件渲染
+  </view>
+  <view class="block">
+    <view>利用view中的wx:if进行条件渲染</view>
+<input type="text" placeholder="请输入颜色或16进制" class="input" bindinput="colorinput"/>
+    <view wx:if="{{color=='red'}}">红色</view>
+    <view wx:elif="{{color=='green'}}">绿色</view>
+    <view wx:elif="{{color=='blue'}}">蓝色</view>
+    <view wx:else>其他颜色</view>
+    <view class="item" style="background-color: {{color}}"></view>
+  </view>
+
+  <view class="block">
+    <view>利用block中的wx:if进行条件渲染</view>
+    <input type="text" placeholder="请输入文本" class="input" bindinput="lengthinput"/>
+    <block wx:if="{{length>10}}">
+      <view class="item" style="background-color: red;">红色</view>
+      <view class="item" style="background-color: green;">绿色</view>
+      <view class="item" style="background-color: blue;">蓝色</view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+START TRANSACTION;
+DELETE * from user;
+
+COMMIT;
+
+ROLLBACK;

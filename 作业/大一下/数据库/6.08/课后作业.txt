@@ -1,0 +1,25 @@
+drop PROCEDURE if EXISTS proc_2;
+create PROCEDURE proc_2
+(in tname varchar(20),out out_score int)
+BEGIN
+	select score into out_score from user where uname = tname;
+end;
+set @score =0;
+set @uname = '平平人生';
+call proc_2(@uname,@score);
+select @uname,@score;
+set @uname = '感动心灵';
+call proc_2(@uname,@score);
+select @uname,@score;
+
+
+drop PROCEDURE if EXISTS proc_3;
+create PROCEDURE proc_3
+(in tuid varchar(20),out out_ordernum int)
+BEGIN
+select ordernum into out_ordernum from b_order where uid = tuid;
+end;
+set @ordernum =0;
+set @uid = '1003';
+call proc_3(@uid,@ordernum);
+select @uid,@ordernum;

@@ -1,0 +1,253 @@
+{
+  "app": {
+    "bundleName": "com.example.myapp",
+    "vendor": "example",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.example.myapp",
+    "name": ".MyApplication",
+    "mainAbility": "com.example.myapp.MainAbility",
+    "deviceType": [
+      "phone"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree": false
+    },
+    "abilities": [
+      {
+        "orientation": "unspecified",
+        "visible": true,
+        "name": "com.example.myapp.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "visible": true,
+        "name": "com.example.myapp.LoginAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "visible": true,
+        "name": "com.example.myapp.TextAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.MyAbility",
+        "icon": "$media:icon",
+        "description": "$string:myability_description",
+        "label": "$string:entry_MyAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.TextTruncationAbility",
+        "icon": "$media:icon",
+        "description": "$string:myability_description",
+        "label": "$string:entry_TextTruncation",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.Scenarioexample",
+        "icon": "$media:icon",
+        "description": "$string:scenarioexample_description",
+        "label": "$string:entry_scenarioexample",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.TextFiled",
+        "icon": "$media:icon",
+        "description": "$string:textfile_description",
+        "label": "$string:entry_TextFile",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.Image",
+        "icon": "$media:icon",
+        "description": "$string:image_description",
+        "label": "$string:entry_Image",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.picker",
+        "icon": "$media:icon",
+        "description": "$string:picker_description",
+        "label": "$string:entry_picker",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.PickerM",
+        "icon": "$media:icon",
+        "description": "$string:pickerm_description",
+        "label": "$string:entry_PickerM",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.FirstAbility",
+        "icon": "$media:icon",
+        "description": "$string:firstability_description",
+        "label": "$string:entry_FirstAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "skills": [
+          {
+            "entities": [],
+            "actions": [
+              "ACTION_ONE",
+              "ACTION_TWO"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "name": "com.example.myapp.SecondAbility",
+        "icon": "$media:icon",
+        "description": "$string:secondability_description",
+        "label": "$string:entry_SecondAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.PgAbility",
+        "icon": "$media:icon",
+        "description": "$string:pgability_description",
+        "label": "$string:entry_PgAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.Pg2Ability",
+        "icon": "$media:icon",
+        "description": "$string:pgability_description",
+        "label": "$string:entry_PgAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.APgAbility",
+        "icon": "$media:icon",
+        "description": "$string:apgability_description",
+        "label": "$string:entry_APgAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.BPgAbility",
+        "icon": "$media:icon",
+        "description": "$string:bpgability_description",
+        "label": "$string:entry_BPgAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.DatePicker",
+        "icon": "$media:icon",
+        "description": "$string:datepicker_description",
+        "label": "$string:entry_DatePicker",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.TimePicker",
+        "icon": "$media:icon",
+        "description": "$string:timepicker_description",
+        "label": "$string:entry_TimePicker",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.RadioButton",
+        "icon": "$media:icon",
+        "description": "$string:radiobutton_description",
+        "label": "$string:entry_RadioButton",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.CheckBox",
+        "icon": "$media:icon",
+        "description": "$string:checkbox_description",
+        "label": "$string:entry_CheckBox",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+
+        "orientation": "unspecified",
+        "name": "com.example.myapp.Toast",
+        "icon": "$media:icon",
+        "description": "$string:toast_description",
+        "label": "$string:entry_toast",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "name": "com.example.myapp.TabList",
+        "icon": "$media:icon",
+        "description": "$string:tablist_description",
+        "label": "$string:entry_TabList",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ],
+    "defPermissions": [
+      {
+        "name": "com.example.myapp.slice.DataAbilityShellProvider.PROVIDER"
+      }
+    ]
+  }
+}

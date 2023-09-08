@@ -1,0 +1,57 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         id="WebApp_ID" version="3.1">
+  <display-name>Archetype Created Web Application</display-name>
+<!--  <servlet>-->
+<!--    <servlet-name>HelloWeb</servlet-name>-->
+<!--    <servlet-class>-->
+<!--      org.springframework.web.servlet.DispatcherServlet-->
+<!--    </servlet-class>-->
+<!--    <load-on-startup>1</load-on-startup>-->
+<!--  </servlet>-->
+
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>HelloWeb</servlet-name>-->
+<!--    <url-pattern>/</url-pattern>-->
+<!--  </servlet-mapping>-->
+
+
+<!--  <servlet>-->
+<!--    <servlet-name>SpringWeb</servlet-name>-->
+<!--    <servlet-class>-->
+<!--      org.springframework.web.servlet.DispatcherServlet-->
+<!--    </servlet-class>-->
+<!--    <load-on-startup>1</load-on-startup>-->
+<!--  </servlet>-->
+
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>SpringWeb</servlet-name>-->
+<!--    <url-pattern>/</url-pattern>-->
+<!--  </servlet-mapping>-->
+
+  <servlet>
+    <servlet-name>DownloadWeb</servlet-name>
+    <servlet-class>
+      org.springframework.web.servlet.DispatcherServlet
+    </servlet-class>
+    <load-on-startup>1</load-on-startup>
+            <multipart-config>
+               <location>./</location>
+               <!--        上传文件最大为2M-->
+               <max-file-size>2097152</max-file-size>
+               <!--        上传文件整个请求大小不超过4M-->
+               <max-request-size>4194304</max-request-size>
+           </multipart-config>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>DownloadWeb</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+</web-app>

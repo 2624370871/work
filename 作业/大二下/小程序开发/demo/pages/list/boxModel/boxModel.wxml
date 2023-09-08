@@ -1,0 +1,15 @@
+<!--pages/box/box.wxml-->
+<view class="box">
+    <view class="title">
+        盒模型
+    </view>
+<view class="boxModel01">
+    
+</view>
+<view class="boxModel02">
+    
+</view>
+<view class="boxModel03">
+    
+</view>
+</view>

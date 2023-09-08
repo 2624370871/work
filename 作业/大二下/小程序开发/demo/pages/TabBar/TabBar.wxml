@@ -1,0 +1,24 @@
+<!--pages/TabBar/TabBar.wxml-->
+<view class="box">
+  <view class="title">
+    TabBar设置
+  </view>
+  <view class="list">
+    <button type="primary" style="width: 45%;" bindtap="showTab">显示标签</button>
+    <button type="primary" style="width: 45%;" bindtap="hideTab">隐藏标签</button>
+  </view>
+  <view class="list">
+    <button type="primary" style="width: 45%;" bindtap="setTab">设置标记</button>
+    <button type="primary" style="width: 45%;" bindtap="delTab">删除标记</button>
+  </view>
+  <view class="list">
+    <button type="primary" style="width: 45%;" bindtap="showTabDot">显示红点</button>
+    <button type="primary" style="width: 45%;" bindtap="hideTabDot">隐藏红点</button>
+  </view>
+  <view class="list">
+    <button type="primary" style="width: 45%;padding:20rpx 0;" bindtap="setTabStyle">设置整体样式</button>
+    <button type="primary" style="width: 45%;padding:20rpx 0;" bindtap="setTabItem">设置单项样式</button>
+  </view>
+  <button type="primary" style="width: 95%;" bindtap="reset">还原标签栏样式</button>
+</view>
+

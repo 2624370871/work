@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+    <!--水平进度条-->
+    <ProgressBar
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:min="0"
+        ohos:max="100"
+        ohos:progress="50"
+        ohos:progress_color="#FF0000"
+        ohos:progress_width="10vp"/>
+    <!--垂直进度条-->
+    <!--    progress_color进度值的颜色-->
+    <!--    progress_hint_text_color进度值得背景颜色-->
+    <!--    progress_hint_text_color进度值数字颜色-->
+    <!--    <ProgressBar-->
+    <!--        ohos:orientation="vertical"-->
+    <!--        ohos:height="match_parent"-->
+    <!--        ohos:width="match_content"-->
+    <!--        ohos:min="0"-->
+    <!--        ohos:max="100"-->
+    <!--        ohos:progress="50"-->
+    <!--        ohos:progress_color="#FF0000"-->
+    <!--        ohos:progress_width="10vp"-->
+    <!--        ohos:background_instruct_element="#000000"-->
+    <!--        ohos:progress_hint_text_color="#0066FF"-->
+    <!--        ohos:progress_hint_text="25%"/>-->
+    <!--    环形进度条-->
+    <!--    <RoundProgressBar-->
+    <!--        ohos:height="300vp"-->
+    <!--        ohos:width="300vp"-->
+    <!--        ohos:progress="50"-->
+    <!--        ohos:start_angle="30"-->
+    <!--        ohos:max_angle="300"/>-->
+    <!--    开关组件-->
+    <Switch
+        ohos:height="40vp"
+        ohos:width="80vp"
+        ohos:text_state_on="ON"
+        ohos:text_state_off="OFF"/>
+
+</DirectionalLayout>

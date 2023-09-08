@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <style>
+      .num1,
+      .num2{
+        width: 100px;
+        font-size: 15px;
+      }
+      .bu{
+        width: 50px;
+        height: 30px;
+      }
+      .result,.up{
+        font-size: 40px;
+      }
+      .se{
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="num1" class="num1" />
+      <select v-model.number="num"  class="se">
+            <option value="1" >+</option>
+            <option value="2" >-</option>
+            <option value="3" >*</option>
+            <option value="4" >/</option>
+        </select>
+        <input type="text" v-model="num2" class="num2" />
+      <div class="up">=</div>
+      <div class="result">{{result}}</div>
+      <input type="button" value="确定" @click="compare()" class="bu"/>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          num1: "",
+          num2: "",
+          num:"",
+          result:""
+        },
+        methods:{
+          compare(){
+          if (this.num1 == "" || this.num2 == "") {
+            this.result = "输入的数不能为空"
+          } else if (this.num==1) {
+            this.result = parseInt(this.num1) + parseInt(this.num2);
+          } else if (this.num==2) {
+            this.result = parseInt(this.num1) - parseInt(this.num2);
+          } else if (this.num==3) {
+            this.result = parseInt(this.num1) * parseInt(this.num2);
+          } else if (this.num==4) {
+            this.result = parseInt(this.num1) / parseInt(this.num2);
+          } else {
+            this.result = "您输入的数值有误！"
+          }
+        }
+        }
+       
+      });
+    </script>
+  </body>
+</html>

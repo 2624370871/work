@@ -1,0 +1,33 @@
+
+.text-area{
+	margin: 0 auto;
+	border: 1px solid #86b7d8;
+	width: 80%;
+	line-height: 60rpx;
+	border-radius: 10px;
+	height: 120px;
+}
+text{
+	margin-left: 10%;
+	font-size: 12px;
+}
+button{
+	width: 80%;
+	margin: 0 auto;
+}
+input{
+	caret-color: #0098FE;
+			margin: 0 auto;
+			border-bottom: 1px solid rgba(212, 212, 212, 0.4);
+			width: 80%;
+			padding-bottom: 18px;
+			font-size: 18px;
+			line-height: 18px;
+}
+checkbox{
+	padding-left: 20px;
+}
+switch{
+	padding-left: 10%;
+}
+

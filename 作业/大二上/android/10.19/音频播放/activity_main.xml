@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hint"
+        android:padding="10px"
+        android:text="从单击play开始播放音频"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button1"
+            android:text="Play"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            android:enabled="false"
+            android:text="Pause"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button3"
+            android:enabled="false"
+            android:text="Stop"/>
+        <TextView
+            android:id="@+id/volume"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:padding="10px"
+            android:text="Volume:"
+          />
+    </LinearLayout>
+<SeekBar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/seekBar1"
+    android:layout_gravity="top"/>
+</LinearLayout>

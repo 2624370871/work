@@ -1,0 +1,14 @@
+<!--pages/list/canvasChange/canvasChange.wxml-->
+<view class="box">
+  <view class="title">
+    改变图形
+  </view>
+  <canvas canvas-id="canvas"></canvas>
+  <view class="btn">
+    <button type="primary" style="width: 150rpx;height: 100rpx;" bindtap="draw">绘图</button>
+    <button type="primary"  style="width: 150rpx;height: 100rpx;"  bindtap="scale">放大</button>
+    <button type="primary"  style="width: 150rpx;height: 100rpx;" bindtap="translate">移动</button>
+    <button type="primary"  style="width: 150rpx;height: 100rpx;" bindtap="rotate">旋转</button>
+  </view>
+</view>
+

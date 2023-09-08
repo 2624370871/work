@@ -1,0 +1,37 @@
+create PROCEDURE sp_test()
+begin
+DECLARE num int DEFAULT(0);
+SELECT num;
+end;
+call sp_test
+
+CREATE PROCEDURE sp_test1()
+begin
+set @var_num=10;
+end;
+
+CREATE PROCEDURE sp_test2()
+begin
+set @var_num=@var_num+10;
+end;
+
+call sp_test1;
+
+select num;
+
+SELECT @var_num;
+
+call sp_test2;
+
+SELECT @var_num;
+
+drop PROCEDURE if EXISTS sp_test;
+
+CREATE PROCEDURE sp_test()
+BEGIN
+
+	declare num int DEFAULT 0;
+	set num = 10;
+	select num;
+END;
+

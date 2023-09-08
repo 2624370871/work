@@ -1,0 +1,30 @@
+<!--pages/list/flex/flex.wxml-->
+<view class="box">
+  <view class="title">
+    flex布局
+  </view>
+  <!-- 第一个 -->
+  <view id="box1">
+    <view class="box1">1</view>
+    <view class="box2">2</view>
+    <view class="box3">3</view>
+  </view>
+  =======================
+  <!-- 第二个 -->
+  <view id="box2">
+    <view class="box1">1</view>
+    <view class="box2-1">
+      <view class="box2">2</view>
+      <view class="box3">3</view>
+    </view>
+  </view>
+  =======================
+  <!-- 第三个 -->
+  <view id="box3">
+    <view class="box1">1</view>
+    <view class="box3-1">
+      <view class="box2">2</view>
+    <view class="box3">3</view>
+    </view>
+  </view>
+</view>

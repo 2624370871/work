@@ -1,0 +1,21 @@
+<!--pages/list/float/float.wxml-->
+<view class="box">
+<view class="title">
+  float页面布局
+</view>
+<!-- 第一个 -->
+<view id="box1">
+<view class="box1">box1</view>
+<view class="box2">box2</view>
+<view class="box3">box3</view>
+<view class="box4">box4</view>
+</view>
+<!-- 第二个 -->
+<view id="box2">
+  <view class="box1">header</view>
+<view class="box2 left">leftBar</view>
+<view class="box4">main</view>
+<view class="box2 right">rightBar</view>
+<view class="box1">footer</view>
+</view>
+</view>

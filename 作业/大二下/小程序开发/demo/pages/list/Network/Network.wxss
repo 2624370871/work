@@ -1,0 +1,4 @@
+/* pages/list/Network/Network.wxss */
+.view view{
+margin: 5px 0;
+}

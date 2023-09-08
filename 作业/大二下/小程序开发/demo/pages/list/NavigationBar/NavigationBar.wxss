@@ -1,0 +1,8 @@
+/* pages/list/NavigationBar/NavigationBar.wxss */
+input{
+  border-bottom: 1px solid black;
+}
+.btnLayout{
+  display: flex;
+  margin: 20rpx 0;
+}

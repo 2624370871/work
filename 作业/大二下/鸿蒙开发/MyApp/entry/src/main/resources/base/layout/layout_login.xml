@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:orientation="vertical">
+    <!-- ohos:id定义组件的id，注意格式固定$+id:xxxx   -->
+    <!--match_content 表示包裹内容，按钮的大小与按钮内的文字大小一致-->
+    <Button
+        ohos:id="$+id:button"
+        ohos:width="match_content"
+        ohos:height="match_content"
+        ohos:text="点击我"
+        ohos:text_size="19fp"
+        ohos:text_color="#FFFFFF"
+        ohos:top_padding="8vp"
+        ohos:bottom_padding="8vp"
+        ohos:right_padding="70vp"
+        ohos:left_padding="70vp"
+        ohos:center_in_parent="true"
+        ohos:margin="10vp"
+        ohos:background_element="#007DFF"
+        />
+</DirectionalLayout>

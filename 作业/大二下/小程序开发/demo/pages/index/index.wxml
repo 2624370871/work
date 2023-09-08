@@ -1,0 +1,454 @@
+
+<view class="box">
+    <view class="title">
+        框架案例
+    </view>
+    <navigator url="/pages/list/fontStyle/fontStyle">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+        fontStyle
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+    <navigator url="/pages/list/textStyle/textStyle">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+        TextStyle
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+    <navigator url="/pages/list/boxModel/boxModel">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+        boxModel
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+    <navigator url="/pages/list/Audio/Audio">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+        Audio
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+    <navigator url="/pages/list/flex/flex">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+        flex
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+    <navigator url="/pages/list/float/float">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+        float
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>   
+
+    <navigator url="/pages/list/draw/draw">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+        draw
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+
+    <navigator url="/pages/list/temp/temp">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+        摄氏温度转华氏温度
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/math/math">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      条件结构和数学函数
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+    <navigator url="/pages/list/score/score">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      成绩计算器
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/sum/sum">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      利用循环语句求和
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/random/random">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      随机数求和
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    
+    <navigator url="/pages/list/bind/bind">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      数据及事件绑定
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/render/render">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      条件渲染
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+    
+    <navigator url="/pages/list/variable/variable">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      变量模块化示例
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/grade/grade">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      成绩等级计算器
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/listdraw/listdraw">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      列表渲染
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/multiplication/multiplication">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      九九乘法表
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/template/template">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      模板的定义和引用
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/include/include">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      利用include引用文件
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/exchange/exchange">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+     货币兑换
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/area/area">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+     三角形面积计算器
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/stylefont/stylefont">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      设置字体样式和大小
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/slider/slider">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      滑动条和颜色
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/swiper/swiper">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      轮播图和开关选择器
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/picker/picker">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      个人信息填写
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/imageShow/imageShow">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      图片展示
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/audioShow/audioShow">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      音频展示
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/videoShow/videoShow">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      视频展示
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/exam/exam/exam">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      考试场次选择
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/faceChange/faceChange">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      变脸游戏
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/factorial/factorial">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      阶乘计算器
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+
+    <navigator url="/pages/list/Canvas/Canvas">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      基本绘画
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+
+    <navigator url="/pages/list/canvasReserve/canvasReserve">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      参数绘图
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/canvasChange/canvasChange">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      改变图形
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/canvasSin/canvasSin">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      绘制正弦曲线
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/canvasFree/canvasFree">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      自由绘图
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/location/location">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      位置和地图
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/File/File">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      文件操作
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/Network/Network">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      网络状态
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/Compass/Compass">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      传感器
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/scan/scan">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      扫码和联系人
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/SystemInfo/SystemInfo">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      同步获取您的设备信息
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/NavigationBar/NavigationBar">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      导航条
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+
+    <navigator url="/pages/list/ActionSheet/ActionSheet">
+    <view class="list">
+        <icon type="success" class="left"/>
+    <view class="center">
+      操作菜单
+    </view>
+    <image class="right" src="/pages/image/right-arrow.png" mode=""/>
+    </view>
+    </navigator>
+</view>
+

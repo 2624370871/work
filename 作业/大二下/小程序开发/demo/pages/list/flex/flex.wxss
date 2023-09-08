@@ -1,0 +1,53 @@
+/* pages/list/flex/flex.wxss */
+view{
+  text-align: center;
+}
+.box1{
+  background-color: red;
+}
+.box2{
+  background-color: green;
+}
+.box3{
+  background-color: blue;
+}
+/* 第一个盒子 */
+#box1{
+  display: flex;
+ justify-content: space-between;
+}
+#box1 view{
+  height: 100rpx;
+  flex: 1;
+  line-height: 100rpx;
+}
+/* 第二个盒子 */
+#box2{
+display: flex;
+}
+#box2 view:first-child{
+  line-height: 200rpx;
+  height: 200rpx;
+  flex: 1;
+}
+#box2 .box2-1{
+  flex: 2;
+}
+#box2 .box2-1 view{
+  height: 100rpx;
+  line-height: 100rpx;
+}
+/* 第三个盒子 */
+#box3 view:first-child{
+  line-height: 100rpx;
+  height: 100rpx;
+}
+#box3 .box3-1{
+  flex: 2;
+  display: flex;
+}
+#box3 .box3-1 view{
+  height: 300rpx;
+  line-height: 300rpx;
+  flex: 1;
+}

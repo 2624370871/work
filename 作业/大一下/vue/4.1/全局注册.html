@@ -1,0 +1,32 @@
+让<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 3、显示自定义的组件 v-for="i in 5显示5个组件 -->
+        <my-button v-for="i in 5"></my-button>
+    </div>
+    <!-- 1、定义一个模板 -->
+    <template id="temp1">
+        <button @click="count++">{{count}}</button>
+    </template>
+</body>
+<script>
+    //2、使用全局api注册组件 my-button
+    Vue.component('my-button',{
+            // 组件的属性 data template(使用模板temp1) methods
+    })
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            count:0
+        }
+    })
+</script>
+</html>

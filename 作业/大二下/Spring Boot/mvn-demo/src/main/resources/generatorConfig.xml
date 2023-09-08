@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 参考文档 commandline里面需要配置 [mybatis-generator:generate -e]
+     https://www.cnblogs.com/sam-uncle/p/13451233.html-->
+    <context id="context1"  targetRuntime="MyBatis3Simple">
+        <!--数据库链接URL，用户名、密码 -->
+        <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/mytest?serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" password="root" userId="root" />
+        <!-- 生成持久化类的包名和位置-->
+        <javaModelGenerator targetPackage="chapter10_2.po" targetProject="src/main/java" />
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="chapter10_2.mapper" targetProject="src/main/java" />
+        <!-- 生成映射接口的包名和位置-->
+        <javaClientGenerator targetPackage="chapter10_2.dao" targetProject="src/main/java" type="XMLMAPPER" />
+        <!-- 针对哪个表或视图生成内容以及是否生成SQL语句-->
+        <table schema="" tableName="t_student" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+    </context>
+</generatorConfiguration>

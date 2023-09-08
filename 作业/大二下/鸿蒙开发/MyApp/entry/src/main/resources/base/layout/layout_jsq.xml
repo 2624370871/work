@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <Text
+        ohos:height="0vp"
+        ohos:width="match_parent"
+        ohos:weight="1">
+    </Text>
+
+    <DirectionalLayout
+        ohos:height="0vp"
+        ohos:width="match_parent"
+        ohos:background_element="$graphic:color_blue_element"
+        ohos:orientation="horizontal"
+        ohos:weight="1">
+
+        <Button
+            ohos:height="match_parent"
+            ohos:width="0vp"
+            ohos:text="7"
+            ohos:text_size="50vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:height="match_parent"
+            ohos:width="0vp"
+            ohos:text="8"
+            ohos:text_size="50vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:height="match_parent"
+            ohos:width="0vp"
+            ohos:text="9"
+            ohos:text_size="50vp"
+            ohos:weight="1"/>
+    </DirectionalLayout>
+
+    <DirectionalLayout
+        ohos:height="0vp"
+        ohos:width="match_parent"
+        ohos:background_element="$graphic:color_green_element"
+        ohos:orientation="horizontal"
+        ohos:weight="1">
+
+        <Button
+            ohos:height="match_parent"
+            ohos:width="0vp"
+            ohos:text="4"
+            ohos:text_size="50vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:height="match_parent"
+            ohos:width="0vp"
+            ohos:text="5"
+            ohos:text_size="50vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:height="match_parent"
+            ohos:width="0vp"
+            ohos:text="6"
+            ohos:text_size="50vp"
+            ohos:weight="1"/>
+    </DirectionalLayout>
+
+    <DirectionalLayout
+        ohos:height="0vp"
+        ohos:width="match_parent"
+        ohos:background_element="$graphic:color_red_element"
+        ohos:orientation="horizontal"
+        ohos:weight="1">
+
+        <Button
+            ohos:height="match_parent"
+            ohos:width="0vp"
+            ohos:text="1"
+            ohos:text_size="50vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:height="match_parent"
+            ohos:width="0vp"
+            ohos:text="2"
+            ohos:text_size="50vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:height="match_parent"
+            ohos:width="0vp"
+            ohos:text="3"
+            ohos:text_size="50vp"
+            ohos:weight="1"/>
+    </DirectionalLayout>
+
+    <DirectionalLayout
+        ohos:height="match_parent"
+        ohos:width="match_parent"
+        ohos:orientation="horizontal"
+        ohos:weight="2">
+<!--        运算布局-->
+        <DirectionalLayout
+            ohos:height="match_parent"
+            ohos:width="match_parent"
+            ohos:orientation="vertical"
+            ohos:weight="2">
+            <!--        加减布局-->
+            <DirectionalLayout
+                ohos:height="0vp"
+                ohos:width="match_parent"
+                ohos:background_element="$graphic:color_pink_element"
+                ohos:orientation="horizontal"
+                ohos:weight="1">
+                <Button
+                    ohos:height="match_parent"
+                    ohos:width="0vp"
+                    ohos:text="+"
+                    ohos:text_size="50vp"
+                    ohos:weight="1"/>
+
+                <Button
+                    ohos:height="match_parent"
+                    ohos:width="0vp"
+                    ohos:text="-"
+                    ohos:text_size="50vp"
+                    ohos:weight="1"/>
+            </DirectionalLayout>
+            <!--除号布局-->
+            <DirectionalLayout
+                ohos:height="0vp"
+                ohos:width="match_parent"
+                ohos:background_element="$graphic:color_orange_element"
+                ohos:orientation="horizontal"
+                ohos:weight="1">
+                <Button
+                    ohos:height="match_parent"
+                    ohos:width="0vp"
+                    ohos:text="/"
+                    ohos:text_size="50vp"
+                    ohos:weight="2"/>
+            </DirectionalLayout>
+        </DirectionalLayout>
+<!--        等号布局-->
+            <Button
+                ohos:background_element="$graphic:color_yellow_element"
+                ohos:height="match_parent"
+                ohos:width="0vp"
+                ohos:text="="
+                ohos:text_size="50vp"
+                ohos:weight="1"/>
+    </DirectionalLayout>
+</DirectionalLayout>

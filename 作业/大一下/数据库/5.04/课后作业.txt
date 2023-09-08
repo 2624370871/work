@@ -1,0 +1,19 @@
+SELECT max(price) 最高价格,min(price) 最低价格,avg(price) 平均价格
+ from books;
+
+
+SELECT cid 类别,count(*) 数量 FROM books
+GROUP BY cid;
+
+
+SELECT cid 类别,count(*) 数量,
+max(price) 最高价格,
+min(price) 最低价格,
+avg(price) 平均价格
+FROM books
+GROUP BY cid;
+
+
+select uid 会员编号,sum(ordernum) 订购数量 from b_order 
+group by uid 
+having sum(ordernum)>3;

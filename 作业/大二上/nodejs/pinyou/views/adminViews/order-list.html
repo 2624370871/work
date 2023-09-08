@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单列表</title>
+    <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/admin-css/top.css">
+    <link rel="stylesheet" href="../../public/css/admin-css/button.css">
+    <style>
+        .second .table tr td a{
+            width: 60px;
+            height: 20px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+</head>
+<body>
+<div class="main">
+    <div class="top">
+        <span class="path">
+            <span class="location">当前位置:</span>
+            <a href="/admin/orderList">订单管理</a>
+             <a href=""><%= orderspace %></a>
+        </span>
+        <a class="fresh" href="javascript:location.reload()"  title="刷新" style="float: right;padding-right: 20px"> <span class="glyphicon glyphicon-repeat"></span></a>
+    </div>
+    <div class="header">
+        <h3>商品信息管理列表</h3>
+    </div>
+    <div class="search">
+        <div class="row">
+            <div class="col-lg-4">
+                <form action="/admin/searchOrder" method="get">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="orderSearch" placeholder="请输入收货人查询订单">
+                    <span class="input-group-btn">
+        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+      </span>
+                </div><!-- /input-group -->
+                </form>
+            </div><!-- /.col-lg-6 -->
+        </div>
+        <p class="h4">订单处理查询</p>
+        <form action="/admin/processSearch" method="get">
+            <div class="row">
+                <div class="col-lg-3" style="float: left;">
+                    <div class="btn-group">
+                    <button type="submit" name="processOrder" class="btn btn-primary" value="1">已处理订单</button>
+                    <button type="submit" name="processOrder" class="btn btn-primary" value="0">未处理订单</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="second">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+            <td>订单编号</td>
+            <td>收货人</td>
+            <td>收货地址</td>
+            <td>下单时间</td>
+            <td>订单状态</td>
+            <td>操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <%orderList.forEach(function(value){%>
+            <tr>
+                <td><%=value.order_id%></td>
+                <td><%=value.order_name%></td>
+                <td><%=value.order_place%></td>
+                <td><%=value.order_time.toLocaleString()%></td>
+                <td><input type="radio" class="orderFreeze" value="<%=value.order_freeze%>" style="display: none"><span class="showorder"></span>
+                    </td><!--这里显示已处理与未处理-->
+                <td><a href="/admin/orderDetail/<%=value.order_id%>" title="查看订单详细信息">订单详情</a>
+                </td>
+            </tr>
+            <%})%>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    //拿到value值的class
+    var orderFreeze=document.getElementsByClassName("orderFreeze")
+    //拿到需要显示的地方
+    var showorder=document.getElementsByClassName("showorder")
+    for (var i=0;i<showorder.length;i++){
+        for (var j=0;j<orderFreeze.length;j++){
+            if (orderFreeze[i].value==0){
+                showorder[i].innerHTML="未处理"
+            } else{
+                showorder[i].innerHTML="已处理"
+            }
+        }
+    }
+</script>
+</body>
+</html>

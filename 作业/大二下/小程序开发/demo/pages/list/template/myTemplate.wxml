@@ -1,0 +1,6 @@
+<template name="student">
+<view>name:{{name}}</view>
+<view>age:{{age}}</view>
+<view>denger:{{denger}}</view>
+
+</template>

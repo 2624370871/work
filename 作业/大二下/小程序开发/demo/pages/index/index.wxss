@@ -1,0 +1,15 @@
+/* pages/navigator/navigator.wxss */
+.list{
+    display: flex;
+}
+.left{
+    margin-right: 10px;
+}
+.right{
+    width: 15px;
+    height: 15px;
+    margin-top: 2px;
+}
+.center{
+    flex: 1;
+}

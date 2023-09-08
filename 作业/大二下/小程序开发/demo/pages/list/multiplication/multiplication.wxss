@@ -1,0 +1,5 @@
+/* pages/list/multiplication/multiplication.wxss */
+.inline{
+  display: inline-block;
+  margin: 1px 5px;
+}

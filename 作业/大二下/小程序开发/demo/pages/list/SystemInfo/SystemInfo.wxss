@@ -1,0 +1,14 @@
+/* pages/list/SystemInfo/SystemInfo.wxss */
+.title{
+  font-size: 25px;
+}
+.border{
+border: 1px solid green;
+margin: 20rpx 0;
+}
+.border view{
+  margin: 20rpx 0;
+  }
+.btnLayout{
+  display: flex;
+}

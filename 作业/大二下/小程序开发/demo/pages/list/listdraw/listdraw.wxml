@@ -1,0 +1,51 @@
+<!--pages/list/listdraw/listdraw.wxml-->
+<view class="box">
+  <view class="title">
+    列表渲染
+  </view>
+  <view>
+    绑定数组渲染
+  </view>
+  <view wx:for="{{array}}">array[{{index}}]：{{item}}
+</view>
+<view>
+  ----------------
+</view>
+<view>
+  直接数组渲染
+</view>
+<view wx:for="{{['春','夏','秋','冬']}}">array[{{index}}]：{{item}}</view>
+<view>
+  ----------------
+</view>
+<view>
+  对象渲染
+</view>
+<view wx:for="{{object}}">
+{{index}}：{{item}}
+</view>
+
+
+<view>
+  ----------------
+</view>
+<view>
+  字符串渲染及index重命名
+</view>
+<view wx:for="小程序" wx:for-index="i" wx:for-item="j">
+array[{{i}}]：{{j}}
+</view>
+
+
+<view>
+  ----------------
+</view>
+<view>
+  利用block渲染多节点结构块
+</view>
+<block wx:for="{{[1,2,3]}}" class="view">
+      <view class="item" style="background-color: red;"></view>
+      <view class="item" style="background-color: green;"></view>
+      <view class="item" style="background-color: blue;"></view>
+    </block>
+</view>

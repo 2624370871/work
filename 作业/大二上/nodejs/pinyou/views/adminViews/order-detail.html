@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/admin-css/top.css">
+    <script src="../../public/js/jquery.js"></script>
+    <style>
+        .second{
+            width: 1200px;
+            height: auto;
+            margin: 0 auto;
+            background-color: #e3e3e3;
+        }
+        .second .row{
+            width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0 10px 20px;
+            border-bottom: 1px solid #cccccc;
+            font-size: 16px;
+        }
+        .good{
+            width: 1200px;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 20px;
+            /*background-color: red;*/
+        }
+        .good table{
+            width: 1200px;
+            text-align: center;
+        }
+        .good table thead{
+            font-weight: bolder;
+        }
+        .good table tr td{
+            padding: 10px 10px;
+        }
+        .good table tr td img{
+            width: 110px;
+            height: 110px;
+
+        }
+    </style>
+
+</head>
+<body>
+<div class="main">
+    <div class="top">
+        <span class="path">
+            <span class="location">当前位置:</span>
+            <a href="/admin/orderList">订单管理</a>
+            <span> ></span>
+            <a href="">订单详情</a>
+        </span>
+        <a class="fresh" href="javascript:location.reload()"  title="刷新" style="float: right;padding-right: 20px"> <span class="glyphicon glyphicon-repeat"></span></a>
+    </div>
+    <div class="header">
+        <h3>订单详情</h3>
+    </div>
+    <div class="second">
+        <div class="row">
+            <div class="col-md-4">
+                <span>订单号：</span>
+                <span><%=orderuserList[0].order_id%></span>
+            </div>
+            <div class="col-md-4">
+                <span>创建时间：</span>
+                <span><%=orderuserList[0].order_time.toLocaleString()%></span>
+            </div>
+            <div class="col-md-4">
+                <span>用户名：</span>
+                <span><%=orderuserList[0].user_nick%></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <span>收货人：</span>
+                <span><%=orderuserList[0].order_name%></span>
+            </div>
+            <div class="col-md-4">
+                <span>联系方式：</span>
+                <span><%=orderuserList[0].order_num%></span>
+            </div>
+            <div class="col-md-4">
+                <span>收货地址：</span>
+                <span><%=orderuserList[0].order_place%></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <span>商品总数：</span>
+                <span><%=orderuserList[0].order_num%></span>
+            </div>
+            <div class="col-md-4">
+                <span>总价：</span>
+                <span><%=orderuserList[0].order_money%></span>
+            </div>
+            <div class="col-md-4">
+                <span>发货状态：</span>
+                <!--<span>${obj.server.allotState eq 0?"未处理"：已处理}</span>-->
+                <span><button type="submit"  id="btn" onclick="dohuo()" value="<%=orderuserList[0].order_freeze%>">发货</button> </span>
+            </div>
+        </div>
+    </div>
+    <div class="good">
+        <table border="1" cellspacing="1px" cellpadding="0px">
+            <thead>
+            <tr>
+                <td>商品图片</td>
+                <td>商品名</td>
+                <td>商品价格</td>
+                <td>商品数量</td>
+            </tr>
+            </thead>
+            <tbody>
+            <%ordergoodList.forEach(function(value){%>
+            <tr>
+                <td><img src="../../public/img/good_img/<%=value.good_img%>"></td>
+                <td><%=value.good_name%></td>
+                <td><%=value.good_price%></td>
+                <td><%=value.good_num%></td>
+            </tr>
+            <%})%>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<script>
+    var btn=document.getElementById("btn")
+    // btn.value为0时是未发货，为1时就显示已发货
+    if (btn.value==0){
+        btn.innerHTML="发货"
+    } else{
+        btn.innerHTML="已发货"
+        btn.style.cursor="not-allowed"
+        btn.style.opacity="0.65"
+        btn.disabled=true
+        btn.value=1
+    }
+    function dohuo() {
+        btn.innerHTML="已发货"
+        btn.style.cursor="not-allowed"
+        btn.style.opacity="0.65"
+        btn.disabled=true
+        btn.value=1
+    }
+</script>
+<script>
+    $('#btn').click(function () {
+        $.ajax({
+            url:'/admin/setOrderFreeze/<%=orderuserList[0].order_id%>',
+            type:'get',
+            data:{
+                orderbtn:$('#btn').val()
+            },
+            success:function (data) {
+                var res_code=data.res_code
+                if (res_code==0){
+                    alert("发货成功！")
+                    window.location.href='/admin/orderList'
+                } else{
+                    alert('服务器繁忙，请稍后再试！')
+
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

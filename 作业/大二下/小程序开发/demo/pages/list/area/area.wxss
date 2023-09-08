@@ -1,0 +1,12 @@
+/* pages/list/area/area.wxss */
+input{
+  border-bottom: 1px solid blue;
+  margin: 5px 0;
+}
+button{
+  margin: 20px 0;
+}
+.btn{
+  display: flex;
+  
+}

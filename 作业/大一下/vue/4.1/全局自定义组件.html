@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+   <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <style>
+        img{
+            width: 200px;
+            height: 150px;
+        }
+        div{
+            float: left;
+            margin-left: 50px
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <my-hero v-for="item in items" v-bind:h="item"></my-hero>
+    </div>
+    <template id="temp1">
+        <div>
+            <img class="img-rounded" v-bind:src="h.url" alt="" srcset="" @mouseOver="addBorder" @mouseOut="delBorder">
+            <p class="text-info"> 姓名:{{h.name}}</p>
+            <p class="text-info"> 昵称：{{h.nick}}</p>
+            <p class="text-info">角色:{{h.role}}</p>
+        </div>
+    </template>
+    <script>
+        Vue.component("my-hero",{
+            template:"#temp1",
+            props:["h"],
+            methods:{
+                addBorder(el){
+                    el.target.style.border="5px solid green"
+                },
+                delBorder(el){
+                    el.target.style.border=0
+                }
+            }
+        })
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                items:[
+                    {url:"/4.1/img/2.png",name:"赵云",role:"武将",nick:"战士"},
+                    {url:"/4.1/img/3.png",name:"后羿",role:"射手",nick:"半神之弓"},
+                    {url:"/4.1/img/4.png",name:"澜",role:"刺客",nick:"鲨之猎刃"},
+                    {url:"/4.1/img/5.png",name:"瑶",role:"辅助",nick:"鹿灵守心"},
+                    {url:"/4.1/img/6.png",name:"元歌",role:"刺客",nick:"无间傀儡"},
+                    {url:"/4.1/img/7.png",name:"程咬金",role:"坦克",nick:"热烈之斧"}
+                ]
+            },
+        })
+    </script>
+</body>
+</html>

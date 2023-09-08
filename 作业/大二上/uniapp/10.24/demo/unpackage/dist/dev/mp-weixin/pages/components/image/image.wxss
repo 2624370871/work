@@ -1,0 +1,9 @@
+
+.smart-center{
+	text-align: center;
+}
+.image{
+	margin: 40rpx 0;
+	width: 200rpx;
+}
+

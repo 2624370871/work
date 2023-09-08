@@ -1,0 +1,14 @@
+<!--pages/list/bind/bind.wxml-->
+<view class="box">
+  <view class="title">
+    数据及事件绑定
+  </view>
+  <view>算术运算绑定：{{a}}+{{b}}+{{c}}={{a+b+c}}</view>
+  <view>对象绑定-学号：{{student.stuId}}</view>
+  <view>对象绑定-姓名：{{student.stuName}}</view>
+  <view>对象绑定-生日：{{student.stuBir}}</view>
+  <view wx:for="{{array}}" wx:key="index">数组绑定-array[{{index}}]：{{item}}
+</view>
+<button type="primary" bindtap="btn">修改绑定数据</button>
+<button type="warn" bindtap="btn1">还原绑定数据</button>
+</view>

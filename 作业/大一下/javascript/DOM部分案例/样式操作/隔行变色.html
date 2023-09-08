@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	    <input type="button" value="隔行变色" id="btn" />
+	    <ul id="uu">
+	        <li>雪花啤酒</li>
+	        <li>金士百啤酒</li>
+	        <li>青岛啤酒</li>
+	        <li>燕京啤酒</li>
+	        <li>百威啤酒</li>
+	        <li>哈尔滨啤酒</li>
+	        <li>乐宝啤酒</li>
+	        <li>崂山啤酒</li>
+	    </ul>
+	</body>
+	<script>
+	    //点击按钮,所有的li隔行变色---奇红偶黄
+	    document.getElementById("btn").onclick = function () {
+	        var count = 0;
+	        //要获取ul中所有的子节点
+	        var nodes = document.getElementById("uu").childNodes;
+	        for (var i = 0; i < nodes.length; i++) {
+	            var node = nodes[i];
+	            //判断这个节点是不是li
+	            if (node.nodeType == "1" && node.nodeName == "LI") {
+	                node.style.backgroundColor = count % 2 == 0 ? "pink" : "lightblue";
+	                count++;//记录li标签的个数
+	            }
+	        }
+	    };
+	</script>
+</html>

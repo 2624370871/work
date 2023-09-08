@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <style>
+        ul{
+            list-style: none;
+        }
+        img{
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <my-parent></my-parent>
+    </div>
+    <template id="parent">
+        <div>
+            <h3>英雄检索</h3>
+            <input type="text" v-model="name">
+            <span>全部英雄</span>
+            <input type="radio">
+            <my-child v-bind:name="name"></my-child>
+        </div>
+    </template>
+    <template id="child" >
+        <ul >
+            <li v-for="i in heros" ><img :src="i.url" alt=""></li>
+            <li>{{show.name}}</li>
+        </ul>
+    </template>
+    <script>
+        Vue.component("my-parent", {
+            template: "#parent",
+            data() {
+                return {
+                    name: ""
+                }
+            }
+        })
+        Vue.component("my-child", {
+            template: "#child",
+            data() {
+                return {
+                    heros: [
+                        { url: "/5.06/img/2.png", name: "赵云" },
+                        { url: "/5.06/img/3.png", name: "后羿" },
+                        { url: "/5.06/img/4.png", name: "澜" },
+                        { url: "/5.06/img/5.png", name: "瑶" },
+                        { url: "/5.06/img/6.png", name: "元歌" },
+                    ],
+                    show:{url:"",name:""}
+                }
+            },
+            props:["name"],
+        watch:{
+            name(){
+                if(this.name){
+                    var found=false
+                    this.heros.forEach((value,index) => {
+                        if(value.name===this.name){
+                            found=value
+                        }
+                    })
+                    this.show=found?found:{url:"",name:""}
+                }else{
+                    return
+                }
+            }
+        }
+        })
+       
+        var vm = new Vue({
+            el: "#app",
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

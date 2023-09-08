@@ -1,0 +1,17 @@
+
+button{
+	margin-top: 30rpx;
+	margin-bottom: 30rpx;
+}
+.mini-btn{
+	margin-right: 30rpx;
+}
+.btn{
+	display: flex;
+	justify-content: center;
+}
+._div{
+	display: flex;
+	justify-content: space-between;
+}
+

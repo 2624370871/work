@@ -1,0 +1,17 @@
+/* pages/textStyle/textStyle.wxss */
+.textStyle01{
+    color: red;
+    letter-spacing: 10px;
+    text-align: left;
+    text-indent: 50px;
+    text-decoration: underline;
+    line-height: 30px;
+    text-decoration-color: blue;
+}
+.textStyle02{
+    word-spacing: 25px;
+    margin-top: 20px;
+    line-height: 25px;
+    text-align: justify;
+    text-transform: uppercase;
+}

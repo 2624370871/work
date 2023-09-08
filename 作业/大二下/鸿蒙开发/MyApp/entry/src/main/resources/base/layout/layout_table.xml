@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_content"
+    ohos:width="match_content"
+    ohos:background_element="#87ceeb"
+    ohos:alignment_type="align_edges"
+    ohos:column_count="3"
+    ohos:orientation="horizontal"
+    >
+<Text
+    ohos:height="60vp"
+    ohos:width="60vp"
+    ohos:text_size="20fp"
+    ohos:text="1"
+    ohos:background_element="$graphic:text_background_element"
+    ohos:text_alignment="center"></Text>
+    <Text
+        ohos:height="60vp"
+        ohos:width="60vp"
+        ohos:text_size="20fp"
+        ohos:text="2"
+        ohos:background_element="$graphic:text_background_element"
+        ohos:text_alignment="center"></Text>
+    <Text
+        ohos:height="60vp"
+        ohos:width="60vp"
+        ohos:text_size="20fp"
+        ohos:text="3"
+        ohos:background_element="$graphic:text_background_element"
+        ohos:text_alignment="center"></Text>
+    <Text
+        ohos:height="60vp"
+        ohos:width="60vp"
+        ohos:text_size="20fp"
+        ohos:text="4"
+        ohos:background_element="$graphic:text_background_element"
+        ohos:text_alignment="center"></Text>
+    <Text
+        ohos:height="60vp"
+        ohos:width="60vp"
+        ohos:text_size="20fp"
+        ohos:text="5"
+        ohos:background_element="$graphic:text_background_element"
+        ohos:text_alignment="center"></Text>
+    <Text
+        ohos:height="60vp"
+        ohos:width="60vp"
+        ohos:text_size="20fp"
+        ohos:text="6"
+        ohos:background_element="$graphic:text_background_element"
+        ohos:text_alignment="center"></Text>
+</TableLayout>

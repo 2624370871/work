@@ -1,0 +1,4 @@
+/* pages/list/ActionSheet/ActionSheet.wxss */
+.item{
+  margin: 30rpx;
+}

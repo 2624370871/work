@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/5.13/js/vue.js"></script>
+    <script src="/5.13/js/vue-router.js"></script>
+    <style>
+         html,body{
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+        .top{
+            background-color: lightblue;
+            height: 80px;
+        }
+        .container{
+            display: flex;
+            height: 600px;
+        }
+        .left{
+            background-color: lightgreen;
+            flex: 2;
+        }
+        .right{
+            background-color: lightpink;
+            flex: 8;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <router-link :to="{name:'x',params:{id:123}}">登录</router-link>
+        <router-view class="top"></router-view>
+        <div class="container">
+            <router-view name="left" class="left"></router-view>
+            <router-view name="right" class="right"></router-view>
+        </div>
+    </div>
+    <script>
+
+        var login={template:"<h1>我是登录组件"+"id:{{$route.params.id}}</h1>"}
+        var left={template:"<h1>左侧</h1>"}
+        var right={template:"<h1>右侧</h1>"}
+        var r=new VueRouter({
+            routes:[
+                {path:"pvp.qq.com/assddfghjj/aassdf/:id",
+                components:{
+                    "default":login,
+                    "left":left,
+                    "right":right
+                },
+                name:"x"}
+            ]
+        })
+        var vm=new Vue({
+            el:"#app",
+            router:r
+        })
+    </script>
+</body>
+</html>

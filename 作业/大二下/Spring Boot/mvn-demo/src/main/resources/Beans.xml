@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="bean1" class="chapter0.HelloWorld" scope="prototype">
+        <property name="message" value="Hello World! I am bean1!"/>
+    </bean>
+
+    <bean id="bean2" class="chapter0.HelloWorld" init-method="init" destroy-method="destroy" lazy-init="true">
+        <property name="message" value="Hello World! I am bean2!"/>
+    </bean>
+
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/testdata"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+    <bean id="jdbcTemplate1" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource" >
+        </property>
+    </bean>
+
+    <bean id="userDao" class="chapter4.comJDBC.UserDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate1" />
+    </bean>
+    <bean id="userService" class="chapter4.comJDBC.UserService">
+        <property name="userDao" ref="userDao" />
+    </bean>
+    <bean id="userAction" class="chapter4.comJDBC.UserAction">
+        <property name="userService" ref="userService" />
+    </bean>
+
+<!--    <bean id="person" class="chapter3.Person">-->
+<!--&lt;!&ndash;        <property name="name" value="张三"/>&ndash;&gt;-->
+<!--        <property name="name">-->
+<!--            <value>"张三"</value>-->
+<!--        </property>-->
+<!--        <property name="age" value="12"/>-->
+<!--        <property name="list">-->
+<!--            <list>-->
+<!--                <value>"第一个元素"</value>-->
+<!--                <value>"第二个元素"</value>-->
+<!--                <value>"第三个元素"</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    <bean id="person1" class="chapter3.Person">-->
+<!--        <constructor-arg value="张三" type="java.lang.String"/>-->
+<!--        <constructor-arg value="25" type="int"/>-->
+<!--        <constructor-arg>-->
+<!--            <list>-->
+<!--                <value>"构造注入元素1"</value>-->
+<!--                <value>"构造注入元素2"</value>-->
+<!--                <value>"构造注入元素3"</value>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+<!--    <bean id="student1" class="chapter3.annBean.User">-->
+<!--        <property name="name" value="zhangsan"/>-->
+<!--        <property name="id" value="101"/>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash; 注解注入 &ndash;&gt;-->
+<!--    &lt;!&ndash;使用context命名空间，开启注解处理器&ndash;&gt;-->
+<!--    <context:annotation-config/>-->
+<!--    &lt;!&ndash;使用context命名空间，配置Spring对指定包spring.annotation下的所有类进行扫描，进行注解解析&ndash;&gt;-->
+<!--    <context:component-scan base-package="chapter3.annBean"/>-->
+
+</beans>

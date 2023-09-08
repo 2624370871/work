@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <style>
+      .table {
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        font-size: 20px;
+      }
+      .btn {
+        width: 100px;
+        height: 40px;
+        margin-left: 40px;
+        font-size: 20px;
+      }
+      input {
+        width: 80px;
+      }
+      h1,h6{
+          text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+        <h1 >学生信息列表</h1>
+        <h6>--移动应用开发--</h6><hr>
+      班级：<input type="text" v-model="grade" />
+      姓名：<input type="text" v-model="name" />
+      性别：<input type="text" v-model="gender" />
+      年龄：<input type="text" v-model="age"/>
+      <button @click="add" class="btn btn-default" style="margin: 20px">添加学生</button>
+      <button @click="del" class="btn btn-default">删除学生</button><hr />
+      <table class="table">
+        <tr style="color: gray">
+          <th>班级</th>
+          <th>姓名</th>
+          <th>性别</th>
+          <th>年龄</th>
+        </tr>
+        <tr v-for="item in students">
+          <td>{{item.grade}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.gender}}</td>
+          <td>{{item.age}}</td>
+        </tr>
+      </table><hr>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          students: [],
+          grade:"",
+          name:"",
+          gender:"",
+          age:"",
+        },
+        methods: {
+          add() {
+            if (this.grade ==""||this.name == ""||this.gender==""||this.age=="") {
+              alert("请输入完整");
+            } else {
+              var student = {
+                grade: this.grade,
+                name: this.name,
+                gender: this.gender,
+                age: this.age,
+              }
+              this.students.push(student);
+            }
+          },
+          del() {
+            this.students.pop();
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

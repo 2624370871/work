@@ -1,0 +1,8 @@
+/* pages/list/bind/bind.wxss */
+view{
+  margin: 20rpx 0;
+  font-size: 18px;
+}
+button{
+  margin: 20rpx 0;
+}

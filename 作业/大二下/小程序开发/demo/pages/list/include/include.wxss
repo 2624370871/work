@@ -1,0 +1,15 @@
+/* pages/list/include/include.wxss */
+view{
+  margin: 0 auto;
+  width: 85%;
+  padding: 10px 0;
+}
+.header{
+  color: blue;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.footer{
+  text-align: center;
+}

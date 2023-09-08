@@ -1,0 +1,31 @@
+/* pages/list/swiper/swiper.wxss */
+text{
+line-height: 30px;
+}
+.switch{
+  /* margin: 10px 0; */
+  display: flex;
+  justify-content: space-between;
+  padding:15px 0;
+  border-bottom: 1px solid black;
+}
+input{
+  width: 100px;
+  text-align: center;
+  border-bottom: 1px solid #14a8ec;
+}
+.red{
+  background-color: red;
+  height: 150px;
+  width: 100%;
+}
+.green{
+  background-color: green;
+  height: 150px;
+  width: 100%;
+}
+.blue{
+  background-color: blue;
+  height: 150px;
+  width: 100%;
+}

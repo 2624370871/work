@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="chapter10_1.mapper.StudentMapper">
+    <select id="findStudentByStuno" parameterType="Integer"
+            resultType="Student">
+        select * from t_student where stuno = #{stuno}
+    </select>
+    <select id="findStudentByList"
+            resultType="Student">
+        select * from t_student
+    </select>
+    <insert id="insertStudent" parameterType="Student">
+        insert into t_Student values (#{stuno},#{stuname},#{grade},#{dept},#{classname})
+    </insert>
+    <update id="updateStudent" parameterType="Student">
+        update t_student set stuname=#{stuname},dept=#{dept}
+        where stuno=#{stuno}
+    </update>
+    <delete id="deleteStudent" parameterType="Integer">
+        delete from t_student where stuno=#{stuno}
+    </delete>
+
+<select id="findStudentByName" resultType="Student">
+    select * from t_student where 1 = 1
+<if test="stuname != null">
+    and stuname like #{stuname}
+</if>
+</select>
+
+<select id="findStudentLike" resultType="Student">
+select * from t_student where 1=1
+    <choose>
+        <when test="stuname!=null">
+            and stuname like %#{student}%
+        </when>
+        <when test="dept!=null">
+            and dept like #{dept}
+        </when>
+        <otherwise>
+            and grade=2017
+        </otherwise>
+    </choose>
+</select>
+</mapper>

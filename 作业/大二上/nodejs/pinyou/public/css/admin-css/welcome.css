@@ -1,0 +1,66 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/*主体设计*/
+.main{
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+}
+/*页面导航及刷新*/
+.main .top{
+    width: 1200px;
+    height: 80px;
+    margin: 20px 0;
+    padding-left: 10px;
+    line-height: 80px;
+    border: 1px solid #dddddd;
+    border-left: 10px solid #f24729;
+    border-right: 10px solid #f24729;
+    background-color: #DFDFDF;
+}
+.top span{
+    font-size: 18px;
+}
+.main .top .fresh{
+    width:40px;
+    height: 80px;
+    background-color: #f24729;
+    border-color: #f24729;
+    padding: 5px 0px 10px 10px;
+    margin-right: 100px;
+}
+.main .top .fresh:hover{
+    background-color: #f24729;
+}
+.main .top .fresh span{
+    font-size: 20px;
+    color: white;
+}
+
+
+
+.with{
+    width: 250px;
+    height: 150px;
+    background-color: #cccccc;
+    cursor: pointer;
+}
+.with>a{
+    text-decoration: none;
+    color: black;
+}
+.with:hover{
+    background-color: white;
+}
+.with h3{
+    padding: 20px 0 0 20px;
+}
+
+.with p{
+    padding: 20px 0px 0px 50px;
+    font-size: 30px;
+    color: blue;
+
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StackLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent">
+<Text
+    ohos:height="300vp"
+    ohos:width="match_parent"
+    ohos:background_element="$graphic:color_red_element">
+
+</Text>
+    <Text
+        ohos:height="200vp"
+        ohos:width="200vp"
+        ohos:background_element="$graphic:color_green_element">
+
+    </Text>
+    <Text
+        ohos:height="100vp"
+        ohos:width="100vp"
+        ohos:background_element="$graphic:color_blue_element">
+
+    </Text>
+</StackLayout>

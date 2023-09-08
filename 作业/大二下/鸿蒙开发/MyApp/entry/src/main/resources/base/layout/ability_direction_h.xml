@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="horizontal"
+    >
+    <Button
+        ohos:height="120vp"
+        ohos:width="80vp"
+        ohos:left_margin="13vp"
+        ohos:text="Button 1"
+        ohos:background_element="$graphic:color_blue_element"
+        ohos:text_size="10vp"/>
+    <Button
+        ohos:height="120vp"
+        ohos:width="80vp"
+        ohos:left_margin="13vp"
+        ohos:text="Button 2"
+        ohos:background_element="$graphic:color_blue_element"
+        ohos:text_size="10vp"/>
+    <Button
+        ohos:height="120vp"
+        ohos:width="80vp"
+        ohos:left_margin="13vp"
+        ohos:text="Button 3"
+        ohos:background_element="$graphic:color_blue_element"
+        ohos:text_size="10vp"/>
+
+</DirectionalLayout>

@@ -1,0 +1,7 @@
+/**index.wxss**/
+.fontstyle{
+    font-family: "cursive";
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+}

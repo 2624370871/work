@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	    <input type="text" id="t1" > <br>
+	    <input type="text" id="t2" >
+	</body>
+	<script>
+	    document.getElementById('t1').oninput = function(){
+	        document.getElementById('t2').value = this.value;
+	    }
+	</script>
+	</body>
+</html>

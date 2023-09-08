@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/vue.js"></script>
+    <link rel="stylesheet" href="/4.22/css/animate.css">
+</head>
+<body>
+    <div id="app">
+        <button @click="show=!show">点击</button>
+        <div>
+            <transition enter-active-class="animated fadeInRightBig" leave-active-class="animated fadeOutLeftBig">
+                <img src="./img/img.jpg" alt="" srcset="" v-show="show">
+            </transition>
+        </div>
+    </div>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                show:true
+            }
+        })
+    </script>
+</body>
+</html>

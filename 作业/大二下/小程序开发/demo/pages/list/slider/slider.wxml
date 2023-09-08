@@ -1,0 +1,19 @@
+<!--pages/list/slider/slider.wxml-->
+<view class="box">
+  <view class="title">
+    滑动条和颜色
+  </view>
+  <text>红色滑动条</text>
+  <slider value="{{r}}" data-color="r" max="255" block-color="red" show-value="true"  bindchanging="change" bindchange="change"/>
+  <text>绿色滑动条</text>
+  <slider value="{{g}}"  data-color="g" max="255" block-color="green" show-value="true" bindchanging="change" bindchange="change"/>
+  <text>蓝色滑动条</text>
+  <slider value="{{b}}"  data-color="b" max="255" block-color="blue" show-value="true" bindchanging="change" bindchange="change"/>
+  <text>透明度滑动条</text>
+  <slider value="{{a}}"  data-color="a" max="1" block-color="orange" show-value="true" step="0.01" value="1"
+  bindchanging="change" bindchange="change"/>
+
+  <view style="height: 100px;background-color: rgba({{r}}, {{g}}, {{b}},{{a}});">
+    
+  </view>
+</view>

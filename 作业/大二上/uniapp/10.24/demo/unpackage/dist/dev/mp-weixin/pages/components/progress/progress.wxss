@@ -1,0 +1,9 @@
+
+.progress-box{
+	height: 50rpx;
+	margin-bottom: 60rpx;
+}
+.progress-control button{
+	margin-top: 20rpx;
+}
+

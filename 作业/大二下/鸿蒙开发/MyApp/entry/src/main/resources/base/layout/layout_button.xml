@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+<Button
+    ohos:height="50vp"
+    ohos:width="120vp"
+   ohos:text="普通按钮"
+    ohos:text_size="20fp"
+    ohos:background_element="$graphic:color_blue_element"
+    ohos:left_margin="20vp"
+    ohos:element_left="$media:icon"
+    ohos:bottom_margin="20vp"></Button>
+
+    <Button
+        ohos:height="50vp"
+        ohos:width="120vp"
+        ohos:text="椭圆按钮"
+        ohos:text_size="20fp"
+        ohos:background_element="$graphic:button1"
+        ohos:left_margin="20vp"
+        ohos:element_left="$media:icon"
+        ohos:bottom_margin="20vp"></Button>
+
+    <Button
+        ohos:height="50vp"
+        ohos:width="120vp"
+        ohos:text="胶囊按钮"
+        ohos:text_size="20fp"
+        ohos:background_element="$graphic:button2"
+        ohos:left_margin="20vp"
+        ohos:element_left="$media:icon"
+        ohos:bottom_margin="20vp"></Button>
+
+    <Button
+        ohos:height="120vp"
+        ohos:width="120vp"
+        ohos:text="圆形按钮"
+        ohos:text_size="20fp"
+        ohos:background_element="$graphic:button3"
+        ohos:left_margin="20vp"
+        ohos:element_left="$media:icon"
+        ohos:bottom_margin="20vp"></Button>
+
+</DirectionalLayout>

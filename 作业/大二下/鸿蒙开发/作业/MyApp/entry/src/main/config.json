@@ -1,0 +1,137 @@
+{
+  "app": {
+    "bundleName": "com.example.myapp",
+    "vendor": "example",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.example.myapp",
+    "name": ".MyApplication",
+    "mainAbility": "com.example.myapp.MainAbility",
+    "deviceType": [
+      "phone"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree": false
+    },
+    "abilities": [
+      {
+        "orientation": "unspecified",
+        "visible": true,
+        "name": "com.example.myapp.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "name": "com.example.myapp.Login",
+        "icon": "$media:icon",
+        "description": "$string:login_description",
+        "label": "$string:entry_Login",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.Register",
+        "icon": "$media:icon",
+        "description": "$string:register_description",
+        "label": "$string:entry_register",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.Reset",
+        "icon": "$media:icon",
+        "description": "$string:reset_description",
+        "label": "$string:entry_reset",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.Home",
+        "icon": "$media:icon",
+        "description": "$string:home_description",
+        "label": "$string:entry_Home",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.My",
+        "icon": "$media:icon",
+        "description": "$string:my_description",
+        "label": "$string:entry_My",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.Scan",
+        "icon": "$media:icon",
+        "description": "$string:scan_description",
+        "label": "$string:entry_Scan",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.Order",
+        "icon": "$media:icon",
+        "description": "$string:order_description",
+        "label": "$string:entry_order",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.foodInfo",
+        "icon": "$media:icon",
+        "description": "$string:foodinfo_description",
+        "label": "$string:entry_foodInfo",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.Pay",
+        "icon": "$media:icon",
+        "description": "$string:pay_description",
+        "label": "$string:entry_Pay",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.myapp.Success",
+        "icon": "$media:icon",
+        "description": "$string:success_description",
+        "label": "$string:entry_Success",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ]
+  }
+}

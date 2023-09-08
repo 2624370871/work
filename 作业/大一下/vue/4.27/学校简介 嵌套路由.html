@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/4.27/js/vue.js"></script>
+    <script src="/4.27/js/vue-router.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            display: flex;
+            flex-direction: row;
+            margin: 10px;
+        }
+        li{
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+            background-color: black;
+            color: antiquewhite;
+            margin: 5px;
+            cursor: pointer;
+        }
+        li:hover{
+            background-color:hsl(208, 5%, 52%);
+            color: hsl(69, 73%, 50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 定义路由链接和路由视图 -->
+        <ul>
+            <router-link to="/about" tag="li">关于我们</router-link>
+            <router-link to="/contact" tag="li">联系我们</router-link>
+        </ul>
+        <router-view></router-view>
+    </div>
+    <!-- 定义模板 -->
+    <template id="about">
+        <div class="profile-right">
+            <h1>湖科**学院</h1>
+            <router-link to="/about/detail">学校简介</router-link>
+            <router-link to="/about/department">机构设置</router-link>
+            <router-view></router-view>
+        </div>
+    </template>
+    <template id="contact">
+        <div class="profile-right">
+            <h1>我校位于湖北省武汉市</h1>
+        </div>
+    </template>
+    <script>
+        // 定义组件
+        var about={template:"#about"}
+        var contact={template:"#contact"}
+        // 子组件
+        var detail={template:"<h1>我校属于湖北省公办院校</h1>"}
+        var department={template:"<h1>软件工程学院</h1>"}
+        // 定义路由对象
+        var router = new VueRouter({
+        routes:[
+            {path:"/about",component:about,
+            // 在about路由器规则下面，添加了路由匹配规则
+            children:[//一组子路由的规则，写法跟routes一样
+                {path:"detail",component:detail},
+                {path:"department",component:department}
+            ]
+        },
+            {path:"/contact",component:contact}
+        ]    
+        })
+        var vm=new Vue({
+            el:"#app",
+                router:router
+        })
+    </script>
+</body>
+</html>

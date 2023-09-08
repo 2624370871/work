@@ -1,0 +1,91 @@
+*{
+	padding: 0;
+	margin: 0;
+	background: #eee;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+#page3 ul{
+	display: flex;
+	justify-content: space-around;
+}
+#page3{
+	width: 1280px;
+	margin: 0 auto;
+	margin-top: 60px;
+}
+#page3 li{
+	width: 423px;
+	height: 650px;
+}
+#page3 .box{
+	width: 423px;
+	height: 500px;
+}
+#page3 .box .img{
+	margin:auto;
+	overflow: hidden;
+	width: 410px;
+	height: 250px;
+}
+#page3 .box img{
+	margin-top:12px;
+	transition: all 0.5s;
+	width: 420px;
+	height: 250px;
+}
+#page3 .box .box1{
+	height: 380px;
+}
+
+
+#page3 .box .box1 h3{
+	margin: 20px 0;
+	text-align: center;
+}
+#page3 .box .box1 p{
+	width: 380px;
+	height: 250px;
+	text-indent: 2em;
+	margin: 20px auto;
+}
+#page3 .box .box1 div{
+	border-top:1px solid #ffffff;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+}
+#page3 li:hover{
+	cursor: pointer;
+}
+#page3 li:hover div{
+	color: #ffffff;
+}
+#page3 li:hover p{
+	color: #ffffff;
+}
+#page3 li:hover h3{
+	color: #ffffff;
+}
+
+#page3 li:hover img{
+	transition: all 0.5s;
+	transform: scale(1.05);
+}
+#page3 li:hover div{
+	transition: all 0.5s;
+	background: #CC3333;
+}
+#page3 li:hover p{
+	transition: all 0.5s;
+	background: #CC3333;
+}
+#page3 li:hover h3{
+	transition: all 0.5s;
+	background: #CC3333;
+}

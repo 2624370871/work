@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:orientation="vertical">
+    <DirectionalLayout
+        ohos:height="100vp"
+        ohos:width="match_parent"
+        ohos:orientation="horizontal">
+        <TextField
+            ohos:height="match_parent"
+            ohos:width="100vp"
+            ohos:text_size="30fp"
+            ohos:id="$+id:tf1"
+            ohos:text_alignment="center">
+        </TextField>
+        <Text
+            ohos:height="match_parent"
+            ohos:width="30vp"
+            ohos:text="+"
+            ohos:text_size="30fp">
+        </Text>
+        <TextField
+            ohos:height="match_parent"
+            ohos:width="100vp"
+            ohos:text_size="30fp"
+            ohos:id="$+id:tf2"
+            ohos:text_alignment="center"
+            >
+        </TextField>
+        <Text
+            ohos:height="match_parent"
+            ohos:width="30vp"
+            ohos:text="="
+            ohos:text_size="30fp">
+        </Text>
+        <TextField
+            ohos:height="match_parent"
+            ohos:width="100vp"
+            ohos:text_size="30fp"
+            ohos:id="$+id:tf3"
+            ohos:text_alignment="center">
+        </TextField>
+    </DirectionalLayout>
+    <Button
+        ohos:height="100vp"
+        ohos:width="300vp"
+        ohos:text="获取计算结果"
+        ohos:text_size="30fp"
+        ohos:background_element="$graphic:green_circle_element"
+        ohos:id="$+id:btn">
+
+    </Button>
+
+</DirectionalLayout>

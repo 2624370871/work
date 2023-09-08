@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <Text
+        ohos:height="100vp"
+        ohos:width="match_content"
+        ohos:multiple_lines="true"
+        ohos:text="第二个(多选):鸿蒙系统能够应用到哪些电子设备？"
+        ohos:text_size="30fp"
+        />
+    <Checkbox
+        ohos:height="50vp"
+        ohos:width="match_parent"
+        ohos:text="A:手机"
+        ohos:text_color_on="#ff1493"
+        ohos:text_color_off="#0066ff"
+        ohos:text_size="30fp"
+        ohos:id="$+id:cb1"
+        ohos:text_alignment="vertical_center"></Checkbox>
+    <Checkbox
+        ohos:height="50vp"
+        ohos:width="match_parent"
+        ohos:text="B:电视"
+        ohos:text_color_on="#ff1493"
+        ohos:text_color_off="#0066ff"
+        ohos:text_size="30fp"
+        ohos:id="$+id:cb2"
+        ohos:text_alignment="vertical_center"></Checkbox>
+    <Checkbox
+        ohos:height="50vp"
+        ohos:width="match_parent"
+        ohos:text="C:平板"
+        ohos:text_color_on="#ff1493"
+        ohos:text_color_off="#0066ff"
+        ohos:text_size="30fp"
+        ohos:id="$+id:cb3"
+        ohos:text_alignment="vertical_center"></Checkbox>
+    <Checkbox
+        ohos:height="50vp"
+        ohos:width="match_parent"
+        ohos:text="D:手表"
+        ohos:text_color_on="#ff1493"
+        ohos:text_color_off="#0066ff"
+        ohos:text_size="30fp"
+        ohos:id="$+id:cb4"
+        ohos:text_alignment="vertical_center"></Checkbox>
+
+    <Text
+        ohos:height="100vp"
+        ohos:width="match_parent"
+        ohos:id="$+id:text"
+        ohos:text_size="20fp">
+    </Text>
+</DirectionalLayout>

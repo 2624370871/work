@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+    <DirectionalLayout
+        ohos:height="100vp"
+        ohos:width="match_parent"
+        ohos:orientation="horizontal">
+        <Text
+            ohos:height="match_parent"
+            ohos:width="200vp"
+            ohos:text_alignment="center"
+            ohos:text_size="30vp"
+            ohos:id="$+id:text"
+            >
+        </Text>
+        <TextField
+            ohos:height="match_parent"
+            ohos:width="100vp"
+            ohos:text_size="30fp"
+            ohos:id="$+id:tf1"
+            ohos:text_alignment="center"
+            ohos:basement="#ff0000"
+            >
+
+        </TextField>
+    </DirectionalLayout>
+    <Button
+        ohos:height="100vp"
+        ohos:width="match_parent"
+        ohos:text="数据回传"
+        ohos:text_size="30fp"
+        ohos:id="$+id:btn"
+        ohos:top_margin="10vp"
+        ohos:background_element="$graphic:green_circle_element">
+    </Button>
+</DirectionalLayout>

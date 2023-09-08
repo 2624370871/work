@@ -1,0 +1,136 @@
+{
+  "string": [
+    {
+      "name": "entry_MainAbility",
+      "value": "entry_MainAbility"
+    },
+    {
+      "name": "mainability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "mainability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "login_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "login_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_Login",
+      "value": "entry_Login"
+    },
+    {
+      "name": "register_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "register_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_register",
+      "value": "entry_register"
+    },
+    {
+      "name": "reset_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "reset_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_reset",
+      "value": "entry_reset"
+    },
+    {
+      "name": "home_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "home_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_Home",
+      "value": "entry_Home"
+    },
+    {
+      "name": "my_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "my_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_My",
+      "value": "entry_My"
+    },
+    {
+      "name": "scan_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "scan_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_Scan",
+      "value": "entry_Scan"
+    },
+    {
+      "name": "order_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "order_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_order",
+      "value": "entry_order"
+    },
+    {
+      "name": "foodinfo_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "foodinfo_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_foodInfo",
+      "value": "entry_foodInfo"
+    },
+    {
+      "name": "pay_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "pay_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_Pay",
+      "value": "entry_Pay"
+    },
+    {
+      "name": "success_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "success_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_Success",
+      "value": "entry_Success"
+    }
+  ]
+}

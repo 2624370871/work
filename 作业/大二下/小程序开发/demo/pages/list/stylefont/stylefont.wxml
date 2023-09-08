@@ -1,0 +1,19 @@
+<!--pages/list/stylefont/stylefont.wxml-->
+<view class="box">
+  <view class="title">
+    设置字体样式和大小
+  </view>
+  <view>
+    <text class="text" style="font-weight: {{bold}};font-style: {{italic}};text-decoration: {{underline}}; font-size: {{size}};">湖北科技职业学院</text>
+  </view>
+  <checkbox-group bindchange="checkbox">
+    <checkbox value="bold"/>加粗
+    <checkbox value="italic"/>倾斜
+    <checkbox value="underline"/>下划线
+  </checkbox-group>
+  <radio-group bindchange="radio">
+    <radio value="15px"/>15px
+    <radio value="25px" checked/>25px
+    <radio value="35px"/>35px
+  </radio-group>
+</view>

@@ -1,0 +1,16 @@
+<!--pages/list/videoShow/videoShow.wxml-->
+<view class="box">
+  <view class="title">
+    视频展示
+  </view>
+  <view class="video">
+    <video src="{{src}}" id="video" danmu-list="{{danmuList}}" controls enable-danmu danmu-btn></video>
+  </view>
+  <view>
+    <view>
+      弹幕内容
+    </view>
+    <input type="text" placeholder="请输入弹幕内容" bindblur="getInput"/>
+    <button type="primary" bindtap="sendDanmu">发送弹幕</button>
+  </view>
+</view>

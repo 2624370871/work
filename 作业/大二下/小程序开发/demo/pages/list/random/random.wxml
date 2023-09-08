@@ -1,0 +1,12 @@
+<!--pages/list/random/random.wxml-->
+<view class="box">
+  <view class="title">随机数求和</view>
+ <view>产生的随机数列为：</view>
+ <!-- this情况，表示item自身，item应该是独一无二的数值或者字符串 -->
+ <view wx:for="{{randomArray}}" wx:key="*this">{{item}}
+</view>
+  <view>随机数列的和为：{{sum}}</view>
+  <button bindtap="rand" style="width: 80%;">产生的随机数</button>
+</view>
+
+

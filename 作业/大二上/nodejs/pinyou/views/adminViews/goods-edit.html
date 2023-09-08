@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品修改</title>
+    <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/admin-css/top.css">
+    <link rel="stylesheet" href="../../public/css/admin-css/button.css">
+    <script src="../../public/js/jquery.js"></script>
+    <style>
+        .second{
+            width: 1200px;
+            height: auto;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+<div class="main">
+    <div class="top">
+        <span class="path">
+            <span class="location">当前位置:</span>
+            <a href="/admin/goodList">商品管理</a>
+            <span> ></span>
+            <a href="">商品修改</a>
+        </span>
+        <a class="fresh" href="javascript:location.reload()"  title="刷新" style="float: right;padding-right: 20px"> <span class="glyphicon glyphicon-repeat"></span></a>
+    </div>
+    <div class="header">
+        <h3>商品信息修改</h3>
+    </div>
+    <div class="second">
+        <form action="/admin/doEdit/<%=goodDetail[0].good_id%>"  method="post" id="edit-form">
+            <div class="form-group">
+                <label for="goodname">商品名称</label>
+                <input type="text" class="form-control" id="goodname" name="goodname" placeholder="请输入商品名称" value="<%=goodDetail[0].good_name%>">
+            </div>
+            <div class="form-group">
+                <label for="goodprice">商品价格</label>
+                <input type="text" class="form-control" id="goodprice" name="goodprice" placeholder="请输入商品价格" value="<%=goodDetail[0].good_price.toFixed(2)%>">
+            </div>
+            <div class="form-group">
+                <label for="goodweight">商品净含量</label>
+                <input type="text" class="form-control" id="goodweight" name="goodweight" placeholder="请输入商品净含量" value="<%=goodDetail[0].good_weight%>">
+            </div>
+            <div class="form-group">
+                <label for="goodcount">库存</label>
+                <input type="text" class="form-control" id="goodcount" name="goodcount" placeholder="请输入库存" value="<%=goodDetail[0].good_count%>">
+            </div>
+            <div class="form-group">
+                <label for="goodplace">产地</label>
+                <input type="text" class="form-control" id="goodplace" name="goodplace" placeholder="请输入产地" value="<%=goodDetail[0].good_place%>">
+            </div>
+            <button type="submit" class="btn btn-primary">确定修改</button>
+        </form>
+    </div>
+</div>
+<script>
+    $("#edit-form").on('submit',function (e) {
+        if ($("#goodname").val()==''){
+            alert('商品名不能为空！')
+            return false
+        }
+        if ($("#goodprice").val()==''){
+            alert('商品价格不能为空！')
+            return false
+        }
+        if (parseFloat($("#goodprice").val())<=0){
+            alert('商品价格不能为负数！')
+            return false
+        }
+        if ($("#goodweight").val()==''){
+            alert('商品净含量不能为空！')
+            return false
+        }
+        if (parseInt($("#goodweight").val())<=0){
+            alert('商品净含量不能为负数！')
+            return false
+        }
+        if ($("#goodcount").val()==''){
+            alert('商品库存不能为空！')
+            return false
+        }
+        if ($("#goodplace").val()==''){
+            alert('商品库存不能为空！')
+            return false
+        }
+        e.preventDefault()
+        var formData=$(this).serialize()//获取表单内容
+        $.ajax({
+            url:'/admin/doEdit/<%=goodDetail[0].good_id%>',
+            type:'post',
+            data:formData,
+            dataType:'json',
+            success:function (data) {
+                var res_code=data.res_code
+                if (res_code==0){
+                    alert("修改成功！")
+                    window.location.href="/admin/goodList"
+                } else{
+                    alert('服务器忙，请稍后再试！')
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

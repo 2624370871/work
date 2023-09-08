@@ -1,0 +1,15 @@
+<!--pages/list/NavigationBar/NavigationBar.wxml-->
+<view class="box">
+  <view class="title">
+    导航条
+  </view>
+  <input placeholder="请输入导航条新标题" bindblur="inputTitle"/>
+<view class="btnLayout">
+  <button type="primary" bindtap="setNavigationBarTitle" style="width: 45%;">设置标题</button>
+  <button type="primary" bindtap="setNavigationBarColor" style="width: 45%;">设置颜色</button>
+</view>
+<view class="btnLayout">
+  <button type="primary" bindtap="setNavigationBarLoading" style="width: 45%;">加载动画</button>
+  <button type="primary" bindtap="setNavigationBarLoding" style="width: 45%;">停止动画</button>
+</view>
+</view>

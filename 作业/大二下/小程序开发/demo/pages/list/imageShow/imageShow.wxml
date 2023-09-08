@@ -1,0 +1,10 @@
+<!--pages/list/imageShow/imageShow.wxml-->
+<view class="box">
+  <view class="title">
+    图片展示
+  </view>
+<view wx:for="{{imgArray}}" class="image">
+<view>{{item.text}}</view>
+<image src="{{image}}" mode="{{item.mode}}"></image>
+</view>
+</view>

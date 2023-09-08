@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:orientation="horizontal">
+
+    <Picker
+        ohos:height="match_content"
+        ohos:width="0vp"
+        ohos:weight="1"
+        ohos:normal_text_color="#00ff7f"
+        ohos:normal_text_size="25fp"
+        ohos:selected_text_color="#ff1493"
+        ohos:selected_text_size="35fp"
+        ohos:top_line_element="#0066ff"
+        ohos:bottom_line_element="#0066ff"
+        ohos:shader_color="#0066ff"
+        ohos:wheel_mode_enabled="true"
+        ohos:selected_normal_text_margin_ratio="3"
+        ohos:id="$+id:picker1"
+        >
+
+    </Picker>
+    <Picker
+        ohos:height="match_content"
+        ohos:width="0vp"
+        ohos:weight="2"
+        ohos:normal_text_color="#00ff7f"
+        ohos:normal_text_size="25fp"
+        ohos:selected_text_color="#ff1493"
+        ohos:selected_text_size="35fp"
+        ohos:top_line_element="#0066ff"
+        ohos:bottom_line_element="#0066ff"
+        ohos:shader_color="#daa520"
+        ohos:wheel_mode_enabled="true"
+        ohos:selected_normal_text_margin_ratio="3"
+        ohos:id="$+id:picker2"
+        ></Picker>
+</DirectionalLayout>
